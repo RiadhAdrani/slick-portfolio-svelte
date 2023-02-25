@@ -44,12 +44,9 @@ import Unknown from '$lib/assets/logos/no-img.svg';
 import Csharp from '$lib/assets/logos/csharp.svg';
 import Xamarin from '$lib/assets/logos/xamarin.svg';
 
-import CV from '$lib/assets/cv.pdf';
-
 export default {
   Csharp,
   Xamarin,
-  CV,
   TypeScript,
   VueJs,
   ReactJs,
