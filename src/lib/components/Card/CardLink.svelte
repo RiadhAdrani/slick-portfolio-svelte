@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '../Icon/Icon.svelte';
-	import { Icons } from '../Icon/Icons';
+	import { Icons } from '$lib/utils';
 
 	export let label: string;
 	export let to: string;

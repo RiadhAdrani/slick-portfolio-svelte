@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Technology } from '$lib/types';
+	import type { Technology } from '$lib/utils';
+	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import Icon from '../Icon/Icon.svelte';
-	import { Icons } from '../Icon/Icons';
 
 	export let items: Array<Technology> = [];
 	const delay = 2000;

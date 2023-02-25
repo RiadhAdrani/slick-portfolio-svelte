@@ -1,13 +1,11 @@
 <script lang="ts">
 	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
 	import Icon from '$lib/components/Icon/Icon.svelte';
-	import { Home } from '$lib/Params';
-	import type { SocialLink, SocialMedia } from '$lib/types';
-	import { useSocialMedia, useTitle } from '$lib/Utils';
+	import { Home, PortfolioTitle } from '$lib/params';
+	import type { SocialLink, SocialMedia } from '$lib/utils';
+	import { useSocialMedia, useTitle } from '$lib/utils';
 
-	const { description, lastName, links: _links, name, skills, title: _title } = Home;
-
-	const title = useTitle(_title);
+	const { description, lastName, links: _links, name, skills, title } = Home;
 
 	const links: Array<SocialLink> = Object.keys(_links).map((key) => {
 		const to = _links[key as 'github']!;
@@ -22,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{useTitle(title, PortfolioTitle)}</title>
 </svelte:head>
 <div class="home">
 	<div class="home-section">

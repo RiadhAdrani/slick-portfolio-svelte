@@ -3,17 +3,15 @@
 	import Input from '$lib/components/Input/Input.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import ProjectCard from '$lib/components/ProjectCard/ProjectCard.svelte';
-	import { PersonalProjects } from '$lib/Params';
-	import type { Project, Technology } from '$lib/types';
-	import { useTitle } from '$lib/Utils';
+	import { PersonalProjects, PortfolioTitle } from '$lib/params';
+	import type { Project, Technology } from '$lib/utils';
+	import { useTitle } from '$lib/utils';
 
 	interface TechnologyFilter extends Technology {
 		isSelected?: boolean;
 	}
 
-	const { items, title: _title } = PersonalProjects;
-
-	const title = useTitle(_title);
+	const { items, title } = PersonalProjects;
 
 	let filters: Array<TechnologyFilter> = items.reduce((items, item) => {
 		item.technologies.forEach((tech) => {
@@ -59,10 +57,10 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{useTitle(title, PortfolioTitle)}</title>
 </svelte:head>
 <div class="projects">
-	<MainTitle>{_title}</MainTitle>
+	<MainTitle>{title}</MainTitle>
 	<div class="projects-search">
 		<Input bind:value={search} placeholder="Enter keywords..." />
 	</div>

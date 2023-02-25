@@ -1,7 +1,6 @@
 import Assets from './Assets';
-import type { Technology } from './types';
 
-export const Technologies = {
+export default {
   JavaScript: { logo: Assets.JavaScript, name: 'JavaScript' },
   TypeScript: { logo: Assets.TypeScript, name: 'TypeScript' },
   Dart: { logo: Assets.Dart, name: 'Dart' },

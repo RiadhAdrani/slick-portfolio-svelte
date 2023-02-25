@@ -1,15 +1,14 @@
 <script>
-	import { JobExperiencesList as jobs } from '$lib/Career';
 	import ExperienceCard from '$lib/components/ExperienceCard/ExperienceCard.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { ProfessionalCareerParams } from '$lib/Params';
-	import { useTitle } from '$lib/Utils';
+	import { ProfessionalCareerParams, PortfolioTitle } from '$lib/params';
+	import { useTitle } from '$lib/utils';
 
 	const { items, title } = ProfessionalCareerParams;
 </script>
 
 <svelte:head>
-	<title>{useTitle(title)}</title>
+	<title>{useTitle(title, PortfolioTitle)}</title>
 </svelte:head>
 <div class="experience">
 	<MainTitle>{title}</MainTitle>

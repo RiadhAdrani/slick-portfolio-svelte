@@ -1,21 +1,20 @@
 <script>
-	import Assets from '$lib/Assets';
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { ResumeParams } from '$lib/Params';
-	import { useTitle } from '$lib/Utils';
+	import { ResumeParams, PortfolioTitle } from '$lib/params';
+	import { useTitle } from '$lib/utils';
 
 	const { cv, title } = ResumeParams;
 </script>
 
 <svelte:head>
-	<title>{useTitle(title)}</title>
+	<title>{useTitle(title, PortfolioTitle)}</title>
 </svelte:head>
 <div />
 <MainTitle>{title}</MainTitle>
 <div class="resume">
 	{#if cv}
-		<a href={Assets.CV}>
+		<a href={cv}>
 			<Chip label="Download" size={'1.25em'} />
 		</a>
 	{:else}

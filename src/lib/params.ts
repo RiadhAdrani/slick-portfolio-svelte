@@ -1,7 +1,5 @@
-import Assets from "./Assets";
-import { EmploymentType } from "./Career";
-import { Technologies } from "./Technologies";
-import type { CareerParams, HomeParams, NavBarParams, PersonalProjectsParams, ResumePageParams } from "./types";
+import { EmploymentType, Technologies, Assets } from "./utils";
+import type { CareerParams, HomeParams, NavBarParams, PersonalProjectsParams, ResumePageParams } from "./utils";
 
 export const PortfolioTitle = 'Slick template with Svelte'
 

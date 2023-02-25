@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Project } from '$lib/Projects';
-	import { countMonths, getMonthName } from '$lib/Utils';
+	import type { Project } from '$lib/utils';
+	import { countMonths, getMonthName } from '$lib/utils/helpers';
 	import Chip from '../Chip/Chip.svelte';
 	import Card from '../Card/Card.svelte';
 	import CardTitle from '../Card/CardTitle.svelte';

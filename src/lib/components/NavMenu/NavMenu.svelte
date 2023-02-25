@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { NavMenuItem } from '$lib/types';
-	import '$lib/styles/index.scss';
+	import type { NavMenuItem } from '$lib/utils/types';
 	import Icon from '../Icon/Icon.svelte';
-	import { Icons } from '../Icon/Icons';
+	import { Icons } from '$lib/utils';
 	import { page } from '$app/stores';
-	import { NavBar } from '$lib/Params';
+	import { NavBar } from '$lib/params';
 
 	import { base } from '$app/paths';
 

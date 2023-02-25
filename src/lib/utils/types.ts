@@ -1,4 +1,4 @@
-import { Icons } from "./components/Icon/Icons"
+import type { EmploymentType, Icons } from ".";
 
 export interface Experience {
   title: string;

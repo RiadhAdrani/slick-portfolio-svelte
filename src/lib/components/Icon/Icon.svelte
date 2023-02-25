@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Icons } from './Icons';
+	import type { Icons } from '$lib/utils';
 	import { viewBox } from './Icons';
 
 	export let size = '30px';
