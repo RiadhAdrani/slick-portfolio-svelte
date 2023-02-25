@@ -1,0 +1,422 @@
+{
+  "src/lib/assets/logos/js.png": {
+    "file": "_app/immutable/assets/js-48d02175.png",
+    "src": "src/lib/assets/logos/js.png"
+  },
+  "src/lib/assets/logos/ts.png": {
+    "file": "_app/immutable/assets/ts-a285671f.png",
+    "src": "src/lib/assets/logos/ts.png"
+  },
+  "src/lib/assets/logos/dart.png": {
+    "file": "_app/immutable/assets/dart-ce728a8e.png",
+    "src": "src/lib/assets/logos/dart.png"
+  },
+  "src/lib/assets/logos/kotlin.png": {
+    "file": "_app/immutable/assets/kotlin-53eb19d4.png",
+    "src": "src/lib/assets/logos/kotlin.png"
+  },
+  "src/lib/assets/logos/java.png": {
+    "file": "_app/immutable/assets/java-7b1e51de.png",
+    "src": "src/lib/assets/logos/java.png"
+  },
+  "src/lib/assets/logos/python.png": {
+    "file": "_app/immutable/assets/python-e8035619.png",
+    "src": "src/lib/assets/logos/python.png"
+  },
+  "src/lib/assets/logos/node.png": {
+    "file": "_app/immutable/assets/node-8852d2b9.png",
+    "src": "src/lib/assets/logos/node.png"
+  },
+  "src/lib/assets/logos/deno.png": {
+    "file": "_app/immutable/assets/deno-f025c306.png",
+    "src": "src/lib/assets/logos/deno.png"
+  },
+  "src/lib/assets/logos/vue.png": {
+    "file": "_app/immutable/assets/vue-d22b0391.png",
+    "src": "src/lib/assets/logos/vue.png"
+  },
+  "src/lib/assets/logos/react.svg": {
+    "file": "_app/immutable/assets/react-f2cadfd0.svg",
+    "src": "src/lib/assets/logos/react.svg"
+  },
+  "src/lib/assets/logos/svelte.png": {
+    "file": "_app/immutable/assets/svelte-13ed3f6c.png",
+    "src": "src/lib/assets/logos/svelte.png"
+  },
+  "src/lib/assets/logos/angular.png": {
+    "file": "_app/immutable/assets/angular-628a1332.png",
+    "src": "src/lib/assets/logos/angular.png"
+  },
+  "src/lib/assets/logos/flutter.svg": {
+    "file": "_app/immutable/assets/flutter-e2cc2c89.svg",
+    "src": "src/lib/assets/logos/flutter.svg"
+  },
+  "src/lib/assets/logos/electron.png": {
+    "file": "_app/immutable/assets/electron-31711ce1.png",
+    "src": "src/lib/assets/logos/electron.png"
+  },
+  "src/lib/assets/logos/solid.svg": {
+    "file": "_app/immutable/assets/solid-123b04bc.svg",
+    "src": "src/lib/assets/logos/solid.svg"
+  },
+  "src/lib/assets/logos/quasar.svg": {
+    "file": "_app/immutable/assets/quasar-be59a798.svg",
+    "src": "src/lib/assets/logos/quasar.svg"
+  },
+  "src/lib/assets/logos/nuxt.png": {
+    "file": "_app/immutable/assets/nuxt-d2a07781.png",
+    "src": "src/lib/assets/logos/nuxt.png"
+  },
+  "src/lib/assets/logos/android.png": {
+    "file": "_app/immutable/assets/android-83b259c2.png",
+    "src": "src/lib/assets/logos/android.png"
+  },
+  "src/lib/assets/logos/express.png": {
+    "file": "_app/immutable/assets/express-fd78a3cf.png",
+    "src": "src/lib/assets/logos/express.png"
+  },
+  "src/lib/assets/logos/fastify.svg": {
+    "file": "_app/immutable/assets/fastify-9904a2a7.svg",
+    "src": "src/lib/assets/logos/fastify.svg"
+  },
+  "src/lib/assets/logos/nest.svg": {
+    "file": "_app/immutable/assets/nest-48bd018d.svg",
+    "src": "src/lib/assets/logos/nest.svg"
+  },
+  "src/lib/assets/logos/adonis.png": {
+    "file": "_app/immutable/assets/adonis-a1ee9ffd.png",
+    "src": "src/lib/assets/logos/adonis.png"
+  },
+  "src/lib/assets/logos/mongodb.svg": {
+    "file": "_app/immutable/assets/mongodb-38222573.svg",
+    "src": "src/lib/assets/logos/mongodb.svg"
+  },
+  "src/lib/assets/logos/redis.svg": {
+    "file": "_app/immutable/assets/redis-f1d469f7.svg",
+    "src": "src/lib/assets/logos/redis.svg"
+  },
+  "src/lib/assets/logos/postgres.png": {
+    "file": "_app/immutable/assets/postgres-366931b7.png",
+    "src": "src/lib/assets/logos/postgres.png"
+  },
+  "src/lib/assets/logos/firebase.png": {
+    "file": "_app/immutable/assets/firebase-dd7fbb93.png",
+    "src": "src/lib/assets/logos/firebase.png"
+  },
+  "src/lib/assets/logos/html.svg": {
+    "file": "_app/immutable/assets/html-ed8b74df.svg",
+    "src": "src/lib/assets/logos/html.svg"
+  },
+  "src/lib/assets/logos/css.svg": {
+    "file": "_app/immutable/assets/css-8bb4d2b9.svg",
+    "src": "src/lib/assets/logos/css.svg"
+  },
+  "src/lib/assets/logos/sass.png": {
+    "file": "_app/immutable/assets/sass-5ec55337.png",
+    "src": "src/lib/assets/logos/sass.png"
+  },
+  "src/lib/assets/logos/tailwind.svg": {
+    "file": "_app/immutable/assets/tailwind-29b2f046.svg",
+    "src": "src/lib/assets/logos/tailwind.svg"
+  },
+  "src/lib/assets/logos/photoshop.svg": {
+    "file": "_app/immutable/assets/photoshop-4e8a5535.svg",
+    "src": "src/lib/assets/logos/photoshop.svg"
+  },
+  "src/lib/assets/logos/after-effects.svg": {
+    "file": "_app/immutable/assets/after-effects-dcca04ac.svg",
+    "src": "src/lib/assets/logos/after-effects.svg"
+  },
+  "src/lib/assets/logos/premiere.svg": {
+    "file": "_app/immutable/assets/premiere-86a3c358.svg",
+    "src": "src/lib/assets/logos/premiere.svg"
+  },
+  "src/lib/assets/logos/illustrator.svg": {
+    "file": "_app/immutable/assets/illustrator-84132260.svg",
+    "src": "src/lib/assets/logos/illustrator.svg"
+  },
+  "src/lib/assets/logos/no-img.svg": {
+    "file": "_app/immutable/assets/no-img-bbc286ba.svg",
+    "src": "src/lib/assets/logos/no-img.svg"
+  },
+  "src/lib/assets/logos/csharp.svg": {
+    "file": "_app/immutable/assets/csharp-718af05c.svg",
+    "src": "src/lib/assets/logos/csharp.svg"
+  },
+  "src/lib/assets/logos/xamarin.svg": {
+    "file": "_app/immutable/assets/xamarin-21082317.svg",
+    "src": "src/lib/assets/logos/xamarin.svg"
+  },
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout-ab79bba1.css",
+    "src": "src/routes/+layout.css"
+  },
+  "Icon.css": {
+    "file": "_app/immutable/assets/Icon-49f27fa9.css",
+    "src": "Icon.css"
+  },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-06c23869.css",
+    "src": "src/routes/+page.css"
+  },
+  "src/routes/projects/+page.css": {
+    "file": "_app/immutable/assets/_page-2546a098.css",
+    "src": "src/routes/projects/+page.css"
+  },
+  "src/routes/experience/+page.css": {
+    "file": "_app/immutable/assets/_page-d82ef26b.css",
+    "src": "src/routes/experience/+page.css"
+  },
+  "MainTitle.css": {
+    "file": "_app/immutable/assets/MainTitle-2ddeb030.css",
+    "src": "MainTitle.css"
+  },
+  "src/routes/resume/+page.css": {
+    "file": "_app/immutable/assets/_page-c6b04c59.css",
+    "src": "src/routes/resume/+page.css"
+  },
+  "ChipIcon.css": {
+    "file": "_app/immutable/assets/ChipIcon-5b267d0a.css",
+    "src": "ChipIcon.css"
+  },
+  "_Params-00621a20.js": {
+    "file": "_app/immutable/chunks/Params-00621a20.js",
+    "assets": [
+      "_app/immutable/assets/js-48d02175.png",
+      "_app/immutable/assets/ts-a285671f.png",
+      "_app/immutable/assets/dart-ce728a8e.png",
+      "_app/immutable/assets/kotlin-53eb19d4.png",
+      "_app/immutable/assets/java-7b1e51de.png",
+      "_app/immutable/assets/python-e8035619.png",
+      "_app/immutable/assets/node-8852d2b9.png",
+      "_app/immutable/assets/deno-f025c306.png",
+      "_app/immutable/assets/vue-d22b0391.png",
+      "_app/immutable/assets/react-f2cadfd0.svg",
+      "_app/immutable/assets/svelte-13ed3f6c.png",
+      "_app/immutable/assets/angular-628a1332.png",
+      "_app/immutable/assets/flutter-e2cc2c89.svg",
+      "_app/immutable/assets/electron-31711ce1.png",
+      "_app/immutable/assets/solid-123b04bc.svg",
+      "_app/immutable/assets/quasar-be59a798.svg",
+      "_app/immutable/assets/nuxt-d2a07781.png",
+      "_app/immutable/assets/android-83b259c2.png",
+      "_app/immutable/assets/express-fd78a3cf.png",
+      "_app/immutable/assets/fastify-9904a2a7.svg",
+      "_app/immutable/assets/nest-48bd018d.svg",
+      "_app/immutable/assets/adonis-a1ee9ffd.png",
+      "_app/immutable/assets/mongodb-38222573.svg",
+      "_app/immutable/assets/redis-f1d469f7.svg",
+      "_app/immutable/assets/postgres-366931b7.png",
+      "_app/immutable/assets/firebase-dd7fbb93.png",
+      "_app/immutable/assets/html-ed8b74df.svg",
+      "_app/immutable/assets/css-8bb4d2b9.svg",
+      "_app/immutable/assets/sass-5ec55337.png",
+      "_app/immutable/assets/tailwind-29b2f046.svg",
+      "_app/immutable/assets/photoshop-4e8a5535.svg",
+      "_app/immutable/assets/after-effects-dcca04ac.svg",
+      "_app/immutable/assets/premiere-86a3c358.svg",
+      "_app/immutable/assets/illustrator-84132260.svg",
+      "_app/immutable/assets/no-img-bbc286ba.svg",
+      "_app/immutable/assets/csharp-718af05c.svg",
+      "_app/immutable/assets/xamarin-21082317.svg"
+    ]
+  },
+  "_singletons-3b933d3f.js": {
+    "file": "_app/immutable/chunks/singletons-3b933d3f.js",
+    "imports": [
+      "_index-ee22a944.js"
+    ]
+  },
+  "_Utils-6ff2b3ba.js": {
+    "file": "_app/immutable/chunks/Utils-6ff2b3ba.js",
+    "imports": [
+      "_Params-00621a20.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "_app/immutable/components/error.svelte-721c772f.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_stores-049399f2.js"
+    ]
+  },
+  "_stores-049399f2.js": {
+    "file": "_app/immutable/chunks/stores-049399f2.js",
+    "imports": [
+      "_index-ee22a944.js",
+      "_singletons-3b933d3f.js"
+    ]
+  },
+  ".svelte-kit/generated/nodes/0.js": {
+    "file": "_app/immutable/chunks/0-f3c7dc9a.js",
+    "src": ".svelte-kit/generated/nodes/0.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/+layout.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/1.js": {
+    "file": "_app/immutable/chunks/1-b4801986.js",
+    "src": ".svelte-kit/generated/nodes/1.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+    ]
+  },
+  "_index-ee22a944.js": {
+    "file": "_app/immutable/chunks/index-ee22a944.js"
+  },
+  "src/routes/resume/+page.svelte": {
+    "file": "_app/immutable/components/pages/resume/_page.svelte-7230661a.js",
+    "src": "src/routes/resume/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_Params-00621a20.js",
+      "_MainTitle-f48a0661.js",
+      "_Utils-6ff2b3ba.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-c6b04c59.css"
+    ]
+  },
+  ".svelte-kit/generated/nodes/2.js": {
+    "file": "_app/immutable/chunks/2-4e63b378.js",
+    "src": ".svelte-kit/generated/nodes/2.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/3.js": {
+    "file": "_app/immutable/chunks/3-a07090df.js",
+    "src": ".svelte-kit/generated/nodes/3.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/experience/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/4.js": {
+    "file": "_app/immutable/chunks/4-9b5fe565.js",
+    "src": ".svelte-kit/generated/nodes/4.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/projects/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/5.js": {
+    "file": "_app/immutable/chunks/5-2519be38.js",
+    "src": ".svelte-kit/generated/nodes/5.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/resume/+page.svelte"
+    ]
+  },
+  "_MainTitle-f48a0661.js": {
+    "file": "_app/immutable/chunks/MainTitle-f48a0661.js",
+    "imports": [
+      "_index-ee22a944.js"
+    ],
+    "css": [
+      "_app/immutable/assets/MainTitle-2ddeb030.css"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "_app/immutable/components/pages/_layout.svelte-ab10e799.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_Icon-2b9458d9.js",
+      "_Params-00621a20.js",
+      "_stores-049399f2.js",
+      "_singletons-3b933d3f.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-ab79bba1.css"
+    ]
+  },
+  "_ChipIcon-2cfcece0.js": {
+    "file": "_app/immutable/chunks/ChipIcon-2cfcece0.js",
+    "imports": [
+      "_index-ee22a944.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ChipIcon-5b267d0a.css"
+    ]
+  },
+  "_Icon-2b9458d9.js": {
+    "file": "_app/immutable/chunks/Icon-2b9458d9.js",
+    "imports": [
+      "_index-ee22a944.js",
+      "_Params-00621a20.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Icon-49f27fa9.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "_app/immutable/components/pages/_page.svelte-929b6faf.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_Icon-2b9458d9.js",
+      "_Params-00621a20.js",
+      "_Utils-6ff2b3ba.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-06c23869.css"
+    ]
+  },
+  "src/routes/projects/+page.svelte": {
+    "file": "_app/immutable/components/pages/projects/_page.svelte-395253e5.js",
+    "src": "src/routes/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_MainTitle-f48a0661.js",
+      "_Utils-6ff2b3ba.js",
+      "_ChipIcon-2cfcece0.js",
+      "_Icon-2b9458d9.js",
+      "_Params-00621a20.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-2546a098.css"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
+    "file": "_app/immutable/start-bd4c06b7.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_singletons-3b933d3f.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/generated/nodes/0.js",
+      ".svelte-kit/generated/nodes/1.js",
+      ".svelte-kit/generated/nodes/2.js",
+      ".svelte-kit/generated/nodes/3.js",
+      ".svelte-kit/generated/nodes/4.js",
+      ".svelte-kit/generated/nodes/5.js"
+    ]
+  },
+  "src/routes/experience/+page.svelte": {
+    "file": "_app/immutable/components/pages/experience/_page.svelte-01257914.js",
+    "src": "src/routes/experience/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ee22a944.js",
+      "_Params-00621a20.js",
+      "_Utils-6ff2b3ba.js",
+      "_ChipIcon-2cfcece0.js",
+      "_MainTitle-f48a0661.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-d82ef26b.css"
+    ]
+  }
+}
