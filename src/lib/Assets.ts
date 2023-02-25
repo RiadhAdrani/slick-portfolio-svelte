@@ -14,7 +14,6 @@ import Svelte from '$lib/assets/logos/svelte.png';
 import Angular from '$lib/assets/logos/angular.png';
 import Flutter from '$lib/assets/logos/flutter.svg';
 import Electron from '$lib/assets/logos/electron.png';
-import Recursive from '$lib/assets/logos/recursive.png';
 import SolidJs from '$lib/assets/logos/solid.svg';
 import Quasar from '$lib/assets/logos/quasar.svg';
 import Nuxt from '$lib/assets/logos/nuxt.png';
@@ -65,7 +64,6 @@ export default {
   Fastify,
   NestJs,
   Quasar,
-  Recursive,
   SolidJs,
   Electron,
   Flutter,

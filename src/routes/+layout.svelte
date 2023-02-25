@@ -47,8 +47,8 @@
 
 		@media (max-width: 1075px) {
 			& {
-				max-width: initial;
-				min-width: initial;
+				max-width: -webkit-fill-available;
+				min-width: -webkit-fill-available;
 			}
 		}
 	}

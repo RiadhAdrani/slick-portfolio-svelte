@@ -18,7 +18,6 @@ export const Technologies = {
   Flutter: { logo: Assets.Flutter, name: 'Flutter' },
   Xamarin: { logo: Assets.Xamarin, name: 'Xamarin' },
   Electron: { logo: Assets.Electron, name: 'Electron' },
-  Recursive: { logo: Assets.Recursive, name: 'Recursive' },
   SolidJs: { logo: Assets.SolidJs, name: 'Solid Js' },
   Quasar: { logo: Assets.Quasar, name: 'Quasar' },
   Nuxt: { logo: Assets.Nuxt, name: 'Nuxt' },

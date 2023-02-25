@@ -87,3 +87,8 @@ export interface CareerParams {
   title: string,
   items: Array<Experience>
 }
+
+export interface ResumePageParams {
+  title: string,
+  cv: string,
+}

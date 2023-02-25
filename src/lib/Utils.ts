@@ -1,4 +1,5 @@
 import { Icons } from "./components/Icon/Icons";
+import { PortfolioTitle } from "./Params";
 import type { SocialMedia } from "./types";
 
 export const countMonths = (from: Date, to: Date = new Date()): number => {
@@ -38,7 +39,7 @@ export const getMonthName = (index: number): string => {
 
 export const useImage = (url: string, base: string): string => `${base}${url}`;
 
-export const useTitle = (title: string) => `${title} | Slick Template With Svelte`;
+export const useTitle = (title: string) => `${title} | ${PortfolioTitle}`;
 
 export const useSocialMedia = (media: SocialMedia) => {
   switch (media) {

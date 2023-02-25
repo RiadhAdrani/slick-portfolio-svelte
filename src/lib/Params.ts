@@ -1,7 +1,9 @@
 import Assets from "./Assets";
 import { EmploymentType } from "./Career";
 import { Technologies } from "./Technologies";
-import type { CareerParams, HomeParams, NavBarParams, PersonalProjectsParams } from "./types";
+import type { CareerParams, HomeParams, NavBarParams, PersonalProjectsParams, ResumePageParams } from "./types";
+
+export const PortfolioTitle = 'Slick template with Svelte'
 
 export const NavBar: NavBarParams = {
   home: 'Home',
@@ -28,16 +30,16 @@ export const PersonalProjects: PersonalProjectsParams = {
   title: 'Personal Projects',
   items: [
     {
-      color: '#ffffff',
-      description: 'hello world',
-      links: [{ to: 'github.com', label: 'hello' }],
+      color: '#ff3e00',
+      description: 'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
+      links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
       logo: Assets.Svelte,
-      name: "world",
+      name: "Slick Portfolio",
       period: {
-        from: new Date(2022, 0, 0)
+        from: new Date()
       },
-      technologies: [Technologies.Java,],
-      type: EmploymentType.Contract
+      technologies: [Technologies.Svelte, Technologies.TypeScript],
+      type: "Website Template"
     },
   ]
 }
@@ -54,4 +56,9 @@ export const ProfessionalCareerParams: CareerParams = {
     skills: [Technologies.JavaScript, Technologies.HTML, Technologies.CSS],
     title: 'Freelancer'
   }]
+}
+
+export const ResumeParams: ResumePageParams = {
+  title: 'Resumé',
+  cv: ''
 }
