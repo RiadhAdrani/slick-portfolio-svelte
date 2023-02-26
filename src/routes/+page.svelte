@@ -45,6 +45,7 @@
 		flex: 1;
 		align-self: stretch;
 		align-items: center;
+		padding: 0px 10px;
 
 		&-title {
 			font-family: var(--title-f);

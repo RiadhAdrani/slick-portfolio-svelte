@@ -14,7 +14,7 @@ export const Home: HomeParams = {
   title: 'Home Page',
   name: 'Name',
   lastName: 'LASTNAME',
-  description: 'A brief description about myself.',
+  description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, rerum. Debitis accusantium deleniti enim iste dignissimos? Similique, exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis laudantium quaerat iure ipsum!',
   links: {
     github: 'https://github.com/',
     linkedin: 'https://www.linkedin.com/',

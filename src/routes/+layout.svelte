@@ -32,6 +32,8 @@
 			& {
 				max-width: -webkit-fill-available;
 				min-width: -webkit-fill-available;
+				max-width: -moz-available;
+				min-width: -moz-available;
 			}
 		}
 	}
