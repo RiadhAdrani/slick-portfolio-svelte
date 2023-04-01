@@ -6,6 +6,7 @@
 	import { PersonalProjects, PortfolioTitle } from '$lib/params';
 	import type { Project, Technology } from '$lib/utils';
 	import { useTitle } from '$lib/utils';
+	import { onMount } from 'svelte';
 
 	interface TechnologyFilter extends Technology {
 		isSelected?: boolean;
@@ -22,6 +23,7 @@
 
 		return items;
 	}, [] as Array<TechnologyFilter>);
+
 	let search = '';
 	let displayed: Array<Project> = [];
 
@@ -54,6 +56,20 @@
 			return isFiltered && isSearched;
 		});
 	}
+
+	onMount(() => {
+		const query = location.search;
+
+		if (query) {
+			const queryParams = new URLSearchParams(location.search);
+
+			const item = queryParams.get('item');
+
+			if (item) {
+				search = item;
+			}
+		}
+	});
 </script>
 
 <svelte:head>

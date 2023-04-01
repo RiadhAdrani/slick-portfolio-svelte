@@ -7,6 +7,9 @@
 	export let color = '#ffffff00';
 	export let margin = '0px';
 	export let tiltDegree = 5;
+	export let classes: Array<string> = [];
+	export let href: undefined | string = undefined;
+	export let bgImg: string | undefined = undefined;
 
 	$: borderColor = changeColorOpacity(color, 0.5);
 	$: dropColor = changeColorOpacity(color, 0.15);
@@ -48,18 +51,29 @@
 
 	onMount(() => {
 		el.style.setProperty('margin', margin);
+		el.style.setProperty('--bg-img', bgImg ? `url(${bgImg})` : '');
 	});
 </script>
 
-<div bind:this={el} on:mousemove={onHover} class="card">
-	<slot />
-</div>
+<svelte:element
+	this={href ? 'a' : 'div'}
+	{href}
+	bind:this={el}
+	on:mousemove={onHover}
+	class={['card', ...classes].join(' ')}
+>
+	<div class="flex-1 card-bg-img">
+		<slot />
+	</div>
+</svelte:element>
 
 <style lang="scss">
 	.card {
 		--border-color: transparent;
 		--bg-color: transparent;
 		--drop-color: transparent;
+
+		--bg-img: url();
 
 		--drop-x: 0;
 		--drop-y: 0;
@@ -70,19 +84,33 @@
 		display: inline-flex;
 		flex-direction: column;
 		border: 1px solid var(--accent-c);
-		padding: 25px;
 		border-radius: 15px;
 		transition-duration: 200ms;
 		position: relative;
+		background: linear-gradient(
+				90deg,
+				var(--primary-c) 0%,
+				var(--primary-c) 60%,
+				rgba(0, 0, 0, 0.6) 100%
+			),
+			no-repeat right 45% / 45% var(--bg-img);
+
+		&-bg-img {
+			padding: 25px;
+			border-radius: 15px;
+
+			&:hover {
+				background-color: var(--bg-color);
+				background-image: radial-gradient(
+					circle at var(--drop-x) var(--drop-y),
+					var(--drop-color),
+					transparent
+				);
+			}
+		}
 
 		&:hover {
 			transform: perspective(1000px) rotateX(var(--rot-x)) rotateY(var(--rot-y)) scale(1.01);
-			background-color: var(--bg-color);
-			background-image: radial-gradient(
-				circle at var(--drop-x) var(--drop-y),
-				var(--drop-color),
-				transparent
-			);
 			border-color: var(--border-color);
 		}
 	}

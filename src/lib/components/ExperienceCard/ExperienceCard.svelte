@@ -45,6 +45,7 @@
 <style lang="scss">
 	.experience {
 		display: flex;
+		align-items: start;
 
 		&-data {
 			display: flex;
@@ -71,13 +72,8 @@
 
 			@media (max-width: 800px) {
 				& {
-					flex-direction: column;
-					align-items: flex-start;
-					margin: 10px 0px;
-
-					&-divider {
-						display: none;
-					}
+					align-items: center;
+					margin: 5px 0px;
 				}
 			}
 		}

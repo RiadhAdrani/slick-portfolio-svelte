@@ -1,7 +1,8 @@
 <script lang="ts">
+	export let classes = '';
 </script>
 
-<h1><slot /></h1>
+<h1 class={classes}><slot /></h1>
 
 <style lang="scss">
 	h1 {

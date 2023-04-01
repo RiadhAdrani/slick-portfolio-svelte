@@ -17,6 +17,7 @@
 
 	const items: Array<NavMenuItem> = [
 		{ title: NavBar.home, to: '/', icon: Icons.Home },
+		{ title: NavBar.skills, to: '/skills', icon: Icons.Skills },
 		{ title: NavBar.personal, to: '/projects', icon: Icons.Projects },
 		{ title: NavBar.career, to: '/experience', icon: Icons.Job },
 		{ title: NavBar.resume, to: '/resume', icon: Icons.Resume }

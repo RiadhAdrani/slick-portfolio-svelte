@@ -10,7 +10,7 @@
 <svelte:head>
 	<title>{useTitle(title, PortfolioTitle)}</title>
 </svelte:head>
-<div />
+
 <MainTitle>{title}</MainTitle>
 <div class="resume">
 	{#if cv}
