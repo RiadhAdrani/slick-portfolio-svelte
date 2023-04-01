@@ -73,6 +73,7 @@
 	<div class="carrousel-btn" on:click={toggleLeft} on:keyup on:keydown on:keypress>
 		<Icon icon={Icons.LeftArrow} size="20px" />
 	</div>
+
 	<div bind:this={element} class="carrousel-content">
 		{#each items as item}
 			<div class="carrousel-item">
@@ -117,6 +118,8 @@
 			&-img {
 				height: 120px;
 				width: 120px;
+
+				max-width: initial;
 
 				&-inverted {
 					filter: invert(100);
