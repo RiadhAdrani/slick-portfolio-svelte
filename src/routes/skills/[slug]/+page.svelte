@@ -10,6 +10,8 @@
 	} from '$lib/params';
 	import { useTitle, type FeaturedSkill } from '$lib/utils';
 
+	import { base } from '$app/paths';
+
 	type Related = { name: string; img: string; type: 'projects' | 'experience' };
 
 	export let data: { skill?: FeaturedSkill };
@@ -75,7 +77,7 @@
 					<span>
 						<a
 							class="flex flex-row items-center mr-3 my-2"
-							href={`/${item.type}/?item=${item.name}`}
+							href={`${base}/${item.type}/?item=${item.name}`}
 						>
 							<CardLogo src={item.img} alt={item.name} size={20} classes="mr-2" />
 							<span>{item.name}</span>
