@@ -8,8 +8,10 @@
 
 	const { skills, title } = MySkillsParams;
 
+	import { base } from '$app/paths';
+
 	const skillHref = (skill: FeaturedSkill): string =>
-		`/skills/${slugify(skill.technology.name.toLowerCase())}`;
+		`${base}/skills/${slugify(skill.technology.name.toLowerCase())}`;
 </script>
 
 <svelte:head>
