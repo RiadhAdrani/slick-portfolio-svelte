@@ -45,7 +45,7 @@
 <style lang="scss">
 	.experience {
 		display: flex;
-		align-items: start;
+		align-items: flex-start;
 
 		&-data {
 			display: flex;
