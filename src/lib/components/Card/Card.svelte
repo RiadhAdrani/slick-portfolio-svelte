@@ -62,7 +62,7 @@
 	on:mousemove={onHover}
 	class={['card', ...classes].join(' ')}
 >
-	<div class="flex-1 card-bg-img">
+	<div class="flex-1 flex flex-col card-bg-img">
 		<slot />
 	</div>
 </svelte:element>
