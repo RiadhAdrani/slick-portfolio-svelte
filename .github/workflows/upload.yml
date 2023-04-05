@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [riadh-adrani]
+  pull_request:
+    branches: [riadh-adrani]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      pandoc/latex # "ubuntu" is a more generic container
+      # using "pandoc/latex" because of dependencies
+      # used in the specific "build.sh"
+    steps:
+      - uses: actions/checkout@v2
+      - name: creates output
+        run:
+          touch test.txt # some command from your repository that creates
+          # output to "source-directory" ("output" in the example)
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: '.'
+          destination-github-username: 'RiadhAdrani'
+          destination-repository-name: 'RiadhAdrani'
+          user-email: riadh_adrani@hotmail.fr
+          target-branch: src
