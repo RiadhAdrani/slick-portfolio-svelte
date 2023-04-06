@@ -75,6 +75,14 @@
     "file": "_app/immutable/assets/express-fd78a3cf.png",
     "src": "src/lib/assets/logos/express.png"
   },
+  "src/lib/assets/logos/fastify.svg": {
+    "file": "_app/immutable/assets/fastify-9904a2a7.svg",
+    "src": "src/lib/assets/logos/fastify.svg"
+  },
+  "src/lib/assets/logos/nest.svg": {
+    "file": "_app/immutable/assets/nest-48bd018d.svg",
+    "src": "src/lib/assets/logos/nest.svg"
+  },
   "src/lib/assets/logos/adonis.png": {
     "file": "_app/immutable/assets/adonis-a1ee9ffd.png",
     "src": "src/lib/assets/logos/adonis.png"
@@ -82,6 +90,10 @@
   "src/lib/assets/logos/mongodb.svg": {
     "file": "_app/immutable/assets/mongodb-38222573.svg",
     "src": "src/lib/assets/logos/mongodb.svg"
+  },
+  "src/lib/assets/logos/redis.svg": {
+    "file": "_app/immutable/assets/redis-f1d469f7.svg",
+    "src": "src/lib/assets/logos/redis.svg"
   },
   "src/lib/assets/logos/postgres.png": {
     "file": "_app/immutable/assets/postgres-366931b7.png",
@@ -135,33 +147,9 @@
     "file": "_app/immutable/assets/xamarin-21082317.svg",
     "src": "src/lib/assets/logos/xamarin.svg"
   },
-  "src/lib/assets/logos/fastify.svg": {
-    "file": "_app/immutable/assets/fastify-9904a2a7.svg",
-    "src": "src/lib/assets/logos/fastify.svg"
-  },
-  "src/lib/assets/logos/redis.svg": {
-    "file": "_app/immutable/assets/redis-f1d469f7.svg",
-    "src": "src/lib/assets/logos/redis.svg"
-  },
-  "src/lib/assets/logos/nest.svg": {
-    "file": "_app/immutable/assets/nest-48bd018d.svg",
-    "src": "src/lib/assets/logos/nest.svg"
-  },
-  "src/routes/resume/+page.css": {
-    "file": "_app/immutable/assets/_page-c6b04c59.css",
-    "src": "src/routes/resume/+page.css"
-  },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout-e0413d12.css",
+    "file": "_app/immutable/assets/_layout-349f4ccf.css",
     "src": "src/routes/+layout.css"
-  },
-  "src/routes/experience/+page.css": {
-    "file": "_app/immutable/assets/_page-d23af710.css",
-    "src": "src/routes/experience/+page.css"
-  },
-  "MainTitle.css": {
-    "file": "_app/immutable/assets/MainTitle-734fda9d.css",
-    "src": "MainTitle.css"
   },
   "Icon.css": {
     "file": "_app/immutable/assets/Icon-49f27fa9.css",
@@ -170,6 +158,14 @@
   "src/routes/+page.css": {
     "file": "_app/immutable/assets/_page-b5f5006d.css",
     "src": "src/routes/+page.css"
+  },
+  "src/routes/experience/+page.css": {
+    "file": "_app/immutable/assets/_page-d23af710.css",
+    "src": "src/routes/experience/+page.css"
+  },
+  "MainTitle.css": {
+    "file": "_app/immutable/assets/MainTitle-734fda9d.css",
+    "src": "MainTitle.css"
   },
   "CardTitle.css": {
     "file": "_app/immutable/assets/CardTitle-5bde36e5.css",
@@ -191,252 +187,29 @@
     "file": "_app/immutable/assets/CardDivider-0fc56e40.css",
     "src": "CardDivider.css"
   },
-  "_singletons-780fc213.js": {
-    "file": "_app/immutable/chunks/singletons-780fc213.js",
-    "imports": [
-      "_index-de56b907.js",
-      "_paths-b4419565.js"
-    ]
+  "src/routes/resume/+page.css": {
+    "file": "_app/immutable/assets/_page-c6b04c59.css",
+    "src": "src/routes/resume/+page.css"
   },
   "src/routes/skills/+page.svelte": {
-    "file": "_app/immutable/components/pages/skills/_page.svelte-85216f10.js",
+    "file": "_app/immutable/components/pages/skills/_page.svelte-d678bc5f.js",
     "src": "src/routes/skills/+page.svelte",
     "isEntry": true,
     "imports": [
       "_index-de56b907.js",
-      "_helpers-390da873.js",
-      "_params-00e2cee6.js",
+      "_helpers-da57fc18.js",
+      "_params-b7e9cb77.js",
       "_MainTitle-0b268c8d.js",
-      "_CardTitle-453b7089.js",
+      "_CardTitle-34b27e89.js",
       "_slugify-f2f2e486.js",
       "_paths-b4419565.js"
-    ]
-  },
-  "_paths-b4419565.js": {
-    "file": "_app/immutable/chunks/paths-b4419565.js"
-  },
-  "_stores-d17ef9f5.js": {
-    "file": "_app/immutable/chunks/stores-d17ef9f5.js",
-    "imports": [
-      "_index-de56b907.js",
-      "_singletons-780fc213.js"
-    ]
-  },
-  "_helpers-390da873.js": {
-    "file": "_app/immutable/chunks/helpers-390da873.js"
-  },
-  "_CardLogo-7999b474.js": {
-    "file": "_app/immutable/chunks/CardLogo-7999b474.js",
-    "imports": [
-      "_index-de56b907.js"
-    ]
-  },
-  "__commonjsHelpers-28e086c5.js": {
-    "file": "_app/immutable/chunks/_commonjsHelpers-28e086c5.js"
-  },
-  "_slugify-f2f2e486.js": {
-    "file": "_app/immutable/chunks/slugify-f2f2e486.js",
-    "imports": [
-      "__commonjsHelpers-28e086c5.js"
     ]
   },
   "_index-de56b907.js": {
     "file": "_app/immutable/chunks/index-de56b907.js"
   },
-  ".svelte-kit/generated/nodes/0.js": {
-    "file": "_app/immutable/chunks/0-31bb5fa1.js",
-    "src": ".svelte-kit/generated/nodes/0.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/+layout.svelte"
-    ]
-  },
-  "__page-f813a24c.js": {
-    "file": "_app/immutable/chunks/_page-f813a24c.js",
-    "imports": [
-      "_params-00e2cee6.js",
-      "_slugify-f2f2e486.js"
-    ]
-  },
-  ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-eb839216.js",
-    "src": ".svelte-kit/generated/nodes/1.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-bd316b0f.js",
-    "src": ".svelte-kit/generated/nodes/2.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/+page.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/3.js": {
-    "file": "_app/immutable/chunks/3-83afc2a6.js",
-    "src": ".svelte-kit/generated/nodes/3.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/experience/+page.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/4.js": {
-    "file": "_app/immutable/chunks/4-cfdcf547.js",
-    "src": ".svelte-kit/generated/nodes/4.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/projects/+page.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/5.js": {
-    "file": "_app/immutable/chunks/5-15dd88ed.js",
-    "src": ".svelte-kit/generated/nodes/5.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/resume/+page.svelte"
-    ]
-  },
-  "src/routes/projects/+page.svelte": {
-    "file": "_app/immutable/components/pages/projects/_page.svelte-0f99afc2.js",
-    "src": "src/routes/projects/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-de56b907.js",
-      "_Chip-8fea7f59.js",
-      "_MainTitle-0b268c8d.js",
-      "_helpers-390da873.js",
-      "_CardTitle-453b7089.js",
-      "_Icon-010b7e57.js",
-      "_params-00e2cee6.js",
-      "_CardDivider-88c671ba.js",
-      "_ChipIcon-1ea81c32.js",
-      "_CardLogo-7999b474.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-3fa430bf.css"
-    ]
-  },
-  "_ChipIcon-1ea81c32.js": {
-    "file": "_app/immutable/chunks/ChipIcon-1ea81c32.js",
-    "imports": [
-      "_index-de56b907.js"
-    ],
-    "css": [
-      "_app/immutable/assets/ChipIcon-43392347.css"
-    ]
-  },
-  ".svelte-kit/generated/nodes/6.js": {
-    "file": "_app/immutable/chunks/6-9bb75d7b.js",
-    "src": ".svelte-kit/generated/nodes/6.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/skills/+page.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/7.js": {
-    "file": "_app/immutable/chunks/7-0ee173e1.js",
-    "src": ".svelte-kit/generated/nodes/7.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "__page-f813a24c.js",
-      "src/routes/skills/[slug]/+page.svelte"
-    ]
-  },
-  "src/routes/skills/[slug]/+page.ts": {
-    "file": "_app/immutable/modules/pages/skills/_slug_/_page.ts-0a24d1c6.js",
-    "src": "src/routes/skills/[slug]/+page.ts",
-    "isEntry": true,
-    "imports": [
-      "_params-00e2cee6.js",
-      "_slugify-f2f2e486.js",
-      "__page-f813a24c.js"
-    ]
-  },
-  "src/routes/resume/+page.svelte": {
-    "file": "_app/immutable/components/pages/resume/_page.svelte-7fdbcc6c.js",
-    "src": "src/routes/resume/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-de56b907.js",
-      "_Chip-8fea7f59.js",
-      "_MainTitle-0b268c8d.js",
-      "_params-00e2cee6.js",
-      "_helpers-390da873.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-c6b04c59.css"
-    ]
-  },
-  "src/routes/+layout.svelte": {
-    "file": "_app/immutable/components/pages/_layout.svelte-6593de97.js",
-    "src": "src/routes/+layout.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-de56b907.js",
-      "_Icon-010b7e57.js",
-      "_params-00e2cee6.js",
-      "_stores-d17ef9f5.js",
-      "_paths-b4419565.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_layout-e0413d12.css"
-    ]
-  },
-  "src/routes/experience/+page.svelte": {
-    "file": "_app/immutable/components/pages/experience/_page.svelte-f1db394d.js",
-    "src": "src/routes/experience/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-de56b907.js",
-      "_helpers-390da873.js",
-      "_CardTitle-453b7089.js",
-      "_CardLogo-7999b474.js",
-      "_Chip-8fea7f59.js",
-      "_ChipIcon-1ea81c32.js",
-      "_MainTitle-0b268c8d.js",
-      "_params-00e2cee6.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-d23af710.css"
-    ]
-  },
-  "_MainTitle-0b268c8d.js": {
-    "file": "_app/immutable/chunks/MainTitle-0b268c8d.js",
-    "imports": [
-      "_index-de56b907.js"
-    ],
-    "css": [
-      "_app/immutable/assets/MainTitle-734fda9d.css"
-    ]
-  },
-  "_Icon-010b7e57.js": {
-    "file": "_app/immutable/chunks/Icon-010b7e57.js",
-    "imports": [
-      "_index-de56b907.js",
-      "_params-00e2cee6.js"
-    ],
-    "css": [
-      "_app/immutable/assets/Icon-49f27fa9.css"
-    ]
-  },
-  "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-3204b515.js",
-    "src": "src/routes/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-de56b907.js",
-      "_params-00e2cee6.js",
-      "_Icon-010b7e57.js",
-      "_helpers-390da873.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-b5f5006d.css"
-    ]
-  },
-  "_params-00e2cee6.js": {
-    "file": "_app/immutable/chunks/params-00e2cee6.js",
+  "_params-b7e9cb77.js": {
+    "file": "_app/immutable/chunks/params-b7e9cb77.js",
     "assets": [
       "_app/immutable/assets/js-48d02175.png",
       "_app/immutable/assets/ts-a285671f.png",
@@ -477,49 +250,22 @@
       "_app/immutable/assets/xamarin-21082317.svg"
     ]
   },
-  "src/routes/skills/[slug]/+page.svelte": {
-    "file": "_app/immutable/components/pages/skills/_slug_/_page.svelte-61aaf7d7.js",
-    "src": "src/routes/skills/[slug]/+page.svelte",
-    "isEntry": true,
+  "_singletons-780fc213.js": {
+    "file": "_app/immutable/chunks/singletons-780fc213.js",
     "imports": [
       "_index-de56b907.js",
-      "_CardDivider-88c671ba.js",
-      "_CardLogo-7999b474.js",
-      "_MainTitle-0b268c8d.js",
-      "_params-00e2cee6.js",
-      "_helpers-390da873.js",
       "_paths-b4419565.js"
     ]
   },
-  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "_app/immutable/components/error.svelte-25cd2c63.js",
-    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
-    "isEntry": true,
+  "_stores-d17ef9f5.js": {
+    "file": "_app/immutable/chunks/stores-d17ef9f5.js",
     "imports": [
       "_index-de56b907.js",
-      "_stores-d17ef9f5.js"
-    ]
-  },
-  "_CardDivider-88c671ba.js": {
-    "file": "_app/immutable/chunks/CardDivider-88c671ba.js",
-    "imports": [
-      "_index-de56b907.js"
-    ],
-    "css": [
-      "_app/immutable/assets/CardDivider-0fc56e40.css"
-    ]
-  },
-  "_Chip-8fea7f59.js": {
-    "file": "_app/immutable/chunks/Chip-8fea7f59.js",
-    "imports": [
-      "_index-de56b907.js"
-    ],
-    "css": [
-      "_app/immutable/assets/Chip-91253aa7.css"
+      "_singletons-780fc213.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-9348d42c.js",
+    "file": "_app/immutable/start-3a790a41.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -538,14 +284,278 @@
       ".svelte-kit/generated/nodes/7.js"
     ]
   },
-  "_CardTitle-453b7089.js": {
-    "file": "_app/immutable/chunks/CardTitle-453b7089.js",
+  "_helpers-da57fc18.js": {
+    "file": "_app/immutable/chunks/helpers-da57fc18.js",
+    "imports": [
+      "_params-b7e9cb77.js"
+    ]
+  },
+  "src/routes/resume/+page.svelte": {
+    "file": "_app/immutable/components/pages/resume/_page.svelte-e609f9f0.js",
+    "src": "src/routes/resume/+page.svelte",
+    "isEntry": true,
     "imports": [
       "_index-de56b907.js",
+      "_Chip-8fea7f59.js",
+      "_MainTitle-0b268c8d.js",
+      "_params-b7e9cb77.js",
+      "_helpers-da57fc18.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-c6b04c59.css"
+    ]
+  },
+  "_CardLogo-7999b474.js": {
+    "file": "_app/immutable/chunks/CardLogo-7999b474.js",
+    "imports": [
+      "_index-de56b907.js"
+    ]
+  },
+  "__commonjsHelpers-28e086c5.js": {
+    "file": "_app/immutable/chunks/_commonjsHelpers-28e086c5.js"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "_app/immutable/components/error.svelte-25cd2c63.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_stores-d17ef9f5.js"
+    ]
+  },
+  "_paths-b4419565.js": {
+    "file": "_app/immutable/chunks/paths-b4419565.js"
+  },
+  ".svelte-kit/generated/nodes/2.js": {
+    "file": "_app/immutable/chunks/2-ff39ef8b.js",
+    "src": ".svelte-kit/generated/nodes/2.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/+page.svelte"
+    ]
+  },
+  "_Chip-8fea7f59.js": {
+    "file": "_app/immutable/chunks/Chip-8fea7f59.js",
+    "imports": [
+      "_index-de56b907.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Chip-91253aa7.css"
+    ]
+  },
+  "_ChipIcon-1ea81c32.js": {
+    "file": "_app/immutable/chunks/ChipIcon-1ea81c32.js",
+    "imports": [
+      "_index-de56b907.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ChipIcon-43392347.css"
+    ]
+  },
+  ".svelte-kit/generated/nodes/3.js": {
+    "file": "_app/immutable/chunks/3-7a66bb15.js",
+    "src": ".svelte-kit/generated/nodes/3.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/experience/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/4.js": {
+    "file": "_app/immutable/chunks/4-230fee5e.js",
+    "src": ".svelte-kit/generated/nodes/4.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/projects/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/5.js": {
+    "file": "_app/immutable/chunks/5-7170a474.js",
+    "src": ".svelte-kit/generated/nodes/5.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/resume/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/6.js": {
+    "file": "_app/immutable/chunks/6-74c5cbea.js",
+    "src": ".svelte-kit/generated/nodes/6.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/skills/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/7.js": {
+    "file": "_app/immutable/chunks/7-7090cded.js",
+    "src": ".svelte-kit/generated/nodes/7.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "__page-0c65c8a8.js",
+      "src/routes/skills/[slug]/+page.svelte"
+    ]
+  },
+  "src/routes/skills/[slug]/+page.ts": {
+    "file": "_app/immutable/modules/pages/skills/_slug_/_page.ts-2c548b19.js",
+    "src": "src/routes/skills/[slug]/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_params-b7e9cb77.js",
+      "_slugify-f2f2e486.js",
+      "__page-0c65c8a8.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "_app/immutable/components/pages/_layout.svelte-50462448.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_Icon-a2e5065b.js",
+      "_params-b7e9cb77.js",
+      "_stores-d17ef9f5.js",
+      "_paths-b4419565.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-349f4ccf.css"
+    ]
+  },
+  "_CardDivider-88c671ba.js": {
+    "file": "_app/immutable/chunks/CardDivider-88c671ba.js",
+    "imports": [
+      "_index-de56b907.js"
+    ],
+    "css": [
+      "_app/immutable/assets/CardDivider-0fc56e40.css"
+    ]
+  },
+  "_slugify-f2f2e486.js": {
+    "file": "_app/immutable/chunks/slugify-f2f2e486.js",
+    "imports": [
       "__commonjsHelpers-28e086c5.js"
+    ]
+  },
+  "_Icon-a2e5065b.js": {
+    "file": "_app/immutable/chunks/Icon-a2e5065b.js",
+    "imports": [
+      "_index-de56b907.js",
+      "_params-b7e9cb77.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Icon-49f27fa9.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "_app/immutable/components/pages/_page.svelte-eea94ff5.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_params-b7e9cb77.js",
+      "_Icon-a2e5065b.js",
+      "_helpers-da57fc18.js",
+      "_index-210154fc.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-b5f5006d.css"
+    ]
+  },
+  "src/routes/skills/[slug]/+page.svelte": {
+    "file": "_app/immutable/components/pages/skills/_slug_/_page.svelte-b629ec4c.js",
+    "src": "src/routes/skills/[slug]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_CardDivider-88c671ba.js",
+      "_CardLogo-7999b474.js",
+      "_MainTitle-0b268c8d.js",
+      "_params-b7e9cb77.js",
+      "_helpers-da57fc18.js",
+      "_paths-b4419565.js"
+    ]
+  },
+  ".svelte-kit/generated/nodes/0.js": {
+    "file": "_app/immutable/chunks/0-6ffa5f4c.js",
+    "src": ".svelte-kit/generated/nodes/0.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/+layout.svelte"
+    ]
+  },
+  "__page-0c65c8a8.js": {
+    "file": "_app/immutable/chunks/_page-0c65c8a8.js",
+    "imports": [
+      "_params-b7e9cb77.js",
+      "_slugify-f2f2e486.js"
+    ]
+  },
+  ".svelte-kit/generated/nodes/1.js": {
+    "file": "_app/immutable/chunks/1-eb839216.js",
+    "src": ".svelte-kit/generated/nodes/1.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+    ]
+  },
+  "_index-210154fc.js": {
+    "file": "_app/immutable/chunks/index-210154fc.js",
+    "imports": [
+      "__commonjsHelpers-28e086c5.js"
+    ]
+  },
+  "_MainTitle-0b268c8d.js": {
+    "file": "_app/immutable/chunks/MainTitle-0b268c8d.js",
+    "imports": [
+      "_index-de56b907.js"
+    ],
+    "css": [
+      "_app/immutable/assets/MainTitle-734fda9d.css"
+    ]
+  },
+  "_CardTitle-34b27e89.js": {
+    "file": "_app/immutable/chunks/CardTitle-34b27e89.js",
+    "imports": [
+      "_index-de56b907.js",
+      "_index-210154fc.js"
     ],
     "css": [
       "_app/immutable/assets/CardTitle-5bde36e5.css"
+    ]
+  },
+  "src/routes/experience/+page.svelte": {
+    "file": "_app/immutable/components/pages/experience/_page.svelte-1d91596c.js",
+    "src": "src/routes/experience/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_helpers-da57fc18.js",
+      "_CardTitle-34b27e89.js",
+      "_CardLogo-7999b474.js",
+      "_Chip-8fea7f59.js",
+      "_ChipIcon-1ea81c32.js",
+      "_MainTitle-0b268c8d.js",
+      "_params-b7e9cb77.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-d23af710.css"
+    ]
+  },
+  "src/routes/projects/+page.svelte": {
+    "file": "_app/immutable/components/pages/projects/_page.svelte-15d6c011.js",
+    "src": "src/routes/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-de56b907.js",
+      "_Chip-8fea7f59.js",
+      "_MainTitle-0b268c8d.js",
+      "_helpers-da57fc18.js",
+      "_CardTitle-34b27e89.js",
+      "_Icon-a2e5065b.js",
+      "_params-b7e9cb77.js",
+      "_CardDivider-88c671ba.js",
+      "_ChipIcon-1ea81c32.js",
+      "_CardLogo-7999b474.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-3fa430bf.css"
     ]
   }
 }
