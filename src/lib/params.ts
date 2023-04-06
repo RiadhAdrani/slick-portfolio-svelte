@@ -12,9 +12,9 @@ export const PortfolioTitle = 'Slick template with Svelte';
 export const NavBar: NavBarParams = {
 	home: 'Home',
 	personal: 'Projects',
-	career: 'Experience',
+	career: 'Experiences',
 	resume: 'Resume',
-	skills: 'My Skills'
+	skills: 'Skills'
 };
 
 export const Home: HomeParams = {

@@ -32,7 +32,7 @@
 				class="nav-menu-item"
 				class:nav-menu-item-active={currentRoute === item.to}
 			>
-				<Icon icon={item.icon} size="20px" />
+				<Icon icon={item.icon} size="18px" />
 				<span class="nav-menu-item-label">{item.title}</span>
 			</a>
 		{/each}
@@ -59,10 +59,11 @@
 		&-item {
 			text-decoration: none;
 			font-weight: 400;
-			padding: 15px 20px;
+			padding: 10px 20px;
 			color: inherit;
 			transition-duration: 250ms;
 			display: flex;
+			align-items: center;
 			border-bottom: 3px solid transparent;
 
 			&-active {
