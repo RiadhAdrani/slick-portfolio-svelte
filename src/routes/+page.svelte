@@ -4,11 +4,12 @@
 	import { Home, PortfolioTitle } from '$lib/params';
 	import type { SocialLink, SocialMedia } from '$lib/utils';
 	import { useSocialMedia, useTitle } from '$lib/utils';
+	import { isBlank } from '@riadh-adrani/utility-js';
 
 	const { description, lastName, links: _links, name, skills, title } = Home;
 
 	const links: Array<SocialLink> = Object.keys(_links).map((key) => {
-		const to = _links[key as 'github']!;
+		const to = _links[key as 'github'] as string;
 		const data = useSocialMedia(key as SocialMedia);
 
 		return {
@@ -17,6 +18,13 @@
 			icon: data.icon
 		};
 	});
+
+	const isEmail = (email: string): boolean => {
+		const reg =
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		return !isBlank(email) && reg.test(email);
+	};
 </script>
 
 <svelte:head>
@@ -28,7 +36,12 @@
 		<p class="home-subtitle">{description}</p>
 		<div class="home-social">
 			{#each links as link}
-				<a class="home-social-item" href={link.to} target="_blank" rel="noreferrer">
+				<a
+					class="home-social-item"
+					href={`${isEmail(link.to) ? 'mailto:' : ''}${link.to}`}
+					target="_blank"
+					rel="noreferrer"
+				>
 					<Icon icon={link.icon} />
 				</a>
 			{/each}

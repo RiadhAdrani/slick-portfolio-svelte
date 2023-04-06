@@ -55,7 +55,7 @@ export interface NavMenuItem extends SocialLink {
 	active?: boolean;
 }
 
-export type SocialMedia = 'github' | 'stackoverflow' | 'twitter' | 'linkedin';
+export type SocialMedia = 'github' | 'stackoverflow' | 'twitter' | 'linkedin' | 'email';
 
 export interface PageParams {
 	title: string;
@@ -65,12 +65,7 @@ export interface HomeParams extends PageParams {
 	name: string;
 	lastName: string;
 	description: string;
-	links: {
-		github?: string;
-		linkedin?: string;
-		twitter?: string;
-		stackoverflow?: string;
-	};
+	links: Partial<Record<SocialMedia, string>>;
 	skills: Array<Technology>;
 }
 

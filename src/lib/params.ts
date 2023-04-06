@@ -27,7 +27,8 @@ export const Home: HomeParams = {
 		github: 'https://github.com/',
 		linkedin: 'https://www.linkedin.com/',
 		twitter: 'https://twitter.com/',
-		stackoverflow: 'https://stackoverflow.com/'
+		stackoverflow: 'https://stackoverflow.com/',
+		email: 'riadh-adrani@hotmail.fr'
 	},
 	skills: [Technologies.JavaScript, Technologies.HTML, Technologies.CSS]
 };
