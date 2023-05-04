@@ -2,13 +2,15 @@
 	import type { Icons } from '$lib/utils';
 	import { viewBox } from './Icons';
 
+	let el: SVGElement;
+
 	export let size = '30px';
 	export let color = '#fff';
 
 	export let icon: Icons;
 </script>
 
-<svg viewBox={viewBox(icon)} fill={color} height={size} width={size}>
+<svg bind:this={el} viewBox={viewBox(icon)} fill={color} height={size} width={size}>
 	<path d={icon} />
 </svg>
 

@@ -1,4 +1,4 @@
-import { EmploymentType, Technologies, Assets, type SkillsParams } from './utils';
+import { EmploymentType, Technologies, Assets, type SkillsParams, type Technology } from './utils';
 import type {
 	CareerParams,
 	HomeParams,
@@ -30,7 +30,7 @@ export const Home: HomeParams = {
 		stackoverflow: 'https://stackoverflow.com/',
 		email: 'riadh-adrani@hotmail.fr'
 	},
-	skills: [Technologies.JavaScript, Technologies.HTML, Technologies.CSS]
+	skills: Object.keys(Technologies).map((key) => (Technologies as Record<string, Technology>)[key])
 };
 
 export const PersonalProjects: PersonalProjectsParams = {
@@ -115,4 +115,8 @@ export const MySkillsParams: SkillsParams = {
 export const ResumeParams: ResumePageParams = {
 	title: 'Resumé',
 	cv: ''
+};
+
+export const SearchPageParams = {
+	title: 'Search'
 };

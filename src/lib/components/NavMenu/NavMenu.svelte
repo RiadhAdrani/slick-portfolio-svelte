@@ -16,7 +16,6 @@
 	}
 
 	const items: Array<NavMenuItem> = [
-		{ title: NavBar.home, to: '/', icon: Icons.Home },
 		{ title: NavBar.skills, to: '/skills', icon: Icons.Skills },
 		{ title: NavBar.personal, to: '/projects', icon: Icons.Projects },
 		{ title: NavBar.career, to: '/experience', icon: Icons.Job },
@@ -25,26 +24,36 @@
 </script>
 
 <div class="nav-menu">
-	<nav class="container">
-		{#each items as item}
-			<a
-				href={`${base}${item.to}`}
-				class="nav-menu-item"
-				class:nav-menu-item-active={currentRoute === item.to}
-			>
-				<Icon icon={item.icon} size="18px" />
-				<span class="nav-menu-item-label">{item.title}</span>
-			</a>
-		{/each}
+	<nav class="container !justify-between flex flex-row items-center text-sm">
+		<a
+			href="/"
+			class="nav-menu-left flex flex-row items-center cursor-pointer px-6 rounded text-[var(--accent-text-c)] self-stretch hover:bg-[color:var(--secondary-c)]"
+		>
+			<Icon icon={Icons.Code} size="30" color="var(--accent-text-c)" />
+			<span class="ml-2 text-md font-bold hidden md:inline">Riadh Adrani</span>
+		</a>
+		<div class="flex flex-row flex-1 self-center justify-center">
+			{#each items as item}
+				<a href={`${base}${item.to}`} class="nav-menu-item !text-[var(--accent-text-c)]">
+					<Icon icon={item.icon} color="var(--accent-text-c)" size="18px" />
+					<span class="nav-menu-item-label ">{item.title}</span>
+				</a>
+			{/each}
+		</div>
+		<a
+			href="/search"
+			class="flex flex-row items-center self-stretch cursor-pointer px-6 py-0.5 hover:bg-[color:var(--secondary-c)]"
+		>
+			<Icon icon={Icons.Search} size="16" color="var(--extra-text-c)" />
+			<span class="hidden sm:flex ml-2 text-[color:var(--extra-text-c)]">Search</span>
+		</a>
 	</nav>
 </div>
 
 <style lang="scss">
-	.container {
-		justify-content: center;
-		display: flex;
-		height: 100%;
-	}
+	// :global(.nav-menu-left:hover > svg) {
+	// 	fill: red !important;
+	// }
 
 	.nav-menu {
 		display: flex;
@@ -65,10 +74,6 @@
 			display: flex;
 			align-items: center;
 			border-bottom: 3px solid transparent;
-
-			&-active {
-				border-bottom-color: var(--extra-c);
-			}
 
 			&-label {
 				margin-left: 10px;

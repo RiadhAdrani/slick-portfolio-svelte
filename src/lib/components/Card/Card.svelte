@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { changeColorOpacity } from '@riadh-adrani/utility-js';
 	import { onMount } from 'svelte';
+	import type { MouseEventHandler } from 'svelte/elements/index';
 
 	let el: HTMLElement;
 
@@ -23,8 +24,9 @@
 		}
 	}
 
-	const onHover = (ev: MouseEvent) => {
-		const target = ev.currentTarget as HTMLElement;
+	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
+		const target = ev.currentTarget;
+
 		const rect = target.getBoundingClientRect();
 
 		const x = ev.clientX - rect.left;
@@ -61,6 +63,7 @@
 	bind:this={el}
 	on:mousemove={onHover}
 	class={['card', ...classes].join(' ')}
+	style:bgColor={'red'}
 >
 	<div class="flex-1 flex flex-col card-bg-img">
 		<slot />
