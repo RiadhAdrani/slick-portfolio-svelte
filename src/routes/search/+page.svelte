@@ -114,7 +114,7 @@
 				<div class="flex flex-row flex-wrap gap-2">
 					{#each result as item}
 						<a
-							href={`${base}${item.to}`}
+							href={`${base}/${item.to}`}
 							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-gray-500 cursor-pointer hover:border-gray-300 hover:bg-gray-900 duration-200"
 						>
 							<Icon icon={item.icon} size={20} />

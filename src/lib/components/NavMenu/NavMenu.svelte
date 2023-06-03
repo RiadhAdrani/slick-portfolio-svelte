@@ -26,7 +26,7 @@
 <div class="nav-menu">
 	<nav class="container !justify-between flex flex-row items-center text-sm">
 		<a
-			href="/"
+			href={`${base}/`}
 			class="nav-menu-left flex flex-row items-center cursor-pointer px-6 rounded text-[var(--accent-text-c)] self-stretch hover:bg-[color:var(--secondary-c)]"
 		>
 			<Icon icon={Icons.Code} size="30" color="var(--accent-text-c)" />
@@ -41,7 +41,7 @@
 			{/each}
 		</div>
 		<a
-			href="/search"
+			href={`${base}/search`}
 			class="flex flex-row items-center self-stretch cursor-pointer px-6 py-0.5 hover:bg-[color:var(--secondary-c)]"
 		>
 			<Icon icon={Icons.Search} size="16" color="var(--extra-text-c)" />
