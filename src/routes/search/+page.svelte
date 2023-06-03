@@ -8,25 +8,35 @@
 		ProfessionalCareerParams,
 		SearchPageParams
 	} from '$lib/params';
-	import { useTitle, type Project, type Technology, type Experience } from '$lib/utils';
-	import ExperienceCard from '$lib/components/ExperienceCard/ExperienceCard.svelte';
-	import ProjectCard from '$lib/components/ProjectCard/ProjectCard.svelte';
-	import Card from '$lib/components/Card/Card.svelte';
-	import slugify from 'slugify';
-	import { base } from '$app/paths';
-	import CardTitle from '$lib/components/Card/CardTitle.svelte';
+	import { useTitle, Icons } from '$lib/utils';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
+	import { onMount } from 'svelte';
+	import Icon from '$lib/components/Icon/Icon.svelte';
+	import { base } from '$app/paths';
+	import slugify from 'slugify';
+
+	type Item<T = unknown> = {
+		icon: Icons;
+		name: string;
+		data: T;
+		to: string;
+	};
 
 	let query = '';
+	let mounted = false;
+	let result: Array<Item> = [];
 
-	let projects: Array<Project> = [];
-	let skills: Array<Technology> = [];
-	let career: Array<Experience> = [];
+	// const skillHref = (skill: string): string => `${base}/skills/${slugify(skill.toLowerCase())}`;
 
-	const skillHref = (skill: string): string => `${base}/skills/${slugify(skill.toLowerCase())}`;
+	onMount(() => {
+		let searchParams = new URLSearchParams(window.location.search);
+
+		query = searchParams.get('q') ?? '';
+		mounted = true;
+	});
 
 	$: {
-		if (browser) {
+		if (browser && mounted) {
 			let searchParams = new URLSearchParams(window.location.search);
 
 			searchParams.set('q', query);
@@ -37,23 +47,52 @@
 
 			window.history.replaceState({ path: url }, '', url);
 
+			result = [];
+
 			// filter
-			projects = PersonalProjects.items.filter(
-				(item) => query.trim() && item.name.toLowerCase().includes(query.trim().toLowerCase())
+			result.push(
+				...PersonalProjects.items
+					.filter(
+						(item) => query.trim() && item.name.toLowerCase().includes(query.trim().toLowerCase())
+					)
+					.map<Item>((data) => ({
+						data,
+						icon: Icons.Projects,
+						name: data.name,
+						to: `projects?item=${data.name}`
+					}))
 			);
 
-			skills = MySkillsParams.skills
-				.filter(
-					(item) =>
-						query.trim() && item.technology.name.toLowerCase().includes(query.trim().toLowerCase())
-				)
-				.map((item) => item.technology);
+			result.push(
+				...MySkillsParams.skills
+					.filter(
+						(item) =>
+							query.trim() &&
+							item.technology.name.toLowerCase().includes(query.trim().toLowerCase())
+					)
+					.map((item) => item.technology)
+					.map<Item>((data) => ({
+						data,
+						icon: Icons.Skills,
+						name: data.name,
+						to: `skills/${slugify(data.name, { lower: true })}`
+					}))
+			);
 
-			career = ProfessionalCareerParams.items.filter(
-				(item) =>
-					query.trim() &&
-					(item.title.toLowerCase().includes(query.trim().toLowerCase()) ||
-						item.company.name.toLowerCase().includes(query.trim().toLowerCase()))
+			result.push(
+				...ProfessionalCareerParams.items
+					.filter(
+						(item) =>
+							query.trim() &&
+							(item.title.toLowerCase().includes(query.trim().toLowerCase()) ||
+								item.company.name.toLowerCase().includes(query.trim().toLowerCase()))
+					)
+					.map<Item>((data) => ({
+						data,
+						icon: Icons.Job,
+						name: `${data.title} @ ${data.company.name}`,
+						to: `experience`
+					}))
 			);
 		}
 	}
@@ -62,48 +101,27 @@
 <svelte:head>
 	<title>{useTitle(SearchPageParams.title, PortfolioTitle)}</title>
 </svelte:head>
-<div class="flex flex-col items-stretch gap-10">
+<div class="flex flex-col items-stretch gap-10 p-2">
+	<MainTitle>Search</MainTitle>
 	<Input placeholder="Search" bind:value={query} />
 	{#if !query}
-		<div>Try typing some words in the box...</div>
+		<div>Try typing something...</div>
 	{:else}
 		<div>
-			<MainTitle>Career</MainTitle>
-			{#if career.length === 0}
-				nothing to display
+			{#if result.length === 0}
+				<p>Oops ! nothing to show !</p>
 			{:else}
-				{#each career as item}
-					<ExperienceCard experience={item} />
-				{/each}
-			{/if}
-		</div>
-
-		<div>
-			<MainTitle>Projects</MainTitle>
-			{#if projects.length === 0}
-				nothing to display
-			{:else}
-				{#each projects as item}
-					<ProjectCard project={item} />
-				{/each}
-			{/if}
-		</div>
-
-		<div>
-			<MainTitle>Skills</MainTitle>
-			{#if skills.length === 0}
-				No Skill
-			{:else}
-				{#each skills as item}
-					<Card
-						classes={['cursor-pointer']}
-						tiltDegree={1}
-						href={skillHref(item.name)}
-						bgImg={item.logo}
-					>
-						<CardTitle title={item.name} />
-					</Card>
-				{/each}
+				<div class="flex flex-row flex-wrap gap-2">
+					{#each result as item}
+						<a
+							href={`${base}${item.to}`}
+							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-gray-500 cursor-pointer hover:border-gray-300 hover:bg-gray-900 duration-200"
+						>
+							<Icon icon={item.icon} size={20} />
+							<span>{item.name}</span>
+						</a>
+					{/each}
+				</div>
 			{/if}
 		</div>
 	{/if}
