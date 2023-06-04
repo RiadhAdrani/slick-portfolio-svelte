@@ -1,0 +1,1 @@
+import{M as o}from"./params-51d20861.js";import{s}from"./slugify-f2f2e486.js";function t({params:l}){if(l.slug)return{skill:o.skills.find(e=>s(e.technology.name.toLocaleLowerCase())===l.slug)}}const u=Object.freeze(Object.defineProperty({__proto__:null,load:t},Symbol.toStringTag,{value:"Module"}));export{u as _,t as l};

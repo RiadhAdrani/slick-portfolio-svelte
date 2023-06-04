@@ -1,1 +1,0 @@
-import{S as l,i as n,s as c,k as o,l as d,m as h,h as a,n as _,b as m,B as s}from"./index-c3ca82ee.js";function v(i){let e;return{c(){e=o("div"),this.h()},l(t){e=d(t,"DIV",{class:!0}),h(e).forEach(a),this.h()},h(){_(e,"class","card-divider svelte-tklg2z")},m(t,r){m(t,e,r)},p:s,i:s,o:s,d(t){t&&a(e)}}}class u extends l{constructor(e){super(),n(this,e,null,v,c,{})}}export{u as C};
