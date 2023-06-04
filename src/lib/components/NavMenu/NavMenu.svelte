@@ -28,7 +28,7 @@
 	<nav class="container !justify-between flex flex-row items-center text-sm">
 		<a
 			href={`${base}/`}
-			class="nav-menu-left flex flex-row items-center cursor-pointer px-6 text-[var(--secondary-text)] self-stretch hover:bg-[color:var(--main-hover)]"
+			class="nav-menu-left flex flex-row items-center cursor-pointer px-4 text-[var(--secondary-text)] self-stretch hover:bg-[color:var(--main-hover)]"
 		>
 			<Icon icon={Icons.Code} size="30" color="var(--secondary-text)" />
 			<span class="ml-2 text-md font-bold hidden md:inline">Riadh Adrani</span>

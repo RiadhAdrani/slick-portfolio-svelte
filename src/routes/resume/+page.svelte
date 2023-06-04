@@ -18,7 +18,7 @@
 			<Chip label="Download" size={'1.25em'} />
 		</a>
 	{:else}
-		<Chip label="Ooops! no CV at the moment. You should input your cv link in $lib/params.ts" />
+		<Chip label="Ooops! no CV at the moment." />
 	{/if}
 </div>
 
