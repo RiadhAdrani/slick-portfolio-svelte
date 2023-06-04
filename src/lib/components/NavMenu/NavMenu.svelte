@@ -97,7 +97,7 @@
 		z-index: 10;
 		padding: 0px 10px;
 		border-bottom: 1px solid var(--secondary);
-		background-color: var(--primary);
+		background-color: var(--main);
 
 		&-item {
 			text-decoration: none;
