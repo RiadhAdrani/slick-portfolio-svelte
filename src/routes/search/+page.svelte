@@ -115,7 +115,7 @@
 					{#each result as item}
 						<a
 							href={`${base}/${item.to}`}
-							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-gray-500 cursor-pointer hover:border-gray-300 hover:bg-gray-900 duration-200"
+							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-[color:var(--border)] cursor-pointer hover:border-[color:var(--border-hover)] hover:bg-[color:var(--main-hover)] duration-200"
 						>
 							<Icon icon={item.icon} size={20} />
 							<span>{item.name}</span>

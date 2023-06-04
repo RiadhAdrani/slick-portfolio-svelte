@@ -3,6 +3,7 @@
 	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import Icon from '../Icon/Icon.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	export let items: Array<Technology> = [];
 	const delay = 2000;
@@ -71,7 +72,7 @@
 
 <div class="carrousel">
 	<div class="carrousel-btn" on:click={toggleLeft} on:keyup on:keydown on:keypress>
-		<Icon icon={Icons.LeftArrow} size="20px" />
+		<Icon icon={Icons.LeftArrow} size="20px" color={'var(--border-hover)'} />
 	</div>
 
 	<div bind:this={element} class="carrousel-content">
@@ -81,7 +82,7 @@
 					class="carrousel-item-img"
 					src={item.logo}
 					alt={item.name}
-					class:carrousel-item-img-inverted={item.inverted}
+					class:carrousel-item-img-inverted={$theme && item.inverted}
 				/>
 				<span class="carrousel-item-label">{item.name}</span>
 			</div>
@@ -89,7 +90,7 @@
 	</div>
 
 	<div class="carrousel-btn" on:click={toggleRight} on:keyup on:keydown on:keypress>
-		<Icon icon={Icons.RightArrow} size="20px" />
+		<Icon icon={Icons.RightArrow} color={'var(--border-hover)'} size="20px" />
 	</div>
 </div>
 
@@ -140,11 +141,11 @@
 			padding: 5px;
 			margin: 0px 10px;
 			cursor: pointer;
-			border: 1px solid var(--accent-c);
+			border: 1px solid var(--border);
 			border-radius: 50%;
 
 			&:hover {
-				border-color: var(--extra-c);
+				border-color: var(--border-hover);
 			}
 		}
 	}

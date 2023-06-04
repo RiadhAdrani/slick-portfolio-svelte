@@ -9,14 +9,14 @@
 	input {
 		color: inherit;
 		background-color: transparent;
-		border: 1px solid var(--accent-c);
+		border: 1px solid var(--border);
 		padding: 10px 20px;
 		border-radius: 15px;
 		flex: 1;
 		font-size: 1.15em;
 
 		&:focus {
-			outline: 1px solid var(--extra-c);
+			outline: 1px solid var(--border-hover);
 		}
 	}
 </style>

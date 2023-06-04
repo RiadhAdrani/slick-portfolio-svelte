@@ -34,7 +34,7 @@
 		padding: 5px 15px;
 		margin: 2.5px;
 		display: inline-block;
-		border: 1px solid var(--accent-c);
+		border: 1px solid var(--border);
 		border-radius: 20px;
 		cursor: pointer;
 		font-weight: 200;
@@ -44,15 +44,15 @@
 
 		&-hoverable {
 			&:hover {
-				background-color: var(--secondary-c);
+				background-color: var(--secondary);
 			}
 		}
 
 		&-active {
-			background-color: var(--extra-text-c);
+			background-color: var(--tertiary);
 
 			&:hover {
-				background-color: var(--extra-c);
+				background-color: var(--accent);
 			}
 		}
 	}

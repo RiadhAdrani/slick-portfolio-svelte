@@ -6,6 +6,7 @@
 	import CardTitle from '../Card/CardTitle.svelte';
 	import Chip from '../Chip/Chip.svelte';
 	import ChipIcon from '../Chip/ChipIcon.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	export let experience: Experience;
 
@@ -35,7 +36,7 @@
 			<div class="experience-description">{experience.description}</div>
 			<div class="experience-skills">
 				{#each experience.skills as skill}
-					<ChipIcon logo={skill.logo} name={skill.name} inverted={skill.inverted} />
+					<ChipIcon logo={skill.logo} name={skill.name} inverted={$theme && skill.inverted} />
 				{/each}
 			</div>
 		</div>
@@ -86,7 +87,7 @@
 
 		&-period,
 		&-location {
-			color: var(--accent-text-c);
+			color: var(--accent-text);
 			font-size: 0.9em;
 			margin-bottom: 5px;
 		}

@@ -5,24 +5,84 @@
 :root {
 	color-scheme: dark;
 
-	// colors
-	--primary-c: #000;
-	--variant-c: #0e0e0e;
-	--secondary-c: #1e1e1e;
-	--accent-c: #2e2e2e;
-	--extra-c: #4e4e4e;
+	--dark-0: #000;
+	--dark-1: #1e1e1e;
+	--dark-2: #2e2e2e;
+	--dark-3: #3e3e3e;
+	--dark-4: #4e4e4e;
+	--dark-5: #5e5e5e;
+	--dark-6: #6e6e6e;
+	--dark-7: #7e7e7e;
+	--dark-8: #8e8e8e;
 
-	// text colors
-	--primary-text-c: #fff;
-	--secondary-text-c: #f0f0f0;
-	--accent-text-c: #a0a0a0;
-	--extra-text-c: #707070;
+	--light-0: #fff;
+	--light-1: #e1e1e1;
+	--light-2: #d1d1d1;
+	--light-3: #c1c1c1;
+	--light-4: #b1b1b1;
+	--light-5: #a1a1a1;
+	--light-6: #919191;
+	--light-7: #818181;
+	--light-8: #717171;
+
+	--dark-0-60: rgba(0, 0, 0, 0.6);
+	--light-0-60: rgba(255, 255, 255, 0.6);
 
 	// fonts
 	--text-f: 'Ubuntu';
 	--title-f: 'Fira Sans';
 
 	overflow-y: scroll;
+}
+
+.theme-dark {
+	--main: var(--dark-0);
+	--main-hover: var(--dark-1);
+	--secondary: var(--dark-1);
+	--secondary-hover: var(--dark-2);
+	--tertiary: var(--dark-2);
+	--tertiary-hover: var(--dark-3);
+	--accent: var(--dark-3);
+	--accent-hover: var(--dark-4);
+
+	--main-text: var(--light-0);
+	--main-text-hover: var(--light-1);
+	--secondary-text: var(--light-1);
+	--secondary-text-hover: var(--light-2);
+	--tertiary-text: var(--light-2);
+	--tertiary-text-hover: var(--light-3);
+	--accent-text: var(--light-3);
+	--accent-text-hover: var(--light-4);
+
+	--border: var(--dark-2);
+	--border-hover: var(--light-7);
+
+	--main-60: var(--dark-0-60);
+}
+
+.theme-light {
+	--main: var(--light-0);
+	--main-hover: var(--light-1);
+	--secondary: var(--light-1);
+	--secondary-hover: var(--light-2);
+	--tertiary: var(--light-2);
+	--tertiary-hover: var(--light-3);
+	--accent: var(--light-3);
+	--accent-hover: var(--light-4);
+
+	--main-text: var(--dark-0);
+	--main-text-hover: var(--dark-1);
+	--secondary-text: var(--dark-1);
+	--secondary-text-hover: var(--dark-2);
+	--tertiary-text: var(--dark-2);
+	--tertiary-text-hover: var(--dark-3);
+	--accent-text: var(--dark-3);
+	--accent-text-hover: var(--dark-4);
+
+	--border: var(--light-1);
+	--border-hover: var(--dark-8);
+
+	--main-60: var(--light-0-60);
 }
 
 .container {

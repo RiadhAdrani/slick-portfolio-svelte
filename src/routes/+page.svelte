@@ -32,7 +32,7 @@
 </svelte:head>
 <div class="home">
 	<div class="home-section">
-		<h1 class="home-title">{name} {lastName.toUpperCase()},</h1>
+		<h1 class="home-title">{name} {lastName},</h1>
 		<p class="home-subtitle">{description}</p>
 		<div class="home-social">
 			{#each links as link}
@@ -42,7 +42,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Icon icon={link.icon} />
+					<Icon icon={link.icon} color={'var(--accent-text)'} />
 				</a>
 			{/each}
 		</div>
@@ -68,7 +68,8 @@
 		}
 
 		&-subtitle {
-			font-size: 1.5em;
+			color: var(--tertiary-text);
+			font-size: 1.35em;
 			font-weight: 200;
 		}
 
@@ -76,6 +77,7 @@
 			display: flex;
 			flex-direction: column;
 			flex: 1;
+			gap: 10px;
 		}
 
 		&-social {

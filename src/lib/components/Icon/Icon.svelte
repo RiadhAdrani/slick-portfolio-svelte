@@ -5,7 +5,7 @@
 	let el: SVGElement;
 
 	export let size = '30px';
-	export let color = '#fff';
+	export let color = 'var(--main-text)';
 
 	export let icon: Icons;
 </script>

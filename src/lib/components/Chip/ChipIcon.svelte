@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { theme } from '$lib/stores/theme';
+
 	export let name: string;
 	export let logo: string;
 	export let inverted = false;
@@ -6,7 +8,12 @@
 </script>
 
 <div class="chip-icon" data-help={name} class:chip-icon-grayscale={grayscale}>
-	<img class="chip-icon-logo" class:chip-icon-logo-inverted={inverted} src={logo} alt={name} />
+	<img
+		class="chip-icon-logo"
+		class:chip-icon-logo-inverted={$theme && inverted}
+		src={logo}
+		alt={name}
+	/>
 </div>
 
 <style lang="scss">
@@ -16,7 +23,7 @@
 		padding: 10px;
 		margin-right: 5px;
 		margin-bottom: 5px;
-		border: 1px solid var(--secondary-c);
+		border: 1px solid var(--border);
 		justify-content: center;
 		border-radius: 10px;
 
@@ -29,7 +36,7 @@
 		}
 
 		&:hover {
-			border-color: var(--extra-c);
+			border-color: var(--border-hover);
 			cursor: help;
 
 			&:after {
@@ -37,11 +44,11 @@
 				display: inline-block;
 				position: absolute;
 				width: max-content;
-				background-color: var(--variant-c);
+				background-color: var(--secondary);
 				padding: 5px 10px;
 				left: 10px;
 				top: calc(100% + 0px);
-				border: 1px solid var(--secondary-c);
+				border: 1px solid var(--border);
 				border-radius: 15px;
 			}
 		}
