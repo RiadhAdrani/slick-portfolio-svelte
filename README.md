@@ -6,6 +6,7 @@ If you want to use the template as it is, you can :
 
 - update `src/lib/params.ts` with your data.
 - update `src/lib/index.scss` for custom styling.
+- update `static/favicon.ico` to customize the tab's icon.
 
 Feel free to explore and hack the template to your needs if you feel like it.
 

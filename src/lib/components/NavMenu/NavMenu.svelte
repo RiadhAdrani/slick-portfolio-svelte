@@ -3,7 +3,7 @@
 	import Icon from '../Icon/Icon.svelte';
 	import { Icons } from '$lib/utils';
 	import { page } from '$app/stores';
-	import { NavBar } from '$lib/params';
+	import { NavBar, Home } from '$lib/params';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 
 	import { base } from '$app/paths';
@@ -31,7 +31,7 @@
 			class="nav-menu-left flex flex-row items-center cursor-pointer px-4 text-[var(--secondary-text)] self-stretch hover:bg-[color:var(--main-hover)]"
 		>
 			<Icon icon={Icons.Code} size="30" color="var(--secondary-text)" />
-			<span class="ml-2 text-md font-bold hidden md:inline">Riadh Adrani</span>
+			<span class="ml-2 text-md font-bold hidden md:inline">{Home.name} {Home.lastName}</span>
 		</a>
 		<div class="flex flex-row flex-1 self-center justify-center">
 			{#each items as item}
