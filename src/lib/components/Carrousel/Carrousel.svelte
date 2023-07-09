@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { Technology } from '$lib/utils';
 	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import Icon from '../Icon/Icon.svelte';
-	import { theme } from '$lib/stores/theme';
+	import type { Skill } from '$lib/types';
+	import { getAssetURL } from '$lib/data/assets';
 
-	export let items: Array<Technology> = [];
+	export let items: Array<Skill> = [];
 	const delay = 2000;
 
 	let element: HTMLElement;
@@ -78,12 +78,7 @@
 	<div bind:this={element} class="carrousel-content">
 		{#each items as item}
 			<div class="carrousel-item">
-				<img
-					class="carrousel-item-img"
-					src={item.logo}
-					alt={item.name}
-					class:carrousel-item-img-inverted={$theme && item.inverted}
-				/>
+				<img class="carrousel-item-img" src={getAssetURL(item.logo)} alt={item.name} />
 				<span class="carrousel-item-label">{item.name}</span>
 			</div>
 		{/each}
@@ -121,10 +116,6 @@
 				width: 120px;
 
 				max-width: initial;
-
-				&-inverted {
-					filter: invert(100);
-				}
 			}
 
 			&-label {

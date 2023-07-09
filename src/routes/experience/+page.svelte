@@ -1,33 +1,42 @@
-<script>
+<script lang="ts">
 	import ExperienceCard from '$lib/components/ExperienceCard/ExperienceCard.svelte';
-	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { ProfessionalCareerParams, PortfolioTitle } from '$lib/params';
-	import { useTitle } from '$lib/utils';
+	import SearchPage from '$lib/components/SearchPage.svelte';
+	import { EXPERIENCES } from '$lib/params';
+	import type { Experience } from '$lib/types';
+	import { isBlank } from '@riadh-adrani/utility-js';
 
-	const { items, title } = ProfessionalCareerParams;
+	const { items, title } = EXPERIENCES;
+
+	let result: Array<Experience> = items;
+
+	const onSearch = (e: CustomEvent<{ search: string }>) => {
+		const query = e.detail.search;
+
+		if (isBlank(query)) {
+			result = items;
+		}
+
+		result = items.filter(
+			(it) =>
+				it.name.toLowerCase().includes(query) ||
+				it.company.toLowerCase().includes(query) ||
+				it.description.toLowerCase().includes(query)
+		);
+	};
 </script>
 
-<svelte:head>
-	<title>{useTitle(title, PortfolioTitle)}</title>
-</svelte:head>
-<div class="experience">
-	<MainTitle>{title}</MainTitle>
-	<div class="experience-experiences">
-		{#each items as job}
+<SearchPage {title} on:search={onSearch}>
+	<div class="experiences">
+		{#each result as job (job.slug)}
 			<ExperienceCard experience={job} />
 		{/each}
 	</div>
-</div>
+</SearchPage>
 
 <style lang="scss">
-	.experience {
+	.experiences {
 		display: flex;
 		flex-direction: column;
-
-		&-experiences {
-			display: flex;
-			flex-direction: column;
-			margin-top: 40px;
-		}
+		margin-top: 40px;
 	}
 </style>

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Experience } from '$lib/utils';
+	import type { Experience } from '$lib/types';
 	import { countMonths, getMonthName } from '$lib/utils/helpers';
 	import Card from '../Card/Card.svelte';
 	import CardLogo from '../Card/CardLogo.svelte';
 	import CardTitle from '../Card/CardTitle.svelte';
 	import Chip from '../Chip/Chip.svelte';
 	import ChipIcon from '../Chip/ChipIcon.svelte';
-	import { theme } from '$lib/stores/theme';
+	import { getAssetURL } from '$lib/data/assets';
 
 	export let experience: Experience;
 
@@ -23,20 +23,20 @@
 
 <Card margin="0px 0px 20px 0px" tiltDegree={2}>
 	<div class="experience">
-		<CardLogo src={experience.company.logo} alt={experience.company.name} size={75} />
+		<CardLogo src={getAssetURL(experience.logo)} alt={experience.company} size={75} />
 		<div class="experience-data">
 			<h3 class="experience-title">
-				<CardTitle title={experience.title} />
+				<CardTitle title={experience.name} />
 				<div class="experience-title-divider" />
-				<Chip label={experience.employmentType} size="0.75em" />
+				<Chip label={experience.contract} size="0.75em" />
 			</h3>
-			<span class="experience-company-name">{experience.company.name}</span>
+			<span class="experience-company-name">{experience.company}</span>
 			<div class="experience-period">{period}</div>
 			<div class="experience-location">{experience.location}</div>
 			<div class="experience-description">{experience.description}</div>
 			<div class="experience-skills">
 				{#each experience.skills as skill}
-					<ChipIcon logo={skill.logo} name={skill.name} inverted={$theme && skill.inverted} />
+					<ChipIcon logo={getAssetURL(skill.logo)} name={skill.name} />
 				{/each}
 			</div>
 		</div>

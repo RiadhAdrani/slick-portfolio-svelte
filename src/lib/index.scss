@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 :root {
-	color-scheme: dark;
-
 	--dark-0: #000;
 	--dark-1: #1e1e1e;
 	--dark-2: #2e2e2e;
@@ -29,13 +27,20 @@
 	--light-0-60: rgba(255, 255, 255, 0.6);
 
 	// fonts
-	--text-f: 'Ubuntu';
-	--title-f: 'Fira Sans';
+	--text-f: 'Inter';
+	--title-f: 'Inter';
 
 	overflow-y: scroll;
 }
 
-.theme-dark {
+* {
+	transition-duration: 200ms;
+	transition-property: background border-color opacity box-shadow top bottom left margin right;
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+
 	--main: var(--dark-0);
 	--main-hover: var(--dark-1);
 	--secondary: var(--dark-1);
@@ -60,7 +65,9 @@
 	--main-60: var(--dark-0-60);
 }
 
-.theme-light {
+:root[data-theme='light'] {
+	color-scheme: light;
+
 	--main: var(--light-0);
 	--main-hover: var(--light-1);
 	--secondary: var(--light-1);

@@ -1,9 +1,12 @@
 <script lang="ts">
 	import NavMenu from '$lib/components/NavMenu/NavMenu.svelte';
 	import '$lib/index.scss';
-	import { theme } from '$lib/stores/theme';
+	import { onHydrated, theme } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
 
 	export const prerender = true;
+
+	onMount(() => onHydrated());
 </script>
 
 <div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
@@ -16,21 +19,7 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		padding: 40px 0px;
-	}
-
-	@media (max-width: 950px) {
-		.content {
-			padding-left: 15px;
-			padding-right: 15px;
-		}
-	}
-
-	@media (max-width: 750px) {
-		.content {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
+		padding: 0px 0px;
 	}
 
 	.body {

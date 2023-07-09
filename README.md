@@ -10,7 +10,10 @@ If you want to use the template as it is, you can :
 
 Feel free to explore and hack the template to your needs if you feel like it.
 
-Before deploying to `GitHub Pages`, make sure to change the `base` parameter in `svelte.config.js`.
+Before deploying to `GitHub Pages`:
+
+- make sure to change the `base` parameter in `svelte.config.js`.
+- allow `GitHub Pages` in your repo settings.
 
 ## Known issues:
 

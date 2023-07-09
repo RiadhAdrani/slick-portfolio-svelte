@@ -1,26 +1,22 @@
 <script>
 	import Chip from '$lib/components/Chip/Chip.svelte';
-	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { ResumeParams, PortfolioTitle } from '$lib/params';
-	import { useTitle } from '$lib/utils';
+	import CommonPage from '$lib/components/CommonPage.svelte';
+	import { RESUME } from '$lib/params';
 
-	const { cv, title } = ResumeParams;
+	const { item, title } = RESUME;
 </script>
 
-<svelte:head>
-	<title>{useTitle(title, PortfolioTitle)}</title>
-</svelte:head>
-
-<MainTitle>{title}</MainTitle>
-<div class="resume">
-	{#if cv}
-		<a href={cv}>
-			<Chip label="Download" size={'1.25em'} />
-		</a>
-	{:else}
-		<Chip label="Ooops! no CV at the moment." />
-	{/if}
-</div>
+<CommonPage {title}>
+	<div class="resume">
+		{#if item}
+			<a href={item}>
+				<Chip label="Download" size={'1.25em'} />
+			</a>
+		{:else}
+			<Chip label="Ooops! no CV at the moment." />
+		{/if}
+	</div>
+</CommonPage>
 
 <style lang="scss">
 	.resume {

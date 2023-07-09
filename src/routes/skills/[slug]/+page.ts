@@ -1,12 +1,9 @@
-import { MySkillsParams } from '$lib/params';
-import slugify from 'slugify';
+import MY_SKILLS from '$lib/skills.params';
 
 export function load({ params }: { params: Record<string, string> }) {
 	if (params.slug) {
-		const skill = MySkillsParams.skills.find((item) => {
-			const slugified = slugify(item.technology.name.toLocaleLowerCase());
-
-			return slugified === params.slug;
+		const skill = MY_SKILLS.find((item) => {
+			return item.slug === params.slug;
 		});
 
 		return { skill };

@@ -1,40 +1,33 @@
 <script lang="ts">
 	import Chip from '$lib/components/Chip/Chip.svelte';
-	import Input from '$lib/components/Input/Input.svelte';
-	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import ProjectCard from '$lib/components/ProjectCard/ProjectCard.svelte';
-	import { PersonalProjects, PortfolioTitle } from '$lib/params';
-	import type { Project, Technology } from '$lib/utils';
-	import { useTitle } from '$lib/utils';
+	import SearchPage from '$lib/components/SearchPage.svelte';
+	import { PROJECTS } from '$lib/params';
+	import type { Project, Skill } from '$lib/types';
 	import { onMount } from 'svelte';
+	import MY_SKILLS from '$lib/skills.params';
 
-	interface TechnologyFilter extends Technology {
+	interface SkillFilter extends Skill {
 		isSelected?: boolean;
 	}
 
-	const { items, title } = PersonalProjects;
+	const { items, title } = PROJECTS;
 
-	let filters: Array<TechnologyFilter> = items.reduce((items, item) => {
-		item.technologies.forEach((tech) => {
-			if (!items.some((t) => t.name === tech.name)) {
-				items.push(tech);
-			}
-		});
-
-		return items;
-	}, [] as Array<TechnologyFilter>);
+	let filters: Array<SkillFilter> = MY_SKILLS.filter((it) => {
+		return items.some((project) => project.skills.some((skill) => skill.slug === it.slug));
+	});
 
 	let search = '';
 	let displayed: Array<Project> = [];
 
-	const isSelected = (tech: Technology) => {
-		return filters.some((item) => item.name === tech.name && item.isSelected);
+	const isSelected = (slug: string): boolean => {
+		return filters.some((item) => item.slug === slug && item.isSelected);
 	};
 
-	const onSelected = (newTech: Technology) => {
+	const onSelected = (slug: string) => {
 		filters = filters.map((tech) => {
-			if (tech.name === newTech.name) {
-				tech.isSelected = !isSelected(tech);
+			if (tech.slug === slug) {
+				tech.isSelected = !isSelected(slug);
 			}
 
 			return tech;
@@ -45,8 +38,8 @@
 		displayed = items.filter((project) => {
 			const isFiltered =
 				filters.every((item) => !item.isSelected) ||
-				project.technologies.some((tech) =>
-					filters.some((filter) => filter.isSelected && filter.name === tech.name)
+				project.skills.some((tech) =>
+					filters.some((filter) => filter.isSelected && filter.slug === tech.slug)
 				);
 
 			const isSearched =
@@ -56,6 +49,10 @@
 			return isFiltered && isSearched;
 		});
 	}
+
+	const onSearch = (e: CustomEvent<{ search: string }>) => {
+		search = e.detail.search;
+	};
 
 	onMount(() => {
 		const query = location.search;
@@ -72,55 +69,30 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{useTitle(title, PortfolioTitle)}</title>
-</svelte:head>
-<div class="projects">
-	<MainTitle>{title}</MainTitle>
-	<div class="projects-search">
-		<Input bind:value={search} placeholder="Enter keywords..." />
-	</div>
+<SearchPage {title} on:search={onSearch}>
 	<div class="projects-filters">
 		{#each filters as tech}
-			<Chip label={tech.name} active={tech.isSelected} on:click={() => onSelected(tech)} />
+			<Chip label={tech.name} active={tech.isSelected} on:click={() => onSelected(tech.slug)} />
 		{/each}
 	</div>
-	<div class="projects-list">
+	<div class="projects-list mt-5">
 		{#each displayed as project}
 			<ProjectCard {project} />
 		{/each}
 	</div>
-</div>
+</SearchPage>
 
 <style lang="scss">
-	.projects {
-		display: flex;
-		flex-direction: column;
+	.projects-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
 
-		&-search,
-		&-filters,
-		&-list {
-			margin-top: 40px;
+		@media (max-width: 1350px) {
+			grid-template-columns: repeat(2, 1fr);
 		}
-
-		&-search {
-			display: flex;
-			justify-content: stretch;
-			padding: 0px 10px;
-		}
-
-		&-list {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 20px;
-			padding: 0px 10px;
-
-			@media (max-width: 1350px) {
-				grid-template-columns: repeat(2, 1fr);
-			}
-			@media (max-width: 850px) {
-				grid-template-columns: repeat(1, 1fr);
-			}
+		@media (max-width: 850px) {
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 </style>

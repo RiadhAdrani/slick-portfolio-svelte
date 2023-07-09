@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Project } from '$lib/utils';
 	import { countMonths, getMonthName } from '$lib/utils/helpers';
 	import Chip from '../Chip/Chip.svelte';
 	import Card from '../Card/Card.svelte';
@@ -8,7 +7,8 @@
 	import CardDivider from '../Card/CardDivider.svelte';
 	import ChipIcon from '../Chip/ChipIcon.svelte';
 	import CardLogo from '../Card/CardLogo.svelte';
-	import { theme } from '$lib/stores/theme';
+	import type { Project } from '$lib/types';
+	import { getAssetURL } from '$lib/data/assets';
 
 	export let project: Project;
 	$: months = countMonths(project.period.from, project.period.to);
@@ -20,7 +20,7 @@
 </script>
 
 <Card color={project.color}>
-	<CardLogo alt={project.name} src={project.logo} size={40} radius={'0'} />
+	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'0'} />
 	<div class="project-card-top">
 		<CardTitle title={project.name} />
 		<div class="project-card-links">
@@ -43,8 +43,8 @@
 	</div>
 	<CardDivider />
 	<div class="project-card-technologies">
-		{#each project.technologies as tech}
-			<ChipIcon logo={tech.logo} name={tech.name} inverted={$theme && tech.inverted} />
+		{#each project.skills as tech}
+			<ChipIcon logo={getAssetURL(tech.logo)} name={tech.name} />
 		{/each}
 	</div>
 </Card>

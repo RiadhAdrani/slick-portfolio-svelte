@@ -1,23 +1,13 @@
 <script lang="ts">
 	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
 	import Icon from '$lib/components/Icon/Icon.svelte';
-	import { Home, PortfolioTitle } from '$lib/params';
-	import type { SocialLink, SocialMedia } from '$lib/utils';
-	import { useSocialMedia, useTitle } from '$lib/utils';
+	import { TITLE_SUFFIX } from '$lib/params';
+	import { HOME, getPlatfromIcon } from '$lib/params';
+	import MY_SKILLS from '$lib/skills.params';
+	import { useTitle } from '$lib/utils';
 	import { isBlank } from '@riadh-adrani/utility-js';
 
-	const { description, lastName, links: _links, name, skills, title } = Home;
-
-	const links: Array<SocialLink> = Object.keys(_links).map((key) => {
-		const to = _links[key as 'github'] as string;
-		const data = useSocialMedia(key as SocialMedia);
-
-		return {
-			to,
-			title: data.title,
-			icon: data.icon
-		};
-	});
+	const { description, lastName, links, name, title, skills } = HOME;
 
 	const isEmail = (email: string): boolean => {
 		const reg =
@@ -28,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{useTitle(title, PortfolioTitle)}</title>
+	<title>{useTitle(title, TITLE_SUFFIX)}</title>
 </svelte:head>
 <div class="home">
 	<div class="home-section">
@@ -38,16 +28,16 @@
 			{#each links as link}
 				<a
 					class="home-social-item"
-					href={`${isEmail(link.to) ? 'mailto:' : ''}${link.to}`}
+					href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Icon icon={link.icon} color={'var(--accent-text)'} />
+					<Icon icon={getPlatfromIcon(link.platform)} color={'var(--accent-text)'} />
 				</a>
 			{/each}
 		</div>
 	</div>
-	<Carrousel items={skills} />
+	<Carrousel items={skills ?? MY_SKILLS} />
 </div>
 
 <style lang="scss">

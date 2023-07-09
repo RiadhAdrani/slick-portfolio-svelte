@@ -1,19 +1,15 @@
 <script lang="ts">
-	import Input from '$lib/components/Input/Input.svelte';
-	import { browser } from '$app/environment';
-	import {
-		MySkillsParams,
-		PersonalProjects,
-		PortfolioTitle,
-		ProfessionalCareerParams,
-		SearchPageParams
-	} from '$lib/params';
-	import { useTitle, Icons } from '$lib/utils';
-	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
+	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon/Icon.svelte';
 	import { base } from '$app/paths';
-	import slugify from 'slugify';
+	import { SEARCH } from '$lib/params';
+	import SearchPage from '$lib/components/SearchPage.svelte';
+	import MY_EXPERIENCES from '$lib/experiences.params';
+	import MY_PROJECTS from '$lib/projects.params';
+	import MY_SKILLS from '$lib/skills.params';
+
+	const { title } = SEARCH;
 
 	type Item<T = unknown> = {
 		icon: Icons;
@@ -26,8 +22,6 @@
 	let mounted = false;
 	let result: Array<Item> = [];
 
-	// const skillHref = (skill: string): string => `${base}/skills/${slugify(skill.toLowerCase())}`;
-
 	onMount(() => {
 		let searchParams = new URLSearchParams(window.location.search);
 
@@ -36,74 +30,48 @@
 	});
 
 	$: {
-		if (browser && mounted) {
-			let searchParams = new URLSearchParams(window.location.search);
+		result = [];
 
-			searchParams.set('q', query);
+		// filter
+		result.push(
+			...MY_PROJECTS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
+				(data) => ({
+					data,
+					icon: Icons.Projects,
+					name: data.name,
+					to: `projects?q=${data.name}`
+				})
+			)
+		);
 
-			const url = `${window.location.protocol}//${window.location.host}${
-				window.location.pathname
-			}?${searchParams.toString()}`;
+		result.push(
+			...MY_SKILLS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
+				(data) => ({
+					data,
+					icon: Icons.Skills,
+					name: data.name,
+					to: `skills/${data.slug}`
+				})
+			)
+		);
 
-			window.history.replaceState({ path: url }, '', url);
-
-			result = [];
-
-			// filter
-			result.push(
-				...PersonalProjects.items
-					.filter(
-						(item) => query.trim() && item.name.toLowerCase().includes(query.trim().toLowerCase())
-					)
-					.map<Item>((data) => ({
-						data,
-						icon: Icons.Projects,
-						name: data.name,
-						to: `projects?item=${data.name}`
-					}))
-			);
-
-			result.push(
-				...MySkillsParams.skills
-					.filter(
-						(item) =>
-							query.trim() &&
-							item.technology.name.toLowerCase().includes(query.trim().toLowerCase())
-					)
-					.map((item) => item.technology)
-					.map<Item>((data) => ({
-						data,
-						icon: Icons.Skills,
-						name: data.name,
-						to: `skills/${slugify(data.name, { lower: true })}`
-					}))
-			);
-
-			result.push(
-				...ProfessionalCareerParams.items
-					.filter(
-						(item) =>
-							query.trim() &&
-							(item.title.toLowerCase().includes(query.trim().toLowerCase()) ||
-								item.company.name.toLowerCase().includes(query.trim().toLowerCase()))
-					)
-					.map<Item>((data) => ({
-						data,
-						icon: Icons.Job,
-						name: `${data.title} @ ${data.company.name}`,
-						to: `experience`
-					}))
-			);
-		}
+		result.push(
+			...MY_EXPERIENCES.filter(
+				(item) =>
+					query &&
+					(item.name.toLowerCase().includes(query) || item.company.toLowerCase().includes(query))
+			).map<Item>((data) => ({
+				data,
+				icon: Icons.Job,
+				name: `${data.name} @ ${data.company}`,
+				to: `experience?q=${data.name}`
+			}))
+		);
 	}
 </script>
 
-<svelte:head>
-	<title>{useTitle(SearchPageParams.title, PortfolioTitle)}</title>
-</svelte:head>
-<div class="flex flex-col items-stretch gap-10 p-2">
-	<MainTitle>Search</MainTitle>
-	<Input placeholder="Search" bind:value={query} />
+<SearchPage {title} on:search={(e) => (query = e.detail.search)}>
+	<div class="flex flex-col items-stretch gap-10 p-2" />
 	{#if !query}
 		<div>Try typing something...</div>
 	{:else}
@@ -117,7 +85,7 @@
 							href={`${base}/${item.to}`}
 							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-[color:var(--border)] cursor-pointer hover:border-[color:var(--border-hover)] hover:bg-[color:var(--main-hover)] duration-200"
 						>
-							<Icon icon={item.icon} size={20} />
+							<Icon icon={item.icon} size={'20'} />
 							<span>{item.name}</span>
 						</a>
 					{/each}
@@ -125,4 +93,4 @@
 			{/if}
 		</div>
 	{/if}
-</div>
+</SearchPage>

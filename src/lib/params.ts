@@ -1,15 +1,20 @@
-import { EmploymentType, Technologies, Assets, type SkillsParams, type Technology } from './utils';
-import type {
-	CareerParams,
-	HomeParams,
-	NavBarParams,
-	PersonalProjectsParams,
-	ResumePageParams
-} from './utils';
+import MY_EXPERIENCES from './experiences.params';
+import MY_PROJECTS from './projects.params';
+import MY_SKILLS from './skills.params';
+import {
+	Platform,
+	type HomePageParams,
+	type ProjectPageParams,
+	type ExperiencePageParams,
+	type SkillsPageParams,
+	type ResumePageParams,
+	type SearchPageParams
+} from './types';
+import { Icons } from './utils';
 
-export const PortfolioTitle = 'Slick template with Svelte';
+export const TITLE_SUFFIX = 'Slick template with Svelte';
 
-export const NavBar: NavBarParams = {
+export const NavBar = {
 	home: 'Home',
 	personal: 'Projects',
 	career: 'Experiences',
@@ -17,106 +22,80 @@ export const NavBar: NavBarParams = {
 	skills: 'Skills'
 };
 
-export const Home: HomeParams = {
-	title: 'Home Page',
+export const getPlatfromIcon = (platform: Platform): Icons => {
+	switch (platform) {
+		case Platform.GitHub:
+			return Icons.GitHub;
+		case Platform.Linkedin:
+			return Icons.LinkedIn;
+		case Platform.StackOverflow:
+			return Icons.StackOverflow;
+		case Platform.Facebook:
+			return Icons.Facebook;
+		case Platform.Email:
+			return Icons.Email;
+		case Platform.Twitter:
+			return Icons.Twitter;
+		case Platform.Youtube:
+			return Icons.Youtube;
+	}
+};
+
+export const HOME: HomePageParams = {
+	title: 'Home',
 	name: 'Name',
 	lastName: 'LASTNAME',
 	description:
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, rerum. Debitis accusantium deleniti enim iste dignissimos? Similique, exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis laudantium quaerat iure ipsum!',
-	links: {
-		github: 'https://github.com/',
-		linkedin: 'https://www.linkedin.com/',
-		twitter: 'https://twitter.com/',
-		stackoverflow: 'https://stackoverflow.com/',
-		email: 'riadh-adrani@hotmail.fr'
-	},
-	skills: Object.keys(Technologies).map((key) => (Technologies as Record<string, Technology>)[key])
-};
-
-export const PersonalProjects: PersonalProjectsParams = {
-	title: 'Personal Projects',
-	items: [
+	links: [
+		{ platform: Platform.GitHub, link: 'https://github.com/' },
 		{
-			color: '#5e95e3',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non dolores voluptatibus vitae praesentium aperiam, iure laboriosam repellendus sunt explicabo pariatur totam enim, nihil animi quisquam. Sit vero quod laborum!',
-			links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-			logo: Assets.Unknown,
-			name: 'Slick Portfolio',
-			period: {
-				from: new Date()
-			},
-			technologies: [Technologies.Angular, Technologies.TypeScript, Technologies.Tailwind],
-			type: 'Website Template'
+			platform: Platform.Linkedin,
+			link: 'https://www.linkedin.com/'
 		},
 		{
-			color: '#ff3e00',
-			description:
-				'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
-			links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-			logo: Assets.Svelte,
-			name: 'Slick Portfolio',
-			period: {
-				from: new Date()
-			},
-			technologies: [Technologies.Svelte, Technologies.TypeScript],
-			type: 'Website Template'
+			platform: Platform.Twitter,
+			link: 'https://twitter.com/'
+		},
+		{
+			platform: Platform.StackOverflow,
+			link: 'https://stackoverflow.com/'
+		},
+		{
+			platform: Platform.Email,
+			link: 'riadh-adrani@hotmail.fr'
+		},
+		{
+			platform: Platform.Youtube,
+			link: 'https://www.youtube.com'
+		},
+		{
+			platform: Platform.Facebook,
+			link: 'https://www.facebook.com'
 		}
 	]
 };
 
-export const ProfessionalCareerParams: CareerParams = {
-	title: 'Professional Experience',
-	items: [
-		{
-			company: { logo: Assets.Unknown, name: 'Home' },
-			description: 'Creating awesome applications for customers.',
-			employmentType: EmploymentType.Freelance,
-			industry: 'Software Development',
-			location: 'Home',
-			period: { from: new Date() },
-			skills: [Technologies.JavaScript, Technologies.HTML, Technologies.CSS],
-			title: 'Freelancer'
-		}
-	]
+export const PROJECTS: ProjectPageParams = {
+	title: 'Projects',
+	items: MY_PROJECTS
 };
 
-export const MySkillsParams: SkillsParams = {
-	skills: [
-		{
-			technology: Technologies.JavaScript,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.'
-		},
-		{
-			technology: Technologies.TypeScript,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.'
-		},
-		{
-			technology: Technologies.Svelte,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.'
-		},
-		{
-			technology: Technologies.Sass,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.'
-		},
-		{
-			technology: Technologies.CSS,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.'
-		}
-	],
-	title: 'My Skills'
+export const EXPERIENCES: ExperiencePageParams = {
+	title: 'Experiences',
+	items: MY_EXPERIENCES
 };
 
-export const ResumeParams: ResumePageParams = {
+export const SKILLS: SkillsPageParams = {
+	title: 'Skills',
+	items: MY_SKILLS
+};
+
+export const RESUME: ResumePageParams = {
 	title: 'Resumé',
-	cv: ''
+	item: ''
 };
 
-export const SearchPageParams = {
+export const SEARCH: SearchPageParams = {
 	title: 'Search'
 };
