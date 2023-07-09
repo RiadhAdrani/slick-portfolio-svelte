@@ -1,0 +1,1 @@
+const l=(e,t=new Date)=>{let a=0,n=0,r=0;return t.getFullYear()!==e.getFullYear()?(r=t.getMonth(),n=(t.getFullYear()-e.getFullYear()-1)*12,a=12-e.getMonth()):a=t.getMonth()-e.getMonth(),a+n+r+1},s=e=>["January","February","March","April","May","June","July","August","September","October","November","December"][e],u=(e,t)=>`${e} | ${t}`;export{l as c,s as g,u};
