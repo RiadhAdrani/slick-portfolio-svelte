@@ -1,0 +1,1 @@
+function p(n){return!s(n)||n.length===0}function b(n){return!s(n)||p(n.trim())}function y(n){if(typeof n=="boolean")return n;if(typeof n!="function")throw"(condition) should be a boolean or a function";const i=n();if(typeof i!="boolean")throw"(condition) result is not a boolean.";return i}function s(n){return y(typeof n=="string")}globalThis&&globalThis.__awaiter;export{b as i};
