@@ -12,7 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@riadh-adrani/utility-js": "^0.29.2",
+		"@riadh-adrani/utils": "0.42.2",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/adapter-static": "^1.0.4",
 		"@sveltejs/kit": "1.22.1",

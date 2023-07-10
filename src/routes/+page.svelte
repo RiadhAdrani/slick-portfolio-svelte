@@ -5,7 +5,7 @@
 	import { HOME, getPlatfromIcon } from '$lib/params';
 	import MY_SKILLS from '$lib/skills.params';
 	import { useTitle } from '$lib/utils';
-	import { isBlank } from '@riadh-adrani/utility-js';
+	import { isBlank } from '@riadh-adrani/utils';
 
 	const { description, lastName, links, name, title, skills } = HOME;
 

@@ -5,7 +5,7 @@
 	import { SKILLS } from '$lib/params';
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import type { Skill } from '$lib/types';
-	import { isBlank } from '@riadh-adrani/utility-js';
+	import { isBlank } from '@riadh-adrani/utils';
 	import { getAssetURL } from '$lib/data/assets';
 
 	const { items, title } = SKILLS;

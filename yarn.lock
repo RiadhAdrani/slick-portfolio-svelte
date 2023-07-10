@@ -260,10 +260,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@riadh-adrani/utility-js@^0.29.2":
-  version "0.29.2"
-  resolved "https://registry.yarnpkg.com/@riadh-adrani/utility-js/-/utility-js-0.29.2.tgz#f24e8dffc62529f69aaf702971d3d2700efcb2b8"
-  integrity sha512-kEy4/A3FwHSzVL4nRtKH9PeubTqNvjzD1hqd87Yg0V3ORKJDUkyqKYV60sgHH5YL7z4bPbDtGg/7wu57yOYPEQ==
+"@riadh-adrani/utils@0.42.2":
+  version "0.42.2"
+  resolved "https://registry.yarnpkg.com/@riadh-adrani/utils/-/utils-0.42.2.tgz#80466d3ec4a919a45fe6500ac997ad8e8d8d94b3"
+  integrity sha512-3VUMfi+Utp/l0f/4dxmyxhOf/Wmzt4c0MvXgYkz7AurrPG5iq6rifdeSzb/SZDuHCOtjsRUCt+MHz+yEswYgoA==
 
 "@rollup/pluginutils@^5.0.2":
   version "5.0.2"
