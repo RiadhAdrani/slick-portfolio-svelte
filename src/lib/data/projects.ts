@@ -21,7 +21,7 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date(2023, 2, 1)
 		},
-		skills: getSkills('ts', 'node'),
+		skills: getSkills('ts', 'node', 'vite', 'vitest'),
 		type: 'Web Framework'
 	},
 	{
@@ -36,7 +36,7 @@ export const items: Array<Project> = [
 			{ label: 'NPM', to: 'https://www.npmjs.com/package/@riadh-adrani/dom-control-js' },
 			{ label: 'Docs', to: 'https://riadhadrani.github.io/dom-control-js/' }
 		],
-		skills: getSkills('ts', 'node'),
+		skills: getSkills('ts', 'node', 'vite', 'vitest'),
 		type: 'JavaScript library'
 	},
 	{
@@ -59,7 +59,7 @@ export const items: Array<Project> = [
 		description: 'My personal website portfolio.',
 		period: { from: new Date(2021, 3, 1) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/RiadhAdrani' }],
-		skills: getSkills('ts', 'svelte', 'sass', 'tailwind'),
+		skills: getSkills('ts', 'svelte', 'sass', 'tailwind', 'vite'),
 		type: 'Website'
 	},
 	{
@@ -74,7 +74,7 @@ export const items: Array<Project> = [
 			{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/recursive' },
 			{ label: 'NPM', to: 'https://www.npmjs.com/package/@riadh-adrani/recursive' }
 		],
-		skills: getSkills('js', 'node'),
+		skills: getSkills('js', 'node', 'jest'),
 		type: 'UI Framework'
 	},
 	{
@@ -88,7 +88,7 @@ export const items: Array<Project> = [
 			{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/utility-js' },
 			{ label: 'NPM', to: 'https://www.npmjs.com/package/@riadh-adrani/utility-js' }
 		],
-		skills: getSkills('ts', 'node'),
+		skills: getSkills('ts', 'node', 'vite', 'vitest'),
 		type: 'JavaScript library'
 	},
 	{
