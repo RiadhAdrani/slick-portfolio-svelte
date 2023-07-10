@@ -38,8 +38,7 @@ export const items = [
 	defineSkill({
 		slug: 'js',
 		color: 'yellow',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'I think I unlocked all Javascript and have almost 100% achievement.',
 		logo: Assets.JavaScript,
 		name: 'Javascript',
 		category: 'pro-lang'
@@ -47,8 +46,7 @@ export const items = [
 	defineSkill({
 		slug: 'ts',
 		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'Being a fanatic in the JavaScript land made the transition to TypeScript easier.',
 		logo: Assets.TypeScript,
 		name: 'Typescript',
 		category: 'pro-lang'
@@ -56,8 +54,7 @@ export const items = [
 	defineSkill({
 		slug: 'css',
 		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: '',
 		logo: Assets.CSS,
 		name: 'CSS',
 		category: 'markup-style'
@@ -65,8 +62,7 @@ export const items = [
 	defineSkill({
 		slug: 'html',
 		color: 'orange',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: '',
 		logo: Assets.HTML,
 		name: 'HTML',
 		category: 'markup-style'
@@ -74,8 +70,7 @@ export const items = [
 	defineSkill({
 		slug: 'sass',
 		color: 'pink',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: '',
 		logo: Assets.Sass,
 		name: 'Sass',
 		category: 'markup-style'
@@ -83,8 +78,7 @@ export const items = [
 	defineSkill({
 		slug: 'reactjs',
 		color: 'cyan',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: '',
 		logo: Assets.ReactJs,
 		name: 'React Js',
 		category: 'library'
@@ -92,10 +86,150 @@ export const items = [
 	defineSkill({
 		slug: 'svelte',
 		color: 'orange',
-		description: svelte,
+		description: '',
 		logo: Assets.Svelte,
-		name: 'Svelte',
-		category: 'library'
+		name: 'Svelte'
+	}),
+	s({ slug: 'vue', color: 'green', description: '', logo: Assets.VueJs, name: 'VueJs' }),
+	s({ slug: 'nuxt', color: 'green', description: '', logo: Assets.Nuxt, name: 'Nuxt' }),
+	s({ slug: 'node', color: 'green', description: '', logo: Assets.NodeJs, name: 'Node JS' }),
+	s({
+		slug: 'deno',
+		color: 'white',
+		description: '',
+		logo: Assets.Deno,
+		name: 'Deno'
+	}),
+	s({ slug: 'dart', color: 'cyan', description: '', logo: Assets.Dart, name: 'Dart' }),
+	s({ slug: 'flutter', color: 'green', description: '', logo: Assets.Flutter, name: 'Flutter' }),
+	s({ slug: 'solid', color: 'blue', description: '', logo: Assets.SolidJs, name: 'Solid JS' }),
+	s({ slug: 'quasar', color: 'purple', description: '', logo: Assets.Quasar, name: 'Quasar' }),
+	s({ slug: 'kotlin', color: 'purple', description: '', logo: Assets.Kotlin, name: 'Kotlin' }),
+	s({
+		slug: 'express',
+		color: 'white',
+		description: '',
+		logo: Assets.ExpressJs,
+		name: 'Express JS'
+	}),
+	s({
+		slug: 'electron',
+		color: 'purple',
+		description: '',
+		logo: Assets.Electron,
+		name: 'Electron JS'
+	}),
+	s({
+		slug: 'postgresql',
+		color: 'blue',
+		description: '',
+		logo: Assets.PostgreSQL,
+		name: 'PostgreSQL'
+	}),
+	s({
+		slug: 'firebase',
+		color: 'orange',
+		description: '',
+		logo: Assets.Firebase,
+		name: 'Firebase'
+	}),
+	s({
+		slug: 'mongodb',
+		color: 'green',
+		description: '',
+		logo: Assets.MongoDB,
+		name: 'MongoDB'
+	}),
+	s({
+		slug: 'java',
+		color: 'red',
+		description: '',
+		logo: Assets.Java,
+		name: 'Java'
+	}),
+	s({
+		slug: 'angular',
+		color: 'red',
+		description: '',
+		logo: Assets.Angular,
+		name: 'Angular'
+	}),
+	s({
+		slug: 'redis',
+		color: 'red',
+		description: '',
+		logo: Assets.Redis,
+		name: 'Redis'
+	}),
+	s({
+		slug: 'tailwind',
+		color: 'cyan',
+		description: '',
+		logo: Assets.Tailwind,
+		name: 'Tailwind'
+	}),
+	s({
+		slug: 'csharp',
+		color: 'purple',
+		description: '',
+		logo: Assets.Csharp,
+		name: 'C#'
+	}),
+	s({
+		slug: 'xamarin',
+		color: 'purple',
+		description: '',
+		logo: Assets.Xamarin,
+		name: 'Xamarin'
+	}),
+	s({
+		slug: 'python',
+		color: 'yellow',
+		description: '',
+		logo: Assets.Python,
+		name: 'Python'
+	}),
+	s({
+		slug: 'ps',
+		color: 'cyan',
+		description: '',
+		logo: Assets.Photoshop,
+		name: 'Adobe Photoshop'
+	}),
+	s({
+		slug: 'ae',
+		color: 'purple',
+		description: '',
+		logo: Assets.AfterEffects,
+		name: 'Adobe After Effects'
+	}),
+	s({
+		slug: 'pp',
+		color: 'pink',
+		description: '',
+		logo: Assets.Premiere,
+		name: 'Adobe Premiere'
+	}),
+	s({
+		slug: 'ai',
+		color: 'orange',
+		description: '',
+		logo: Assets.Illustrator,
+		name: 'Adobe Illustrator'
+	}),
+	s({
+		slug: 'docker',
+		color: 'blue',
+		description: '',
+		logo: Assets.Docker,
+		name: 'Docker'
+	}),
+	s({
+		slug: 'fastify',
+		color: 'fastify',
+		description: '',
+		logo: Assets.Fastify,
+		name: 'Fastify'
 	})
 ] as const;
 
