@@ -66,7 +66,8 @@ const Assets = {
 	Illustrator: a('illustrator.svg'),
 	Nuxt: a('nuxt.png'),
 	Vite: a('vite.png'),
-	Vitest: a('vitest.png')
+	Vitest: a('vitest.png'),
+	Jest: a('jest.png')
 };
 
 export default Assets;

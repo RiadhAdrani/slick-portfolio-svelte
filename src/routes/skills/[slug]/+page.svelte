@@ -10,8 +10,9 @@
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import { SKILLS, TITLE_SUFFIX } from '$lib/params';
+	import { isBlank } from '@riadh-adrani/utils';
 
-	type Related = { name: string; img: string; type: 'projects' | 'experience' };
+	type Related = { display: string; name: string; img: string; type: 'projects' | 'experience' };
 
 	export let data: { skill?: Skill };
 
@@ -28,13 +29,22 @@
 
 		MY_PROJECTS.forEach((item) => {
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
-				out.push({ img: getAssetURL(item.logo), name: item.name, type: 'projects' });
+				out.push({
+					img: getAssetURL(item.logo),
+					display: `${item.name} (${item.type})`,
+					name: item.name,
+					type: 'projects'
+				});
 			}
 		});
-
 		MY_EXPERIENCES.forEach((item) => {
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
-				out.push({ img: getAssetURL(item.logo), name: item.name, type: 'experience' });
+				out.push({
+					img: getAssetURL(item.logo),
+					display: `${item.name} @ ${item.company}`,
+					name: item.name,
+					type: 'experience'
+				});
 			}
 		});
 
@@ -62,22 +72,23 @@
 				<MainTitle>{data.skill.name}</MainTitle>
 			</div>
 			<p class="py-10 px-4 text-[var(--tertiary-text)]">
-				{data.skill.description}
+				{isBlank(data.skill.description)
+					? 'This place is yet to be filled...'
+					: data.skill.description}
 			</p>
 			<div class="self-stretch mb-3">
 				<CardDivider />
 			</div>
-			<div class="flex flex-row px-4 self-stretch flex-wrap text-[var(--tertiary-text)]">
+			<div class="flex flex-row px-4 gap-2 self-stretch flex-wrap ">
 				{#each related as item}
-					<span>
-						<a
-							class="flex flex-row items-center mr-3 my-2"
-							href={`${base}/${item.type}?q=${item.name}`}
-						>
-							<CardLogo src={item.img} alt={item.name} size={20} classes="mr-2" />
-							<span>{item.name}</span>
+					<div
+						class="border rounded border-[color:var(--border)] px-2.5 py-1 text-[var(--tertiary-text)]"
+					>
+						<a class="flex flex-row items-center" href={`${base}/${item.type}?q=${item.name}`}>
+							<CardLogo src={item.img} alt={item.name} radius={'0px'} size={17} classes="mr-2" />
+							<span class="text-[0.9em]">{item.display}</span>
 						</a>
-					</span>
+					</div>
 				{/each}
 			</div>
 		</div>

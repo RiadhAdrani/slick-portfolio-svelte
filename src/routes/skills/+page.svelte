@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Card from '$lib/components/Card/Card.svelte';
-	import CardTitle from '$lib/components/Card/CardTitle.svelte';
 	import { base } from '$app/paths';
 	import { SKILLS } from '$lib/params';
 	import SearchPage from '$lib/components/SearchPage.svelte';
@@ -32,7 +31,7 @@
 				href={`${base}/skills/${skill.slug}`}
 				bgImg={getAssetURL(skill.logo)}
 			>
-				<CardTitle title={skill.name} />
+				<p class="text-[var(--tertiary-text)]">{skill.name}</p>
 			</Card>
 		{/each}
 	</div>
