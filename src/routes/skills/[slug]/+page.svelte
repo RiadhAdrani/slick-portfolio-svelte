@@ -2,15 +2,16 @@
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 	import CardLogo from '$lib/components/Card/CardLogo.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { useTitle } from '$lib/utils';
 	import MY_EXPERIENCES from '$lib/experiences.params';
 	import MY_PROJECTS from '$lib/projects.params';
 
 	import { base } from '$app/paths';
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
-	import { SKILLS, TITLE_SUFFIX } from '$lib/params';
+	import { SKILLS } from '$lib/params';
 	import { isBlank } from '@riadh-adrani/utils';
+	import Markdown from '$lib/components/Markdown.svelte';
+	import TabTitle from '$lib/components/TabTitle.svelte';
 
 	type Related = { display: string; name: string; img: string; type: 'projects' | 'experience' };
 
@@ -56,26 +57,26 @@
 	$: related = data.skill ? getRelatedProjects() : [];
 </script>
 
-<svelte:head>
-	<title>{useTitle(computedTitle, TITLE_SUFFIX)}</title>
-</svelte:head>
+<TabTitle title={computedTitle} />
 
-<div>
+<div class="pb-10 overflow-x-hidden">
 	{#if data.skill === undefined}
 		<div>Could not load skill data.</div>
 	{:else}
-		<div class="flex flex-col items-center">
+		<div class="flex flex-col items-center overflow-x-hidden">
 			<div
 				style={`--bg-img:url(${getAssetURL(data.skill.logo)})`}
 				class="flex flex-row w-[100%] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] items-center skill-cover px-4 md:px-10"
 			>
 				<MainTitle>{data.skill.name}</MainTitle>
 			</div>
-			<p class="py-10 px-4 text-[var(--tertiary-text)]">
-				{isBlank(data.skill.description)
-					? 'This place is yet to be filled...'
-					: data.skill.description}
-			</p>
+			<div class="px-4 py-3 overflow-x-hidden w-full">
+				{#if isBlank(data.skill.description)}
+					<p class="text-[var(--tertiary-text)]">This place is yet to be filled...</p>
+				{:else}
+					<Markdown content={data.skill.description} />
+				{/if}
+			</div>
 			<div class="self-stretch mb-3">
 				<CardDivider />
 			</div>

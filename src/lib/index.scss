@@ -23,6 +23,24 @@
 	--light-7: #818181;
 	--light-8: #717171;
 
+	--code-keyword-light: #bd2864;
+	--code-keyword-dark: #bd2864;
+
+	--code-string-light: #297a3a;
+	--code-string-dark: #62c073;
+
+	--code-function-light: #0068d6;
+	--code-function-dark: #52a8ff;
+
+	--code-constant-dark: #f8c555;
+	--code-constant-light: #f08d49;
+
+	--code-operator-dark: #67cdcc;
+	--code-operator-light: #016464;
+
+	--link-dark: #2563eb;
+	--link-light: #3b82f6;
+
 	--dark-0-60: rgba(0, 0, 0, 0.6);
 	--light-0-60: rgba(255, 255, 255, 0.6);
 
@@ -35,7 +53,8 @@
 
 * {
 	transition-duration: 200ms;
-	transition-property: background border-color opacity box-shadow top bottom left margin right;
+	transition-property: background, border-color, opacity, box-shadow, top, bottom, left, margin,
+		right;
 }
 
 :root[data-theme='dark'] {
@@ -63,6 +82,13 @@
 	--border-hover: var(--light-7);
 
 	--main-60: var(--dark-0-60);
+
+	--code-keyword: var(--code-keyword-dark);
+	--code-string: var(--code-string-dark);
+	--code-function: var(--code-function-dark);
+	--code-constant: var(--code-constant-dark);
+	--code-operator: var(--code-operator-dark);
+	--link: var(--link-light);
 }
 
 :root[data-theme='light'] {
@@ -90,6 +116,13 @@
 	--border-hover: var(--dark-8);
 
 	--main-60: var(--light-0-60);
+
+	--code-keyword: var(--code-keyword-light);
+	--code-string: var(--code-string-light);
+	--code-function: var(--code-function-light);
+	--code-constant: var(--code-constant-light);
+	--code-operator: var(--code-operator-light);
+	--link: var(--link-dark);
 }
 
 .container {
@@ -111,5 +144,151 @@
 			max-width: -moz-available;
 			min-width: -moz-available;
 		}
+	}
+}
+
+.markdown-container {
+	--code-comment: var(--tertiary-text);
+	--code-punctuation: var(--main-text);
+	--code-builtin: var(--secondary-text);
+	--code-number: var(--secondary-text);
+	--code-interpolation: var(--code-keyword);
+	--code-class-name: var(--secondary-text);
+
+	color: var(--secondary-text);
+	overflow-y: auto !important;
+
+	code[class*='language-'],
+	pre[class*='language-'] {
+		overflow-x: auto;
+		min-width: 0px;
+		color: var(--main-text-hover);
+	}
+
+	pre[class*='language-'] {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	& .token.selector,
+	.token.important,
+	.token.atrule,
+	.token.keyword {
+		color: var(--code-keyword);
+	}
+
+	& .token {
+		&.punctuation {
+			color: var(--code-punctuation);
+		}
+
+		&.string {
+			color: var(--code-string);
+		}
+
+		&.function {
+			color: var(--code-function);
+		}
+
+		&.comment {
+			color: var(--code-comment);
+		}
+
+		&.token.builtin {
+			color: var(--code-builtin);
+		}
+
+		&.token.number {
+			color: var(--code-number);
+		}
+
+		&.token.constant {
+			color: var(--code-constant);
+		}
+
+		&.token.operator {
+			color: var(--code-operator);
+		}
+		&.token.interpolation {
+			color: var(--code-interpolation);
+		}
+
+		&.token.class-name {
+			color: var(--code-function);
+		}
+	}
+
+	& h1,
+	& h2,
+	& h3 {
+		color: var(--text);
+		margin-bottom: 0.45em;
+	}
+
+	& h1 {
+		font-size: 2.25em;
+	}
+
+	& p {
+		line-height: 1.75rem;
+	}
+
+	& ul {
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	& li {
+		padding: 5px 0px;
+		line-height: 1.75rem;
+	}
+
+	& a {
+		color: var(--link);
+	}
+
+	& :is(code):not(pre code) {
+		color: var(--accent-text);
+		// font-size: 0.9em;
+		background-color: var(--secondary);
+		padding: 1px 6px;
+		border-radius: 0.25em;
+	}
+
+	& :not(pre) > code[class*='language-'],
+	pre[class*='language-'] {
+		background-color: var(--secondary);
+		border: 1px solid var(--border);
+		border-radius: 0.25em;
+		font-size: 0.9em;
+
+		&:hover {
+			background-color: var(--secondary-hover);
+			border-color: var(--border-hover);
+		}
+	}
+
+	& a :is(code):not(pre code) {
+		color: inherit;
+	}
+
+	& blockquote {
+		padding: 5px 20px;
+		background-color: var(--secondary);
+		border: 1px solid var(--dividerLight1);
+		margin-right: 0px;
+		margin-left: 0px;
+		border-radius: 0.25em;
+
+		strong {
+			font-style: normal;
+		}
+	}
+
+	& hr {
+		border: none;
+		border-top: 1px solid var(--border-low);
+		color: var(--border-low);
+		margin: 30px 0px;
 	}
 }

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
 	import Icon from '$lib/components/Icon/Icon.svelte';
+	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import { TITLE_SUFFIX } from '$lib/params';
 	import { HOME, getPlatfromIcon } from '$lib/params';
 	import MY_SKILLS from '$lib/skills.params';
@@ -22,7 +23,7 @@
 </svelte:head>
 <div class="home">
 	<div class="home-section">
-		<h1 class="home-title">{name} {lastName},</h1>
+		<MainTitle classes="!text-left">{name} {lastName},</MainTitle>
 		<p class="home-subtitle">{description}</p>
 		<div class="home-social">
 			{#each links as link}
@@ -49,13 +50,6 @@
 		align-self: stretch;
 		align-items: center;
 		padding: 0px 10px;
-
-		&-title {
-			font-family: var(--title-f);
-			font-size: 4em;
-			font-weight: 900;
-			letter-spacing: 2px;
-		}
 
 		&-subtitle {
 			color: var(--tertiary-text);
