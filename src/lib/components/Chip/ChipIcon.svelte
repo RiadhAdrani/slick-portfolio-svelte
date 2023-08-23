@@ -5,16 +5,24 @@
 	export let logo: string;
 	export let inverted = false;
 	export let grayscale = true;
+
+	export let href: string | undefined = undefined;
 </script>
 
-<div class="chip-icon" data-help={name} class:chip-icon-grayscale={grayscale}>
+<svelte:element
+	this={href ? 'a' : 'div'}
+	{href}
+	class={`chip-icon ${href ? 'cursor-pointer' : 'cursor-help'}`}
+	data-help={name}
+	class:chip-icon-grayscale={grayscale}
+>
 	<img
 		class="chip-icon-logo"
 		class:chip-icon-logo-inverted={$theme && inverted}
 		src={logo}
 		alt={name}
 	/>
-</div>
+</svelte:element>
 
 <style lang="scss">
 	.chip-icon {
@@ -37,7 +45,6 @@
 
 		&:hover {
 			border-color: var(--border-hover);
-			cursor: help;
 
 			&:after {
 				content: attr(data-help);

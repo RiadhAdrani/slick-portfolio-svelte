@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { NavMenuItem } from '$lib/utils/types';
 	import Icon from '../Icon/Icon.svelte';
 	import { Icons } from '$lib/utils';
 	import { page } from '$app/stores';
@@ -13,10 +12,12 @@
 	$: {
 		if ($page) {
 			currentRoute = $page.url.pathname;
+
+			console.log(currentRoute);
 		}
 	}
 
-	const items: Array<NavMenuItem> = [
+	const items = [
 		{ title: NavBar.skills, to: '/skills', icon: Icons.Skills },
 		{ title: NavBar.personal, to: '/projects', icon: Icons.Projects },
 		{ title: NavBar.career, to: '/experience', icon: Icons.Job },
@@ -50,7 +51,7 @@
 			</a>
 			<button
 				class="hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
-				on:click={toggleTheme}
+				on:click={() => toggleTheme()}
 			>
 				{#if $theme}
 					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 32 32"
