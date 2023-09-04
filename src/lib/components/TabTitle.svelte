@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { TITLE_SUFFIX } from '$lib/params';
-	import { useTitle } from '$lib/utils';
+	import { useTitle } from '$lib/utils/helpers';
 
 	export let title: string;
 </script>
