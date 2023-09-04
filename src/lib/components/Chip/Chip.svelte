@@ -7,6 +7,7 @@
 	export let active = false;
 	export let hoverable = true;
 	export let size = 'auto';
+	export let classes = '';
 
 	onMount(() => {
 		el.style.setProperty('--size', size);
@@ -15,7 +16,7 @@
 
 <p
 	bind:this={el}
-	class="chip"
+	class={`chip ${classes}`}
 	class:chip-active={active}
 	class:chip-hoverable={hoverable}
 	data-size={size}

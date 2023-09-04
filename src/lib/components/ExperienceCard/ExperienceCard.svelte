@@ -22,19 +22,20 @@
 </script>
 
 <Card margin="0px 0px 20px 0px" tiltDegree={2}>
-	<div class="experience">
+	<div class="experience flex flex-col md:flex-row items-start gap-5 md:gap-1">
 		<CardLogo src={getAssetURL(experience.logo)} alt={experience.company} size={75} />
-		<div class="experience-data">
-			<h3 class="experience-title">
+		<div class="flex flex-col ml-0 md:ml-[20px] gap-1.5 w-full">
+			<h3
+				class="flex flex-col items-start sm:flex-row sm:items-center justify-between sm:gap-5 md:flex-col md:items-start md:gap-0 lg:flex-row lg:items-center"
+			>
 				<CardTitle title={experience.name} />
-				<div class="experience-title-divider" />
-				<Chip label={experience.contract} size="0.75em" />
+				<Chip label={experience.contract} size="0.7em" classes="!mx-0" />
 			</h3>
-			<span class="experience-company-name">{experience.company}</span>
-			<div class="experience-period">{period}</div>
-			<div class="experience-location">{experience.location}</div>
+			<span class="font-[var(--title-f)] ">{experience.company}</span>
+			<div class="text-[var(--accent-text)] text-[0.9em]">{period}</div>
+			<div class="text-[var(--accent-text)] text-[0.9em]">{experience.location}</div>
 			<div class="experience-description">{experience.description}</div>
-			<div class="experience-skills">
+			<div class="flex flex-row flex-wrap mt-5">
 				{#each experience.skills as skill}
 					<ChipIcon logo={getAssetURL(skill.logo)} name={skill.name} />
 				{/each}
@@ -42,67 +43,3 @@
 		</div>
 	</div>
 </Card>
-
-<style lang="scss">
-	.experience {
-		display: flex;
-		align-items: flex-start;
-
-		&-data {
-			display: flex;
-			flex-direction: column;
-			margin-left: 20px;
-		}
-
-		@media (max-width: 800px) {
-			flex-direction: column;
-
-			&-data {
-				margin-left: 0px;
-			}
-		}
-
-		&-title {
-			margin: 0;
-			display: flex;
-			align-items: center;
-
-			&-divider {
-				width: 10px;
-			}
-
-			@media (max-width: 800px) {
-				& {
-					align-items: center;
-					margin: 5px 0px;
-				}
-			}
-		}
-
-		&-company-name {
-			margin-bottom: 5px;
-			font-family: var(--title-f);
-			font-size: 1.15em;
-		}
-
-		&-period,
-		&-location {
-			color: var(--accent-text);
-			font-size: 0.9em;
-			margin-bottom: 5px;
-		}
-
-		&-location {
-			margin-bottom: 15px;
-		}
-
-		&-description {
-			margin-bottom: 20px;
-		}
-
-		&-skills {
-			display: flex;
-			flex-wrap: wrap;
-		}
-	}
-</style>
