@@ -4,6 +4,20 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
+		slug: 'govid',
+		color: '#007d9c',
+		description: 'A youtube clone with Golang as backend.',
+		links: [{ to: 'https://github.com/RiadhAdrani/govid', label: 'GitHub' }],
+		logo: Assets.Go,
+		name: 'GoVid',
+		period: {
+			from: new Date(2023, 5, 24),
+			to: new Date(2023, 8, 14)
+		},
+		skills: getSkills('ts', 'node', 'vite', 'go', 'docker', 'redis'),
+		type: 'Web App'
+	},
+	{
 		slug: 'ruvy',
 		color: '#ffffff',
 		description: 'React from scratch, but better',
