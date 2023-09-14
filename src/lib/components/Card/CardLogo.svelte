@@ -7,7 +7,7 @@
 </script>
 
 <img
-	class={`card-logo ${classes}`}
+	class={`card-logo ${classes} aspect-square`}
 	{src}
 	{alt}
 	height={size}
