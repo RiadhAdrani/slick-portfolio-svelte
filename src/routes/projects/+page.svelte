@@ -72,7 +72,9 @@
 <SearchPage {title} on:search={onSearch}>
 	<div class="projects-filters">
 		{#each filters as tech}
-			<Chip label={tech.name} active={tech.isSelected} on:click={() => onSelected(tech.slug)} />
+			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.slug)}
+				>{tech.name}</Chip
+			>
 		{/each}
 	</div>
 	<div class="projects-list mt-5">

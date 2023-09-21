@@ -8,6 +8,7 @@
 	import MY_EXPERIENCES from '$lib/experiences.params';
 	import MY_PROJECTS from '$lib/projects.params';
 	import MY_SKILLS from '$lib/skills.params';
+	import Chip from '$lib/components/Chip/Chip.svelte';
 
 	const { title } = SEARCH;
 
@@ -79,15 +80,12 @@
 			{#if result.length === 0}
 				<p>Oops ! nothing to show !</p>
 			{:else}
-				<div class="flex flex-row flex-wrap gap-2">
+				<div class="flex flex-row flex-wrap gap-1">
 					{#each result as item}
-						<a
-							href={`${base}/${item.to}`}
-							class="flex flex-row items-center gap-4 border rounded px-4 py-2 border-[color:var(--border)] cursor-pointer hover:border-[color:var(--border-hover)] hover:bg-[color:var(--main-hover)] duration-200"
-						>
-							<Icon icon={item.icon} size={'20'} />
+						<Chip href={`${base}/${item.to}`} classes="flex flex-row items-center gap-2">
+							<Icon icon={item.icon} size={'15'} />
 							<span>{item.name}</span>
-						</a>
+						</Chip>
 					{/each}
 				</div>
 			{/if}

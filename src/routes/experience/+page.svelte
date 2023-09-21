@@ -27,7 +27,7 @@
 
 <SearchPage {title} on:search={onSearch}>
 	<div class="flex flex-col items-center relative mt-10">
-		<div class="w-[2px] hidden lg:flex h-full py-50px bg-[var(--accent-text)] absolute rounded" />
+		<div class="w-[0.5px] hidden lg:flex h-full py-50px bg-[var(--border)] absolute rounded" />
 		{#each result as job, index (job.slug)}
 			<div
 				class={`flex ${

@@ -3,20 +3,17 @@
 	export let placeholder = '';
 </script>
 
-<input bind:value {placeholder} />
+<input
+	bind:value
+	{placeholder}
+	class="text-[inherit] bg-transparent border-[1px] border-solid border-[var(--border)] px-[20px] py-[10px] rounded-[15px] flex-1 text-[1.15em] "
+/>
 
 <style lang="scss">
 	input {
-		color: inherit;
-		background-color: transparent;
-		border: 1px solid var(--border);
-		padding: 10px 20px;
-		border-radius: 15px;
-		flex: 1;
-		font-size: 1.15em;
-
 		&:focus {
 			outline: 1px solid var(--border-hover);
+			background-color: var(--main-hover);
 		}
 	}
 </style>
