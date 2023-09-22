@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ExperienceCard from '$lib/components/ExperienceCard/ExperienceCard.svelte';
+	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import { EXPERIENCES } from '$lib/params';
 	import type { Experience } from '$lib/types';
@@ -37,10 +38,8 @@
 				} relative items-center w-full my-[10px]`}
 			>
 				<div class="flex-1 hidden lg:flex" />
-				<div class="hidden lg:inline p-10px bg-[var(--main)] rounded">
-					<div
-						class="hidden lg:flex w-[10px] h-[10px] mx-5 aspect-square bg-[var(--accent-text)] rounded-full my-5 outline-[1px] outline outline-[var(--accent-text)] outline-offset-[4px]"
-					/>
+				<div class="hidden lg:inline p-15px bg-[var(--main)] rounded">
+					<UIcon icon="i-carbon-condition-point" classes="" />
 				</div>
 				<div class="flex-1 col items-stretch">
 					<ExperienceCard experience={job} />

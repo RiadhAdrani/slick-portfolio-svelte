@@ -1,5 +1,5 @@
 import extractorSvelte from '@unocss/extractor-svelte';
-import { defineConfig, presetTypography, presetUno, presetWebFonts } from 'unocss';
+import { defineConfig, presetUno, presetWebFonts, presetIcons } from 'unocss';
 
 export default defineConfig({
 	extractors: [extractorSvelte()],
@@ -15,7 +15,12 @@ export default defineConfig({
 				}
 			}
 		}),
-		presetTypography()
+		presetIcons({
+			extraProperties: {
+				display: 'inline-block',
+				'vertical-align': 'middle'
+			}
+		})
 	],
 	shortcuts: [
 		{

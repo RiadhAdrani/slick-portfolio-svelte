@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
-	import Icon from '$lib/components/Icon/Icon.svelte';
 	import { base } from '$app/paths';
 	import { SEARCH } from '$lib/params';
 	import SearchPage from '$lib/components/SearchPage.svelte';
@@ -9,11 +7,12 @@
 	import MY_PROJECTS from '$lib/projects.params';
 	import MY_SKILLS from '$lib/skills.params';
 	import Chip from '$lib/components/Chip/Chip.svelte';
+	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
 	const { title } = SEARCH;
 
 	type Item<T = unknown> = {
-		icon: Icons;
+		icon: string;
 		name: string;
 		data: T;
 		to: string;
@@ -38,7 +37,7 @@
 			...MY_PROJECTS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
 				(data) => ({
 					data,
-					icon: Icons.Projects,
+					icon: 'i-carbon-cube',
 					name: data.name,
 					to: `projects?q=${data.name}`
 				})
@@ -49,7 +48,7 @@
 			...MY_SKILLS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
 				(data) => ({
 					data,
-					icon: Icons.Skills,
+					icon: 'i-carbon-software-resource-cluster',
 					name: data.name,
 					to: `skills/${data.slug}`
 				})
@@ -63,7 +62,7 @@
 					(item.name.toLowerCase().includes(query) || item.company.toLowerCase().includes(query))
 			).map<Item>((data) => ({
 				data,
-				icon: Icons.Job,
+				icon: 'i-carbon-development',
 				name: `${data.name} @ ${data.company}`,
 				to: `experience?q=${data.name}`
 			}))
@@ -74,16 +73,22 @@
 <SearchPage {title} on:search={(e) => (query = e.detail.search)}>
 	<div class="flex flex-col items-stretch gap-10 p-2" />
 	{#if !query}
-		<div>Try typing something...</div>
+		<div class="flex-1 self-center col-center m-t-10 gap-5 font-300 text-[var(--accent-text)]">
+			<UIcon icon="i-carbon-search-locate-mirror" classes="text-2em" />
+			<span> Try typing something... </span>
+		</div>
 	{:else}
 		<div>
 			{#if result.length === 0}
-				<p>Oops ! nothing to show !</p>
+				<div class="flex-1 self-center col-center m-t-10 gap-5 font-300 text-[var(--accent-text)]">
+					<UIcon icon="i-carbon-cube" classes="text-2em" />
+					<span> Oops ! nothing to show ! </span>
+				</div>
 			{:else}
 				<div class="flex flex-row flex-wrap gap-1">
 					{#each result as item}
 						<Chip href={`${base}/${item.to}`} classes="flex flex-row items-center gap-2">
-							<Icon icon={item.icon} size={'15'} />
+							<UIcon icon={item.icon} />
 							<span>{item.name}</span>
 						</Chip>
 					{/each}

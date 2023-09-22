@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { Icons } from '$lib/utils';
 	import { onMount } from 'svelte';
-	import Icon from '../Icon/Icon.svelte';
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
+	import UIcon from '../Icon/UIcon.svelte';
 
 	export let items: Array<Skill> = [];
 	const delay = 2000;
@@ -78,7 +77,7 @@
 		on:keydown
 		on:keypress
 	>
-		<Icon icon={Icons.LeftArrow} size="20px" color={'var(--border-hover)'} />
+		<UIcon icon="i-carbon-chevron-left" />
 	</button>
 
 	<div bind:this={element} class="row overflow-hidden box-content w-150px">
@@ -97,6 +96,6 @@
 		on:keydown
 		on:keypress
 	>
-		<Icon icon={Icons.RightArrow} color={'var(--border-hover)'} size="20px" />
+		<UIcon icon="i-carbon-chevron-right" />
 	</button>
 </div>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { theme } from '$lib/stores/theme';
 
-	export let name: string;
-	export let logo: string;
+	export let name = '';
+	export let logo = '';
 	export let inverted = false;
 	export let grayscale = true;
 
@@ -17,12 +17,16 @@
 	} ${grayscale ? 'grayscale-65 hover:grayscale-0' : ''}`}
 	data-help={name}
 >
-	<img
-		class={`w-15px h-15px ${inverted ? 'invert-100' : ''}`}
-		class:chip-icon-logo-inverted={$theme && inverted}
-		src={logo}
-		alt={name}
-	/>
+	{#if $$slots.default}
+		<slot />
+	{:else}
+		<img
+			class={`w-15px h-15px ${inverted ? 'invert-100' : ''}`}
+			class:chip-icon-logo-inverted={$theme && inverted}
+			src={logo}
+			alt={name}
+		/>
+	{/if}
 </svelte:element>
 
 <style lang="scss">
