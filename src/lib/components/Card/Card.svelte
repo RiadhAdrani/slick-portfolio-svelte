@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { changeColorOpacity } from '@riadh-adrani/utils';
 	import { onMount } from 'svelte';
-	import type { MouseEventHandler } from 'svelte/elements/index';
+	import type { MouseEventHandler } from 'svelte/elements';
 
 	let el: HTMLElement;
 
@@ -24,6 +24,7 @@
 		}
 	}
 
+	// svelte typing is broken...
 	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
 		const target = ev.currentTarget;
 
@@ -57,15 +58,18 @@
 	});
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
 	this={href ? 'a' : 'div'}
 	{href}
 	bind:this={el}
 	on:mousemove={onHover}
-	class={['card', ...classes].join(' ')}
+	class={`card inline-flex flex-col border-1px border-solid border-[var(--border)] rounded-15px duration relative ${classes.join(
+		' '
+	)}`}
 	style:bgColor={'red'}
 >
-	<div class="flex-1 flex flex-col card-bg-img">
+	<div class="card-bg-img flex-1 flex flex-col p-25px rounded-15px">
 		<slot />
 	</div>
 </svelte:element>
@@ -84,19 +88,10 @@
 		--rot-x: 0;
 		--rot-y: 0;
 
-		display: inline-flex;
-		flex-direction: column;
-		border: 1px solid var(--border);
-		border-radius: 15px;
-		transition-duration: 200ms;
-		position: relative;
 		background: linear-gradient(90deg, var(--main) 0%, var(--main) 60%, var(--main-60) 100%),
 			no-repeat right 40% / 40% var(--bg-img);
 
 		&-bg-img {
-			padding: 25px;
-			border-radius: 15px;
-
 			&:hover {
 				background-color: var(--bg-color);
 				background-image: radial-gradient(

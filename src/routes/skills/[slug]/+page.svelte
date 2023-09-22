@@ -70,22 +70,26 @@
 			>
 				<MainTitle>{data.skill.name}</MainTitle>
 			</div>
-			<div class="px-4 pt-3 pb-1 overflow-x-hidden w-full">
-				<Markdown content={data.skill.description ?? 'This place is yet to be filled...'} />
+			<div class="pt-3 pb-1 overflow-x-hidden w-full">
+				<div class="px-10px">
+					<Markdown content={data.skill.description ?? 'This place is yet to be filled...'} />
+				</div>
 			</div>
-			<div class="self-stretch mb-3">
+			<div class="self-stretch mb-2">
 				<CardDivider />
 			</div>
-			<div class="flex flex-row px-4 gap-1 self-stretch flex-wrap ">
-				{#each related as item}
-					<Chip
-						classes="inline-flex flex-row items-center justify-center"
-						href={`${base}/${item.type}?q=${item.name}`}
-					>
-						<CardLogo src={item.img} alt={item.name} radius={'0px'} size={15} classes="mr-2" />
-						<span class="text-[0.9em]">{item.display}</span>
-					</Chip>
-				{/each}
+			<div class="flex flex-row gap-1 self-stretch flex-wrap ">
+				<div class="px-10px">
+					{#each related as item}
+						<Chip
+							classes="inline-flex flex-row items-center justify-center"
+							href={`${base}/${item.type}?q=${item.name}`}
+						>
+							<CardLogo src={item.img} alt={item.name} radius={'0px'} size={15} classes="mr-2" />
+							<span class="text-[0.9em]">{item.display}</span>
+						</Chip>
+					{/each}
+				</div>
 			</div>
 		</div>
 	{/if}

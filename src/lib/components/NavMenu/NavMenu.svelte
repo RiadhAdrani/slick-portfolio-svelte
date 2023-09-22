@@ -13,7 +13,7 @@
 		if ($page) {
 			currentRoute = $page.url.pathname;
 
-			console.log(currentRoute);
+			// console.log(currentRoute);
 		}
 	}
 
@@ -50,7 +50,7 @@
 				<Icon icon={Icons.Search} size="16" color="var(--secondary-text)" />
 			</a>
 			<button
-				class="hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
+				class="bg-transparent border-none hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
 				on:click={() => toggleTheme()}
 			>
 				{#if $theme}
@@ -83,8 +83,8 @@
 							><polygon points="444 228 468 228 468 204 444 204" /></g
 						></svg
 					>
-				{/if}</button
-			>
+				{/if}
+			</button>
 		</div>
 	</nav>
 </div>

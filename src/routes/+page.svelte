@@ -21,14 +21,18 @@
 <svelte:head>
 	<title>{useTitle(title, TITLE_SUFFIX)}</title>
 </svelte:head>
-<div class="home">
-	<div class="home-section">
-		<MainTitle classes="!text-left">{name} {lastName},</MainTitle>
-		<p class="home-subtitle">{description}</p>
-		<div class="home-social">
+<div
+	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center items-center p-y-0px p-x-10px"
+>
+	<div class="md:flex-1 gap-10px">
+		<MainTitle classes="md:text-left">{name} {lastName},</MainTitle>
+		<p class="text-[var(--tertiary-text)]  text-center md:text-left text-[1.2em] font-extralight">
+			{description}
+		</p>
+		<div class="row justify-center md:justify-start p-y-15px p-x-0px">
 			{#each links as link}
 				<a
-					class="home-social-item"
+					class="m-r-10px decoration-none"
 					href={`${isEmail(link.link) ? 'mailto:' : ''}${link.link}`}
 					target="_blank"
 					rel="noreferrer"
@@ -40,50 +44,3 @@
 	</div>
 	<Carrousel items={skills ?? MY_SKILLS} />
 </div>
-
-<style lang="scss">
-	.home {
-		align-self: center;
-		display: flex;
-		flex-direction: row;
-		flex: 1;
-		align-self: stretch;
-		align-items: center;
-		padding: 0px 10px;
-
-		&-subtitle {
-			color: var(--tertiary-text);
-			font-size: 1.35em;
-			font-weight: 200;
-		}
-
-		&-section {
-			display: flex;
-			flex-direction: column;
-			flex: 1;
-			gap: 10px;
-		}
-
-		&-social {
-			padding: 15px 0px;
-
-			&-item {
-				margin-right: 10px;
-				text-decoration: none;
-			}
-		}
-
-		@media (max-width: 875px) {
-			& {
-				flex-direction: column;
-				justify-content: center;
-			}
-
-			&-section {
-				flex: 0;
-				align-items: center;
-				text-align: center;
-			}
-		}
-	}
-</style>

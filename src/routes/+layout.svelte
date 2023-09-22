@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'uno.css';
 	import NavMenu from '$lib/components/NavMenu/NavMenu.svelte';
 	import '$lib/index.scss';
 	import { onHydrated, theme } from '$lib/stores/theme';

@@ -8,6 +8,11 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
+	vitePlugin: {
+		inspector: {
+			showToggleButton: 'always'
+		}
+	},
 
 	kit: {
 		adapter: adapter({ fallback: '404.html' }),

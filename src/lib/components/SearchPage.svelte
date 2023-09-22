@@ -40,10 +40,10 @@
 </script>
 
 <CommonPage {title}>
-	<div class="w-100% flex flex-row">
+	<div class="w-100% row">
 		<Input bind:value={search} placeholder={'Search...'} />
 	</div>
-	<div class="w-100% flex flex-col">
+	<div class="w-100% col">
 		<slot />
 	</div>
 </CommonPage>

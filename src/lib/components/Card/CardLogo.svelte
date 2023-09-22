@@ -6,11 +6,4 @@
 	export let classes = '';
 </script>
 
-<img
-	class={`card-logo ${classes} aspect-square`}
-	{src}
-	{alt}
-	height={size}
-	width={size}
-	style={`border-radius:${radius};`}
-/>
+<img class={`rounded-${radius} ${classes} aspect-square`} {src} {alt} height={size} width={size} />

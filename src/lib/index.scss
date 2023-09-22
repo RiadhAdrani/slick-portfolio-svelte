@@ -51,6 +51,10 @@
 	overflow-y: scroll;
 }
 
+body {
+	margin: 0px;
+}
+
 * {
 	transition-duration: 200ms;
 	transition-property: background, border-color, opacity, box-shadow, top, bottom, left, margin,

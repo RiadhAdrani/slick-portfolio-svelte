@@ -10,12 +10,13 @@
 	export let icon: Icons;
 </script>
 
-<svg bind:this={el} viewBox={viewBox(icon)} fill={color} height={size} width={size}>
+<svg
+	bind:this={el}
+	class="inline-block"
+	viewBox={viewBox(icon)}
+	fill={color}
+	height={size}
+	width={size}
+>
 	<path d={icon} />
 </svg>
-
-<style lang="scss">
-	svg {
-		display: inline-block;
-	}
-</style>

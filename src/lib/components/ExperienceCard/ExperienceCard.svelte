@@ -23,11 +23,11 @@
 </script>
 
 <Card margin="0px 0px 20px 0px" tiltDegree={2}>
-	<div class="experience flex flex-col md:flex-row items-start gap-5 md:gap-1">
+	<div class="col md:flex-row items-start gap-5 md:gap-1">
 		<CardLogo src={getAssetURL(experience.logo)} alt={experience.company} size={75} />
-		<div class="flex flex-col ml-0 md:ml-[20px] gap-1.5 w-full">
+		<div class="col ml-0 md:ml-[20px] gap-1.5 w-full">
 			<h3
-				class="flex flex-col items-start sm:flex-row sm:items-center justify-between sm:gap-5 md:flex-col md:items-start md:gap-0 lg:flex-row lg:items-center"
+				class="flex text-[0.9em] flex-col items-start sm:flex-row sm:items-center justify-between sm:gap-5 md:flex-col md:items-start md:gap-0 lg:flex-row lg:items-center"
 			>
 				<CardTitle title={experience.name} />
 				<Chip classes="!mx-0 text-[0.7em]">{experience.contract}</Chip>

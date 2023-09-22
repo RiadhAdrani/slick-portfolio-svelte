@@ -70,74 +70,33 @@
 	});
 </script>
 
-<div class="carrousel">
-	<div class="carrousel-btn" on:click={toggleLeft} on:keyup on:keydown on:keypress>
+<div class="carrousel flex-[0.5] row-center">
+	<button
+		class="row-center font-500 p-5px m-y-0px m-x-10px cursor-pointer border-1px border-solid border-[var(--border)] bg-transparent rounded-[50%] hover:border-[var(--border-hover)]"
+		on:click={toggleLeft}
+		on:keyup
+		on:keydown
+		on:keypress
+	>
 		<Icon icon={Icons.LeftArrow} size="20px" color={'var(--border-hover)'} />
-	</div>
+	</button>
 
-	<div bind:this={element} class="carrousel-content">
+	<div bind:this={element} class="row overflow-hidden box-content w-150px">
 		{#each items as item}
-			<div class="carrousel-item">
-				<img class="carrousel-item-img" src={getAssetURL(item.logo)} alt={item.name} />
-				<span class="carrousel-item-label">{item.name}</span>
+			<div class="box-content w-150px p-15px col-center">
+				<img class="w-120px h-120px aspect-square" src={getAssetURL(item.logo)} alt={item.name} />
+				<span class="text-center m-t-20px">{item.name}</span>
 			</div>
 		{/each}
 	</div>
 
-	<div class="carrousel-btn" on:click={toggleRight} on:keyup on:keydown on:keypress>
+	<button
+		class="row-center font-500 p-5px m-y-0px m-x-10px cursor-pointer border-1px border-solid border-[var(--border)] bg-transparent rounded-[50%] hover:border-[var(--border-hover)]"
+		on:click={toggleRight}
+		on:keyup
+		on:keydown
+		on:keypress
+	>
 		<Icon icon={Icons.RightArrow} color={'var(--border-hover)'} size="20px" />
-	</div>
+	</button>
 </div>
-
-<style lang="scss">
-	.carrousel {
-		flex: 0.5;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		&-content {
-			display: flex;
-			width: 150px;
-			box-sizing: content-box;
-			overflow: hidden;
-		}
-
-		&-item {
-			box-sizing: content-box;
-			width: 150px;
-			padding: 15px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-
-			&-img {
-				height: 120px;
-				width: 120px;
-
-				max-width: initial;
-			}
-
-			&-label {
-				text-align: center;
-				margin-top: 20px;
-			}
-		}
-
-		&-btn {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-weight: 500;
-			padding: 5px;
-			margin: 0px 10px;
-			cursor: pointer;
-			border: 1px solid var(--border);
-			border-radius: 50%;
-
-			&:hover {
-				border-color: var(--border-hover);
-			}
-		}
-	}
-</style>

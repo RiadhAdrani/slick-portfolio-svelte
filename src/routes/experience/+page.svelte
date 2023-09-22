@@ -26,8 +26,10 @@
 </script>
 
 <SearchPage {title} on:search={onSearch}>
-	<div class="flex flex-col items-center relative mt-10">
-		<div class="w-[0.5px] hidden lg:flex h-full py-50px bg-[var(--border)] absolute rounded" />
+	<div class="col items-center relative mt-10">
+		<div
+			class="w-[0.5px] hidden lg:flex top-0 bottom-0 py-50px bg-[var(--border)] absolute rounded"
+		/>
 		{#each result as job, index (job.slug)}
 			<div
 				class={`flex ${
@@ -35,12 +37,12 @@
 				} relative items-center w-full my-[10px]`}
 			>
 				<div class="flex-1 hidden lg:flex" />
-				<div class="p-10px bg-[var(--main)] rounded">
+				<div class="hidden lg:inline p-10px bg-[var(--main)] rounded">
 					<div
 						class="hidden lg:flex w-[10px] h-[10px] mx-5 aspect-square bg-[var(--accent-text)] rounded-full my-5 outline-[1px] outline outline-[var(--accent-text)] outline-offset-[4px]"
 					/>
 				</div>
-				<div class="flex-1 flex flex-col items-stretch">
+				<div class="flex-1 col items-stretch">
 					<ExperienceCard experience={job} />
 				</div>
 			</div>

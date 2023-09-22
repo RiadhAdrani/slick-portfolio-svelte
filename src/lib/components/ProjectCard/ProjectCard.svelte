@@ -22,28 +22,32 @@
 
 <Card color={project.color}>
 	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'0'} />
-	<div class="project-card-top">
+	<div class="m-t-20px row justify-between items-center">
 		<CardTitle title={project.name} />
-		<div class="project-card-links">
+		<div class="row">
 			{#each project.links as link}
 				<CardLink label={link.label ?? ''} to={link.to} />
 			{/each}
 		</div>
 	</div>
 	<CardDivider />
-	<div class="project-card-mid">
-		<p class="project-card-type">{project.type}</p>
-		<p class="project-card-period">{period}</p>
+	<div
+		class="row m-b-15px justify-between text-[var(--secondary-text)] text-0.9em font-italic font-300"
+	>
+		<p>{project.type}</p>
+		<p>{period}</p>
 	</div>
-	<p class="project-card-description">{project.description}</p>
-	<div class="project-card-bottom">
+	<p class="text-[0.95em] text-[var(--secondary-text)] font-300 m-t-20px m-b-40px flex-1">
+		{project.description}
+	</p>
+	<div class="row justify-between text-0.8em font-400">
 		<Chip>{from}</Chip>
 		{#if from !== to}
 			<Chip>{to}</Chip>
 		{/if}
 	</div>
 	<CardDivider />
-	<div class="project-card-technologies">
+	<div class="row">
 		{#each project.skills as tech}
 			<ChipIcon
 				logo={getAssetURL(tech.logo)}
@@ -53,51 +57,3 @@
 		{/each}
 	</div>
 </Card>
-
-<style lang="scss">
-	.project-card {
-		&-period,
-		&-description {
-			margin-bottom: 20px;
-		}
-
-		&-top {
-			margin-top: 20px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		&-links,
-		&-technologies {
-			display: flex;
-		}
-
-		&-mid {
-			display: flex;
-			justify-content: space-between;
-			color: var(--secondary-text);
-			font-size: 0.9em;
-			font-style: italic;
-			font-weight: 300;
-		}
-
-		&-bottom {
-			display: flex;
-			justify-content: space-between;
-			font-size: 0.75em;
-			font-weight: 400;
-		}
-
-		&-type {
-			text-transform: uppercase;
-		}
-
-		&-description {
-			line-height: 1.4em;
-			font-size: 0.9em;
-			flex: 1;
-			color: var(--accent-text);
-		}
-	}
-</style>
