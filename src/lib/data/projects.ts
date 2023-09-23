@@ -7,6 +7,7 @@ export const items: Array<Project> = [
 		slug: 'govid',
 		color: '#007d9c',
 		description: 'A youtube clone with Golang as backend.',
+		shortDescription: 'A youtube clone with Golang as backend.',
 		links: [{ to: 'https://github.com/RiadhAdrani/govid', label: 'GitHub' }],
 		logo: Assets.Go,
 		name: 'GoVid',
@@ -21,6 +22,7 @@ export const items: Array<Project> = [
 		slug: 'ruvy',
 		color: '#ffffff',
 		description: 'React from scratch, but better',
+		shortDescription: 'React from scratch, but better',
 		links: [
 			{ to: 'https://github.com/RiadhAdrani/ruvy', label: 'GitHub' },
 			{ to: 'https://github.com/RiadhAdrani/create-ruvy', label: 'CLI' },
@@ -44,6 +46,7 @@ export const items: Array<Project> = [
 		name: 'Dom Utils',
 		logo: Assets.NodeJs,
 		description: 'Create and manipulate DOM elements.',
+		shortDescription: 'Create and manipulate DOM elements.',
 		period: { from: new Date(2022, 9, 28) },
 		links: [
 			{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/dom-control-js' },
@@ -60,6 +63,8 @@ export const items: Array<Project> = [
 		logo: Assets.Unknown,
 		description:
 			'An app to manage your game of Loup garous de thiercelieu also known as The Werewolves of Millers Hollow.',
+		shortDescription:
+			'An app to manage your game of Loup garous de thiercelieu also known as The Werewolves of Millers Hollow.',
 		period: { from: new Date(2022, 6, 23) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/werewolves' }],
 		skills: getSkills('dart', 'flutter'),
@@ -71,6 +76,7 @@ export const items: Array<Project> = [
 		name: 'Portfolio',
 		logo: Assets.Unknown,
 		description: 'My personal website portfolio.',
+		shortDescription: 'My personal website portfolio.',
 		period: { from: new Date(2021, 3, 1) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/RiadhAdrani' }],
 		skills: getSkills('ts', 'svelte', 'sass', 'tailwind', 'vite'),
@@ -82,6 +88,8 @@ export const items: Array<Project> = [
 		name: 'Recursive',
 		logo: Assets.Unknown,
 		description:
+			'Recursive is an ongoing project that allow developers to build a functional, component-based, Javascript only, beautiful and interactive Web applications.',
+		shortDescription:
 			'Recursive is an ongoing project that allow developers to build a functional, component-based, Javascript only, beautiful and interactive Web applications.',
 		period: { from: new Date(2021, 8, 1), to: new Date(2022, 11, 26) },
 		links: [
@@ -97,6 +105,7 @@ export const items: Array<Project> = [
 		name: 'Utils',
 		logo: Assets.NodeJs,
 		description: 'My JavaScript utility functions and types.',
+		shortDescription: 'My JavaScript utility functions and types.',
 		period: { from: new Date(2022, 8, 1) },
 		links: [
 			{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/utility-js' },
@@ -112,6 +121,8 @@ export const items: Array<Project> = [
 		logo: Assets.SolidJs,
 		description:
 			'Web app that retrieves repositories from GitHub and displaying them with the ability to be saved and persisted in the local storage.',
+		shortDescription:
+			'Web app that retrieves repositories from GitHub and displaying them with the ability to be saved and persisted in the local storage.',
 		period: { from: new Date(2022, 10, 1), to: new Date(2022, 10, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/solid-github' }],
 		skills: getSkills('solid', 'ts', 'node'),
@@ -126,6 +137,8 @@ export const items: Array<Project> = [
 		period: { from: new Date(2022, 9, 1), to: new Date(2022, 9, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/gradio' }],
 		description: 'A web application used to create and generate gradient background for css usage.',
+		shortDescription:
+			'A web application used to create and generate gradient background for css usage.',
 		skills: getSkills('quasar', 'node', 'js')
 	},
 	{
@@ -137,6 +150,8 @@ export const items: Array<Project> = [
 		period: { from: new Date(2022, 7, 1), to: new Date(2022, 7, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/random-name-picker' }],
 		description:
+			'An android application used to create lists for random name picking. Lists and user preferences are saved',
+		shortDescription:
 			'An android application used to create lists for random name picking. Lists and user preferences are saved',
 		skills: getSkills('kotlin')
 	},
@@ -152,6 +167,8 @@ export const items: Array<Project> = [
 		],
 		description:
 			'A website that allow users to submit their questions and answers for a possible game app.',
+		shortDescription:
+			'A website that allow users to submit their questions and answers for a possible game app.',
 		skills: getSkills('node', 'vue', 'js', 'firebase')
 	},
 	{
@@ -163,6 +180,8 @@ export const items: Array<Project> = [
 		period: { from: new Date(2021, 1, 1), to: new Date(2021, 4, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/azur_app' }],
 		description:
+			'A prototype of a commercial app made for Azur City. The App was presented as an End of studies projects.',
+		shortDescription:
 			'A prototype of a commercial app made for Azur City. The App was presented as an End of studies projects.',
 		skills: getSkills('kotlin')
 	},
@@ -177,6 +196,8 @@ export const items: Array<Project> = [
 			{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/werewolves_of_the_millers_hollow' }
 		],
 		description:
+			'Creating a guide for the game "Werewolves of The Millers Hollow" originally "Les loups garous de Thierclieux".',
+		shortDescription:
 			'Creating a guide for the game "Werewolves of The Millers Hollow" originally "Les loups garous de Thierclieux".',
 		skills: getSkills('kotlin')
 	},
@@ -193,6 +214,8 @@ export const items: Array<Project> = [
 			{ label: 'GitHub (Web)', to: 'https://github.com/RiadhAdrani/color_noter-web' }
 		],
 		description:
+			'Color Noter is a color based note taking app that offer the user the ability to write and save his ideas and todos in an easy to use environment.',
+		shortDescription:
 			'Color Noter is a color based note taking app that offer the user the ability to write and save his ideas and todos in an easy to use environment.',
 		skills: getSkills('java', 'electron', 'reactjs', 'firebase')
 	}
