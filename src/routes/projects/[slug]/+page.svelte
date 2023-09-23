@@ -41,7 +41,7 @@
 					<div class="w-75%">
 						<CardDivider />
 					</div>
-					<div class="row-center text-[0.9em] text-[var(--tertiary-text)] m-b-2">
+					<div class="row-center flex-wrap text-[0.9em] text-[var(--tertiary-text)] m-b-2">
 						{#each data.project.links as item}
 							<Chip href={item.to}>
 								<div class="row-center gap-2">
@@ -51,7 +51,7 @@
 							</Chip>
 						{/each}
 					</div>
-					<div class="row-center m-b-2">
+					<div class="row-center flex-wrap m-b-2">
 						{#each data.project.skills as item}
 							<Chip
 								classes="inline-flex flex-row items-center justify-center"
