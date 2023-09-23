@@ -1,6 +1,3 @@
-import { Icons } from '.';
-import type { SocialMedia } from './types';
-
 export const countMonths = (from: Date, to: Date = new Date()): number => {
 	let firstYear = 0;
 	let wholeYears = 0;
@@ -40,17 +37,6 @@ export const useImage = (url: string, base: string): string => `${base}${url}`;
 
 export const useTitle = (title: string, suffix: string) => `${title} | ${suffix}`;
 
-export const useSocialMedia = (media: SocialMedia) => {
-	switch (media) {
-		case 'github':
-			return { title: 'GitHub', icon: Icons.GitHub };
-		case 'linkedin':
-			return { title: 'LinkedIn', icon: Icons.LinkedIn };
-		case 'stackoverflow':
-			return { title: 'StackOverflow', icon: Icons.StackOverflow };
-		case 'twitter':
-			return { title: 'Twitter', icon: Icons.Twitter };
-		case 'email':
-			return { title: 'Email', icon: Icons.Email };
-	}
-};
+// TODO: time ago
+
+// TODO: time duration in years -> months -> days
