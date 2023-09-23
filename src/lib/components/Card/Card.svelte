@@ -64,7 +64,7 @@
 	{href}
 	bind:this={el}
 	on:mousemove={onHover}
-	class={`card inline-flex flex-col border-1px border-solid border-[var(--border)] rounded-15px duration relative ${classes.join(
+	class={`card text-inherit decoration-none inline-flex flex-col border-1px border-solid border-[var(--border)] rounded-15px duration relative ${classes.join(
 		' '
 	)}`}
 	style:bgColor={'red'}

@@ -12,8 +12,16 @@
 	import Markdown from '$lib/components/Markdown.svelte';
 	import TabTitle from '$lib/components/TabTitle.svelte';
 	import Chip from '$lib/components/Chip/Chip.svelte';
+	import Banner from '$lib/components/Banner/Banner.svelte';
+	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
-	type Related = { display: string; name: string; img: string; type: 'projects' | 'experience' };
+	type Related = {
+		display: string;
+		name: string;
+		img: string;
+		type: 'projects' | 'experience';
+		url: string;
+	};
 
 	export let data: { skill?: Skill };
 
@@ -34,7 +42,8 @@
 					img: getAssetURL(item.logo),
 					display: `${item.name} (${item.type})`,
 					name: item.name,
-					type: 'projects'
+					type: 'projects',
+					url: `/projects/${item.slug}`
 				});
 			}
 		});
@@ -44,7 +53,8 @@
 					img: getAssetURL(item.logo),
 					display: `${item.name} @ ${item.company}`,
 					name: item.name,
-					type: 'experience'
+					type: 'experience',
+					url: `/experience?q=${item.name}`
 				});
 			}
 		});
@@ -59,19 +69,19 @@
 
 <TabTitle title={computedTitle} />
 
-<div class="pb-10 overflow-x-hidden">
+<div class="pb-10 overflow-x-hidden col flex-1">
 	{#if data.skill === undefined}
-		<div>Could not load skill data.</div>
+		<div class="p-5 col-center gap-3 m-y-auto text-[var(--accent-text)]">
+			<UIcon icon="i-carbon-software-resource-cluster" classes="text-3.5em" />
+			<p class="font-300">Could not load skill data.</p>
+		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<div
-				style={`--bg-img:url(${getAssetURL(data.skill.logo)})`}
-				class="flex flex-row w-[100%] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] items-center skill-cover px-4 md:px-10"
-			>
+			<Banner img={getAssetURL(data.skill.logo)}>
 				<MainTitle>{data.skill.name}</MainTitle>
-			</div>
+			</Banner>
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
-				<div class="px-10px">
+				<div class="px-10px m-y-5">
 					<Markdown content={data.skill.description ?? 'This place is yet to be filled...'} />
 				</div>
 			</div>
@@ -83,7 +93,7 @@
 					{#each related as item}
 						<Chip
 							classes="inline-flex flex-row items-center justify-center"
-							href={`${base}/${item.type}?q=${item.name}`}
+							href={`${base}${item.url}`}
 						>
 							<CardLogo src={item.img} alt={item.name} radius={'0px'} size={15} classes="mr-2" />
 							<span class="text-[0.9em]">{item.display}</span>
@@ -94,12 +104,3 @@
 		</div>
 	{/if}
 </div>
-
-<style lang="scss">
-	.skill-cover {
-		background: linear-gradient(90deg, var(--main) 0%, var(--main) 55%, var(--main-60) 130%),
-			no-repeat 110% 45% / 50% var(--bg-img);
-
-		border-block-end: 1px solid var(--border);
-	}
-</style>

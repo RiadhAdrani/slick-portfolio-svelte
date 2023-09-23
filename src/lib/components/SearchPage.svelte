@@ -43,7 +43,7 @@
 	<div class="w-100% row">
 		<Input bind:value={search} placeholder={'Search...'} />
 	</div>
-	<div class="w-100% col">
+	<div class="w-100% col flex-1">
 		<slot />
 	</div>
 </CommonPage>

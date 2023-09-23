@@ -20,7 +20,7 @@
 		: 'now';
 </script>
 
-<Card color={project.color}>
+<Card color={project.color} href={`${base}/projects/${project.slug}`}>
 	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'0'} />
 	<div class="m-t-20px row justify-between items-center">
 		<CardTitle title={project.name} />
@@ -38,7 +38,7 @@
 		<p>{period}</p>
 	</div>
 	<p class="text-[0.95em] text-[var(--secondary-text)] font-300 m-t-20px m-b-40px flex-1">
-		{project.description}
+		{project.shortDescription}
 	</p>
 	<div class="row justify-between text-0.8em font-400">
 		<Chip>{from}</Chip>
