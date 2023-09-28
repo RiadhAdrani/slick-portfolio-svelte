@@ -35,7 +35,7 @@
 					<div class="text-0.9em">
 						<MainTitle>{data.experience.name}</MainTitle>
 					</div>
-					<p class="font-300 text-[var(--tertiary-text)] m-y-2">
+					<p class="font-300 text-[var(--tertiary-text)] m-y-2 text-center">
 						{data.experience.company} · {data.experience.location} · {data.experience.type}
 					</p>
 					<div class="w-75%">
