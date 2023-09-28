@@ -39,7 +39,7 @@
 					data,
 					icon: 'i-carbon-cube',
 					name: data.name,
-					to: `projects?q=${data.name}`
+					to: `projects/${data.slug}`
 				})
 			)
 		);
