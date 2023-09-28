@@ -32,7 +32,7 @@ export const items: Array<Project> = [
 				label: 'Stackblitz'
 			}
 		],
-		logo: Assets.ReactJs,
+		logo: 'https://riadhadrani.github.io/ruvy/assets/dark-5f671e8e.svg',
 		name: 'Ruvy',
 		period: {
 			from: new Date(2023, 2, 1)
@@ -60,7 +60,7 @@ export const items: Array<Project> = [
 		slug: 'werewolves-dart',
 		color: '#fbb03b',
 		name: 'Werewolves',
-		logo: Assets.Unknown,
+		logo: 'https://www.loups-garous-en-ligne.com/jeu/assets/images/miniatures/carte2_120_120.png',
 		description:
 			'An app to manage your game of Loup garous de thiercelieu also known as The Werewolves of Millers Hollow.',
 		shortDescription:
@@ -74,7 +74,7 @@ export const items: Array<Project> = [
 		slug: 'portfolio',
 		color: '#ff3e00',
 		name: 'Portfolio',
-		logo: Assets.Unknown,
+		logo: Assets.Svelte,
 		description: 'My personal website portfolio.',
 		shortDescription: 'My personal website portfolio.',
 		period: { from: new Date(2021, 3, 1) },
@@ -86,7 +86,7 @@ export const items: Array<Project> = [
 		slug: 'recursive',
 		color: '#cf2026',
 		name: 'Recursive',
-		logo: Assets.Unknown,
+		logo: 'https://raw.githubusercontent.com/RiadhAdrani/recursive/master/logo.png',
 		description:
 			'Recursive is an ongoing project that allow developers to build a functional, component-based, Javascript only, beautiful and interactive Web applications.',
 		shortDescription:
@@ -175,7 +175,7 @@ export const items: Array<Project> = [
 		slug: 'azur-app',
 		name: 'Azur City',
 		type: 'Android App',
-		logo: Assets.Unknown,
+		logo: 'https://scontent.ftun16-1.fna.fbcdn.net/v/t39.30808-1/348652463_663404615830647_3436956788999835601_n.png?stp=dst-png_p200x200&_nc_cat=1&ccb=1-7&_nc_sid=754033&_nc_ohc=a9X7nm0sAm0AX_Vyd-p&_nc_ht=scontent.ftun16-1.fna&oh=00_AfCRzPB2KLKILey_5c_yJ6xYZv-XnQNfRwMT2IL2YRJOPQ&oe=651AB591',
 		color: '#01acc8',
 		period: { from: new Date(2021, 1, 1), to: new Date(2021, 4, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/azur_app' }],
@@ -189,7 +189,7 @@ export const items: Array<Project> = [
 		slug: 'werewolves-kt',
 		name: 'Werewolves',
 		type: 'Android App',
-		logo: Assets.Unknown,
+		logo: 'https://www.loups-garous-en-ligne.com/jeu/assets/images/miniatures/carte2_120_120.png',
 		color: '#fbb03b',
 		period: { from: new Date(2021, 0, 1), to: new Date(2021, 5, 10) },
 		links: [
