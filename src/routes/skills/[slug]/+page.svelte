@@ -87,7 +87,7 @@
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
 							<UIcon icon="i-carbon-text-font" classes="text-3.5em" />
-							<p class="font-300">No description for this skill...</p>
+							<p class="font-300">No description</p>
 						</div>
 					{/if}
 				</div>
