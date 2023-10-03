@@ -15,8 +15,23 @@ export const items: Array<Project> = [
 			from: new Date(2023, 5, 24),
 			to: new Date(2023, 8, 14)
 		},
-		skills: getSkills('ts', 'node', 'vite', 'go', 'docker', 'redis'),
+		skills: getSkills('ts', 'node', 'vite', 'go', 'docker', 'redis', 'unocss'),
 		type: 'Web App'
+	},
+	{
+		slug: 'postcss-ignore-file-plugin',
+		color: '#c82829',
+		description: 'PostCSS plugin that ignore a file with a comment.',
+		shortDescription: 'PostCSS plugin that ignore a file with a comment.',
+		links: [{ to: 'https://github.com/RiadhAdrani/postcss-plugin-ignore-file', label: 'GitHub' }],
+		logo: 'https://postcss.org/assets/postcss-83d93145.svg',
+		name: 'Ignore file plugin',
+		period: {
+			from: new Date(2023, 7, 16),
+			to: new Date(2023, 7, 16)
+		},
+		skills: getSkills('js', 'postcss', 'node', 'jest'),
+		type: 'Plugin'
 	},
 	{
 		slug: 'ruvy',
@@ -25,6 +40,7 @@ export const items: Array<Project> = [
 		shortDescription: 'React from scratch, but better',
 		links: [
 			{ to: 'https://github.com/RiadhAdrani/ruvy', label: 'GitHub' },
+			{ to: 'https://riadhadrani.github.io/ruvy/', label: 'Documentation' },
 			{ to: 'https://github.com/RiadhAdrani/create-ruvy', label: 'CLI' },
 			{ to: 'https://www.npmjs.com/package/@riadh-adrani/ruvy', label: 'NPM' },
 			{
@@ -37,7 +53,7 @@ export const items: Array<Project> = [
 		period: {
 			from: new Date(2023, 2, 1)
 		},
-		skills: getSkills('ts', 'node', 'vite', 'vitest'),
+		skills: getSkills('ts', 'node', 'vite', 'vitest', 'unocss'),
 		type: 'Web Framework'
 	},
 	{
@@ -79,7 +95,7 @@ export const items: Array<Project> = [
 		shortDescription: 'My personal website portfolio.',
 		period: { from: new Date(2021, 3, 1) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/RiadhAdrani' }],
-		skills: getSkills('ts', 'svelte', 'sass', 'tailwind', 'vite'),
+		skills: getSkills('ts', 'svelte', 'sass', 'vite', 'unocss'),
 		type: 'Website'
 	},
 	{
