@@ -40,7 +40,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		contract: ContractType.Freelance,
 		type: 'Software Development',
 		location: 'Home',
-		period: { from: new Date() },
+		period: { from: new Date(2022, 0, 1), to: new Date() },
 		skills: getSkills('css', 'html', 'js'),
 		name: 'Junior Freelancer',
 		color: '#ffffff',

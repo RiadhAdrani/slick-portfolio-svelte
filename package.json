@@ -45,5 +45,8 @@
 		"unocss": "^0.56.1",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"dayjs": "^1.11.10"
+	}
 }

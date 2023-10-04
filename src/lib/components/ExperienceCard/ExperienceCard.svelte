@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Experience } from '$lib/types';
-	import { countMonths, getMonthName } from '$lib/utils/helpers';
+	import { getMonthName, getTimeDiff } from '$lib/utils/helpers';
 	import Card from '../Card/Card.svelte';
 	import CardLogo from '../Card/CardLogo.svelte';
 	import CardTitle from '../Card/CardTitle.svelte';
@@ -11,7 +11,8 @@
 
 	export let experience: Experience;
 
-	const months = countMonths(experience.period.from, experience.period.to);
+	const months = getTimeDiff(experience.period.from, experience.period.to);
+
 	const from = `${getMonthName(
 		experience.period.from.getMonth()
 	)} ${experience.period.from.getFullYear()}`;
@@ -19,7 +20,7 @@
 		? `${getMonthName(experience.period.to.getMonth())} ${experience.period.to.getFullYear()}`
 		: 'Present';
 
-	const period = `${from} - ${to} · ${months} month${months > 1 ? 's' : ''}`;
+	const period = `${from} - ${to} · ${months}`;
 </script>
 
 <Card margin="0px 0px 20px 0px" tiltDegree={2} href={`${base}/experience/${experience.slug}`}>
