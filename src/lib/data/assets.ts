@@ -66,11 +66,11 @@ const Assets = {
 	Illustrator: a('illustrator.svg'),
 	Nuxt: a('nuxt.png'),
 	Vite: a('vite.png'),
-	Vitest: a('vitest.png'),
+	Vitest: a('vitest.svg'),
 	Jest: a('jest.png'),
-  Unocss: a('unocss.svg'),
-  Ruvy: a('ruvy.svg'),
-  Postcss: a('postcss.svg'),
+	Unocss: a('unocss.svg'),
+	Ruvy: a('ruvy.svg'),
+	Postcss: a('postcss.svg')
 };
 
 export default Assets;
