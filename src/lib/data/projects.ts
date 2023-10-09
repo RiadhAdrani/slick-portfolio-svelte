@@ -4,6 +4,22 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
+		slug: 'docuniser',
+		color: '#747bff',
+		description:
+			'A simple desktop application that allow user to create and manage documents locally.',
+		shortDescription:
+			'A simple desktop application that allow user to create and manage documents locally.',
+		links: [{ to: 'https://github.com/RiadhAdrani/docuniser', label: 'GitHub' }],
+		logo: Assets.Unknown,
+		name: 'Docuniser',
+		period: {
+			from: new Date(2023, 8, 23)
+		},
+		skills: getSkills('ts', 'reactjs', 'node', 'vite', 'electron', 'unocss', 'docker'),
+		type: 'Desktop App'
+	},
+	{
 		slug: 'govid',
 		color: '#007d9c',
 		description: 'A youtube clone with Golang as backend.',
