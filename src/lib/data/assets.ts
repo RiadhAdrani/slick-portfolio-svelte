@@ -1,6 +1,7 @@
 import type { Asset } from '$lib/types';
 import { theme } from '$lib/stores/theme';
 import { base } from '$app/paths';
+import Azur from '$lib/assets/logos/azur.png';
 
 const gh = (file: string) => `${base}/logos/${file}`;
 
@@ -70,7 +71,8 @@ const Assets = {
 	Jest: a('jest.png'),
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
-	Postcss: a('postcss.svg')
+	Postcss: a('postcss.svg'),
+	Azur
 };
 
 export default Assets;

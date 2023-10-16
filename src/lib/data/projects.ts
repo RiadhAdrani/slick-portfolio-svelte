@@ -207,7 +207,7 @@ export const items: Array<Project> = [
 		slug: 'azur-app',
 		name: 'Azur City',
 		type: 'Android App',
-		logo: 'https://scontent.ftun16-1.fna.fbcdn.net/v/t39.30808-1/348652463_663404615830647_3436956788999835601_n.png?stp=dst-png_p200x200&_nc_cat=1&ccb=1-7&_nc_sid=754033&_nc_ohc=a9X7nm0sAm0AX_Vyd-p&_nc_ht=scontent.ftun16-1.fna&oh=00_AfCRzPB2KLKILey_5c_yJ6xYZv-XnQNfRwMT2IL2YRJOPQ&oe=651AB591',
+		logo: Assets.Azur,
 		color: '#01acc8',
 		period: { from: new Date(2021, 1, 1), to: new Date(2021, 4, 10) },
 		links: [{ label: 'GitHub', to: 'https://github.com/RiadhAdrani/azur_app' }],
