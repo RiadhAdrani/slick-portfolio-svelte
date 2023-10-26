@@ -1,8 +1,8 @@
 import type { Asset } from '$lib/types';
 import { theme } from '$lib/stores/theme';
+import { base } from '$app/paths';
 
-const gh = (file: string) =>
-	`https://raw.githubusercontent.com/RiadhAdrani/slick-portfolio-svelte/assets/logos/${file}`;
+const gh = (file: string) => `${base}/logos/${file}`;
 
 const a = (light: string, dark?: string): Asset =>
 	dark ? { dark: gh(dark), light: gh(light) } : gh(light);
