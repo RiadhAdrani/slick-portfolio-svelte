@@ -59,6 +59,17 @@ export interface Experience extends Project {
 	contract: ContractType;
 }
 
+export interface Education extends Item {
+	organization: string;
+	location: string;
+	period: {
+		from: Date;
+		to?: Date;
+	};
+	subjects: Array<string>;
+	degree: string;
+}
+
 export interface PageParams {
 	title: string;
 }
@@ -85,6 +96,8 @@ export type SearchPageParams = PageParams;
 export type ProjectPageParams = PageWithSearchParams<Project>;
 
 export type ExperiencePageParams = PageWithSearchParams<Experience>;
+
+export type EducationPageParams = PageWithSearchParams<Education>;
 
 export type SkillsPageParams = PageWithSearchParams<Skill>;
 

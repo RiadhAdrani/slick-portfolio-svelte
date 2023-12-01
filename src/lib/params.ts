@@ -1,3 +1,4 @@
+import { MY_EDUCATIONS } from './educations.params';
 import MY_EXPERIENCES from './experiences.params';
 import MY_PROJECTS from './projects.params';
 import MY_SKILLS from './skills.params';
@@ -8,7 +9,8 @@ import {
 	type ExperiencePageParams,
 	type SkillsPageParams,
 	type ResumePageParams,
-	type SearchPageParams
+	type SearchPageParams,
+	type EducationPageParams
 } from './types';
 import { Icons } from './utils';
 
@@ -19,7 +21,8 @@ export const NavBar = {
 	personal: 'Projects',
 	career: 'Experiences',
 	resume: 'Resume',
-	skills: 'Skills'
+	skills: 'Skills',
+	Education: 'Education'
 };
 
 export const getPlatfromIcon = (platform: Platform): Icons => {
@@ -98,4 +101,9 @@ export const RESUME: ResumePageParams = {
 
 export const SEARCH: SearchPageParams = {
 	title: 'Search'
+};
+
+export const EDUCATION: EducationPageParams = {
+	items: MY_EDUCATIONS,
+	title: 'Education'
 };

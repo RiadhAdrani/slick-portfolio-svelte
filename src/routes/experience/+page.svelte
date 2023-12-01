@@ -15,6 +15,7 @@
 
 		if (isBlank(query)) {
 			result = items;
+			return;
 		}
 
 		result = items.filter(
