@@ -39,6 +39,9 @@
 				<p class="font-300">Could not find anything...</p>
 			</div>
 		{:else}
+			<div
+				class="w-[0.5px] hidden lg:flex top-0 bottom-0 py-50px bg-[var(--border)] absolute rounded"
+			/>
 			{#each result as education, index (education.slug)}
 				<div
 					class={`flex ${
