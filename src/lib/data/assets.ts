@@ -1,7 +1,6 @@
 import type { Asset } from '$lib/types';
 import { theme } from '$lib/stores/theme';
 import { base } from '$app/paths';
-import Azur from '$lib/assets/logos/azur.png';
 
 const gh = (file: string) => `${base}/logos/${file}`;
 
@@ -24,7 +23,7 @@ const Assets = {
 	Numpy: a('numpy.svg'),
 	Pandas: a('pandas.svg'),
 	RabbitMQ: a('rabbitmq.svg'),
-	Rust: a('rust.svg', 'rust-dark.png'),
+	Rust: a('rust.png'),
 	Scrapy: a('scrapy.png'),
 	Selenium: a('selenium.svg'),
 	Docker: a('docker.svg'),
@@ -72,8 +71,10 @@ const Assets = {
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
-	Azur
+	Azur: a('azur.png')
 };
+
+console.log(Assets.Postcss);
 
 export default Assets;
 
