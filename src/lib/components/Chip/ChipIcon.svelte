@@ -45,6 +45,7 @@
 				top: calc(100% + 0px);
 				border: 1px solid var(--border);
 				border-radius: 15px;
+				z-index: 10;
 			}
 		}
 

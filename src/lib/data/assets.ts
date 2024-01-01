@@ -8,6 +8,8 @@ const a = (light: string, dark?: string): Asset =>
 	dark ? { dark: gh(dark), light: gh(light) } : gh(light);
 
 const Assets = {
+	HSTECH: a('hstech.jpg'),
+	Triweb: a('triweb.jpg'),
 	AWS: a('aws.svg'),
 	Bootstrap: a('bootstrap.svg'),
 	C: a('c.svg'),
@@ -37,11 +39,11 @@ const Assets = {
 	Kotlin: a('kotlin.png'),
 	Python: a('python.png'),
 	NodeJs: a('node.png'),
-	Deno: a('deno.png', 'deno-dark.png'),
+	Deno: a('deno.png'),
 	Svelte: a('svelte.png'),
 	ExpressJs: a('express.png'),
 	JavaScript: a('js.png'),
-	Fastify: a('fastify.svg', 'fastify-dark.png'),
+	Fastify: a('fastify.png'),
 	NestJs: a('nest.svg'),
 	Quasar: a('quasar.svg'),
 	SolidJs: a('solid.svg'),
@@ -71,10 +73,9 @@ const Assets = {
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
-	Azur: a('azur.png')
+	Azur: a('azur.png'),
+	BrainAcademy: a('brain-academy.jpg')
 };
-
-console.log(Assets.Postcss);
 
 export default Assets;
 
