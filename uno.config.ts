@@ -21,6 +21,12 @@ export default defineConfig({
 					weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
 					italic: true,
 					provider: 'google'
+				},
+				mono: {
+					name: 'Roboto Mono',
+					weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+					italic: true,
+					provider: 'google'
 				}
 			}
 		}),
