@@ -41,12 +41,14 @@
 		<p>{project.type}</p>
 		<p>{period}</p>
 	</div>
-	<div class="col min-h-150px">
-		<p class="text-[0.95em] text-[var(--secondary-text)] font-300 m-t-20px m-b-40px flex-1">
+	<div class="col sm:h-100px md:h-160px">
+		<p
+			class="text-[0.95em] text-[var(--secondary-text)] font-300 m-t-20px m-b-40px flex-1 line-clamp-3"
+		>
 			{project.shortDescription}
 		</p>
 	</div>
-	<div class="row justify-between text-0.8em font-400 m-t-auto">
+	<div class="row justify-between text-0.8em font-400">
 		<Chip>{from}</Chip>
 		{#if from !== to}
 			<Chip>{to}</Chip>

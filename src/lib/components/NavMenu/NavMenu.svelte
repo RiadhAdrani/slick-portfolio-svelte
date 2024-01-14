@@ -24,13 +24,16 @@
 </script>
 
 <div class="nav-menu">
-	<nav class="container !justify-between flex flex-row items-center text-sm">
+	<nav class="container flex flex-row items-center text-sm">
 		<a
 			href={`${base}/`}
-			class="nav-menu-left decoration-none flex flex-row items-center cursor-pointer px-4 text-[var(--secondary-text)] self-stretch hover:bg-[color:var(--main-hover)]"
+			class="nav-menu-left decoration-none w-auto md:w-150px lg:w-auto row flex flex-row items-center cursor-pointer px-4 text-[var(--secondary-text)] self-stretch hover:bg-[color:var(--main-hover)]"
 		>
 			<UIcon icon="i-carbon-code" classes="text-2em" />
-			<span class="ml-2 text-md font-bold hidden md:inline">{HOME.name} {HOME.lastName}</span>
+			<span
+				class="ml-2 text-md font-bold hidden md:inline overflow-hidden whitespace-nowrap text-ellipsis"
+				>{HOME.name} {HOME.lastName}</span
+			>
 		</a>
 		<div class="flex flex-row flex-1 self-center justify-center">
 			{#each items as item}
@@ -40,7 +43,7 @@
 				</a>
 			{/each}
 		</div>
-		<div class="flex flex-row self-stretch items-stretch gap-1 text-1.15em">
+		<div class="row h-full justify-center items-stretch w-auto md:w-150px gap-1 text-1.15em">
 			<a
 				href={`${base}/search`}
 				class="text-inherit col-center self-stretch px-2 hover:bg-[color:var(--main-hover)]"
