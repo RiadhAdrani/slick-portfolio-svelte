@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
 	--dark-0: #000;
 	--dark-1: #1e1e1e;
@@ -159,6 +161,9 @@ body {
 	--code-interpolation: var(--code-keyword);
 	--code-class-name: var(--secondary-text);
 
+	font-family: 'Space Mono', monospace;
+	font-size: 14px;
+
 	color: var(--tertiary-text);
 	overflow-y: auto !important;
 
@@ -230,7 +235,27 @@ body {
 	}
 
 	& h1 {
-		font-size: 2.25em;
+		font-size: 2em;
+	}
+
+	& h2 {
+		font-size: 1.8em;
+	}
+
+	& h3 {
+		font-size: 1.6em;
+	}
+
+	& h4 {
+		font-size: 1.45em;
+	}
+
+	& h5 {
+		font-size: 1.3em;
+	}
+
+	& h6 {
+		font-size: 1.2em;
 	}
 
 	& p {
@@ -254,14 +279,14 @@ body {
 	& :is(code):not(pre code) {
 		color: var(--accent-text);
 		// font-size: 0.9em;
-		background-color: var(--secondary);
+		background-color: var(--tertiary);
 		padding: 1px 6px;
 		border-radius: 0.25em;
 	}
 
 	& :not(pre) > code[class*='language-'],
 	pre[class*='language-'] {
-		background-color: var(--secondary);
+		background-color: var(--main-hover);
 		border: 1px solid var(--border);
 		border-radius: 0.25em;
 		font-size: 0.9em;
@@ -278,8 +303,8 @@ body {
 
 	& blockquote {
 		padding: 5px 20px;
-		background-color: var(--secondary);
-		border: 1px solid var(--dividerLight1);
+		background-color: var(--main-hover);
+		border: 1px solid var(--dividerLight);
 		margin-right: 0px;
 		margin-left: 0px;
 		border-radius: 0.25em;
@@ -290,8 +315,8 @@ body {
 	}
 
 	& hr {
-		border: none;
-		border-top: 1px solid var(--border-low);
+		// border: none;
+		border-top: 0.5px solid var(--border-low);
 		color: var(--border-low);
 		margin: 30px 0px;
 	}

@@ -158,7 +158,7 @@ export const convertNamedToHexColor = (name: NamedColor): HexColor => {
 	const color = NAMED_COLORS[name];
 
 	if (!color) {
-		throw new Error('missing or invalid color name');
+		return NAMED_COLORS.white;
 	}
 
 	return color;
