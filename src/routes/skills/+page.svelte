@@ -37,6 +37,7 @@
 					tiltDegree={1}
 					href={`${base}/skills/${skill.slug}`}
 					bgImg={getAssetURL(skill.logo)}
+					color={skill.color}
 				>
 					<p class="text-[var(--tertiary-text)]">{skill.name}</p>
 				</Card>

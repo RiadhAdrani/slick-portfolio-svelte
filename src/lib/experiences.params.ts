@@ -13,7 +13,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		period: { from: new Date() },
 		skills: getSkills('ts', 'js'),
 		name: 'Open Source Developer',
-		color: '#ffffff',
+		color: 'red',
 		links: [],
 		logo: Assets.Unknown,
 		shortDescription: ''
@@ -28,7 +28,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		period: { from: new Date() },
 		skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
 		name: 'Freelancer',
-		color: '#ffffff',
+		color: 'blue',
 		links: [],
 		logo: Assets.Unknown,
 		shortDescription: ''
@@ -43,7 +43,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		period: { from: new Date(2022, 0, 1), to: new Date() },
 		skills: getSkills('css', 'html', 'js'),
 		name: 'Junior Freelancer',
-		color: '#ffffff',
+		color: 'green',
 		links: [],
 		logo: Assets.Unknown,
 		shortDescription: ''
