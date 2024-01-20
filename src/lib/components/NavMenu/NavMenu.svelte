@@ -8,6 +8,16 @@
 
 	let currentRoute = '/';
 
+	let expanded = true;
+
+	const toggleExpanded = (v?: boolean) => {
+		if (typeof v === 'undefined') {
+			expanded = !expanded;
+		} else {
+			expanded = v;
+		}
+	};
+
 	$: {
 		if ($page) {
 			currentRoute = $page.url.pathname;
@@ -20,7 +30,7 @@
 		{ title: NavBar.career, to: '/experience', icon: 'i-carbon-development' },
 		{ title: NavBar.Education, to: '/education', icon: 'i-carbon-education' },
 		{ title: NavBar.resume, to: '/resume', icon: 'i-carbon-result' }
-	];
+	] as const;
 </script>
 
 <div class="nav-menu">
@@ -32,10 +42,14 @@
 			<UIcon icon="i-carbon-code" classes="text-2em" />
 			<span
 				class="ml-2 text-md font-bold hidden md:inline overflow-hidden whitespace-nowrap text-ellipsis"
-				>{HOME.name} {HOME.lastName}</span
-			>
+				>{HOME.name} {HOME.lastName}
+			</span>
 		</a>
-		<div class="flex flex-row flex-1 self-center justify-center">
+		<div class="flex-1 block overflow-hidden md:hidden whitespace-nowrap text-ellipsis text-center">
+			{HOME.name}
+			{HOME.lastName}
+		</div>
+		<div class="flex-row flex-1 self-center h-full justify-center hidden md:flex">
 			{#each items as item}
 				<a href={`${base}${item.to}`} class="nav-menu-item !text-[var(--secondary-text)]">
 					<UIcon icon={item.icon} classes="text-1.3em" />
@@ -43,25 +57,74 @@
 				</a>
 			{/each}
 		</div>
-		<div class="row h-full justify-center items-stretch w-auto md:w-150px gap-1 text-1.15em">
+		<div
+			class="row h-full justify-center items-stretch m-l-auto md:m-l-0 w-auto md:w-150px gap-1 text-1.15em"
+		>
+			<div class="row hidden md:flex">
+				<a
+					href={`${base}/search`}
+					class="text-inherit col-center self-stretch px-2 hover:bg-[color:var(--main-hover)]"
+				>
+					<UIcon icon="i-carbon-search" />
+				</a>
+				<button
+					class="bg-transparent text-1em border-none cursor-pointer hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
+					on:click={() => toggleTheme()}
+				>
+					{#if $theme}
+						<UIcon icon="i-carbon-moon" />
+					{:else}
+						<UIcon icon="i-carbon-sun" />
+					{/if}
+				</button>
+			</div>
+			<div class="col-center md:hidden h-full hover:bg-[var(--main-hover)] cursor-pointer">
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<div
+					class={`nav-bar-mobile-btn col-center ${expanded ? 'nav-bar-mobile-btn-expanded' : ''}`}
+					on:keydown
+					on:keyup
+					on:click={() => toggleExpanded()}
+				/>
+			</div>
+		</div>
+	</nav>
+	<div class={`nav-menu-mobile ${expanded ? 'nav-menu-mobile-open' : ''} md:hidden`}>
+		<div class="flex-col flex-1 self-center h-full justify-center m-t-7">
+			{#each items as item}
+				<a
+					href={`${base}${item.to}`}
+					class="nav-menu-item !text-[var(--secondary-text)] gap-5"
+					on:click={() => toggleExpanded(false)}
+				>
+					<UIcon icon={item.icon} classes="text-1.3em" />
+					<span class="">{item.title}</span>
+				</a>
+			{/each}
+		</div>
+		<div class="col gap-2 m-t-7">
 			<a
 				href={`${base}/search`}
-				class="text-inherit col-center self-stretch px-2 hover:bg-[color:var(--main-hover)]"
+				class="text-inherit decoration-none px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)]"
+				on:click={() => toggleExpanded(false)}
 			>
 				<UIcon icon="i-carbon-search" />
+				<span>Search</span>
 			</a>
 			<button
-				class="bg-transparent text-1em border-none cursor-pointer hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
+				class="bg-transparent text-1em border-none cursor-pointer px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
 				on:click={() => toggleTheme()}
 			>
 				{#if $theme}
 					<UIcon icon="i-carbon-moon" />
+					<span>Dark Theme</span>
 				{:else}
 					<UIcon icon="i-carbon-sun" />
+					<span>Light Theme</span>
 				{/if}
 			</button>
 		</div>
-	</nav>
+	</div>
 </div>
 
 <style lang="scss">
@@ -72,6 +135,7 @@
 		top: 0px;
 		z-index: 10;
 		padding: 0px 10px;
+		height: 50px;
 		border-bottom: 1px solid var(--secondary);
 		background-color: var(--main);
 
@@ -97,6 +161,25 @@
 			&:hover {
 				background-color: var(--main-hover);
 			}
+		}
+	}
+
+	.nav-menu-mobile {
+		z-index: -1;
+		max-height: calc(100vh - 50px - 1px);
+		min-height: calc(100vh - 50px - 1px);
+		width: 100%;
+		position: absolute;
+		background-color: var(--main);
+		top: 51px;
+		transform: translateY(-100vh);
+		transition-property: transform opacity;
+		transition: 400ms ease;
+		opacity: 0;
+
+		&-open {
+			opacity: 1;
+			transform: translateY(0vh);
 		}
 	}
 </style>

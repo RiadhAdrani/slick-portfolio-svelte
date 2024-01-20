@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let icon = '';
+	export let icon: `i-${string}-${string}` | undefined = undefined;
 
 	export let classes = '';
 </script>

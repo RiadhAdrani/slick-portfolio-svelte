@@ -296,3 +296,43 @@ body {
 		margin: 30px 0px;
 	}
 }
+
+.nav-bar-mobile-btn {
+	width: 36px;
+	height: 36px;
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 20px;
+		background-color: var(--secondary-text);
+		transition: transform 200ms ease;
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			background-color: auto;
+		}
+	}
+
+	&::before {
+		transform: translateY(-5px) rotate(0deg);
+	}
+
+	&::after {
+		transform: translateY(4px) rotate(0deg);
+	}
+
+	&-expanded {
+		&::before {
+			transform: translateY(2px) rotate(45deg);
+		}
+
+		&::after {
+			transform: translateY(0) rotate(-45deg);
+		}
+	}
+}
