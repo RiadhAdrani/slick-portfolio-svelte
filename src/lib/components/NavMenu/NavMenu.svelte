@@ -8,7 +8,7 @@
 
 	let currentRoute = '/';
 
-	let expanded = true;
+	let expanded = false;
 
 	const toggleExpanded = (v?: boolean) => {
 		if (typeof v === 'undefined') {
