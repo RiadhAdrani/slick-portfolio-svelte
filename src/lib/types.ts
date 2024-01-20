@@ -1,3 +1,5 @@
+import type { Color } from './utils/colors';
+
 export enum Platform {
 	GitHub = 'github',
 	StackOverflow = 'stackoverflow',
@@ -44,7 +46,7 @@ export interface Skill extends Omit<Item, 'shortDescription'> {
 
 export interface Project extends Item {
 	links: Array<Link>;
-	color: string;
+	color: Color;
 	period: {
 		from: Date;
 		to?: Date;
