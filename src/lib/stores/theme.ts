@@ -30,6 +30,10 @@ export const onHydrated = () => {
 			// dark mode
 			toggleTheme(true);
 		}
+		else {
+			// light mode
+			toggleTheme(false);
+		}
 	} else {
 		toggleTheme(JSON.parse(fromStore));
 	}
