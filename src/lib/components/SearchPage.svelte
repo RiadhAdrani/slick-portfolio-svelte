@@ -6,6 +6,7 @@
 
 	export let title = 'Title';
 	export let search = '';
+    let searchInput: Input;
 
 	const dispatch = createEventDispatcher();
 
@@ -28,6 +29,13 @@
 			const state = window.history.state;
 
 			window.history.replaceState(state, '', url);
+			
+			const path = window.location.pathname;
+			if (path.startsWith('/search')) {
+				if (searchInput) {
+					searchInput.focus();
+				}
+			}
 		}
 	}
 
@@ -41,7 +49,7 @@
 
 <CommonPage {title}>
 	<div class="w-100% row">
-		<Input bind:value={search} placeholder={'Search...'} />
+		<Input bind:this={searchInput} bind:value={search} placeholder={'Search...'} />
 	</div>
 	<div class="w-100% col flex-1">
 		<slot />
