@@ -8,10 +8,11 @@
 	import MY_SKILLS from '$lib/skills.params';
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
+    import { filterItemsByQuery } from '$lib/utils/helpers';
 
 	const { title } = SEARCH;
 
-	type Item<T = unknown> = {
+	type SearchResultItem<T = unknown> = {
 		icon: string;
 		name: string;
 		data: T;
@@ -20,7 +21,7 @@
 
 	let query = '';
 	let mounted = false;
-	let result: Array<Item> = [];
+	let result: Array<SearchResultItem> = [];
 
 	onMount(() => {
 		let searchParams = new URLSearchParams(window.location.search);
@@ -34,7 +35,7 @@
 
 		// filter
 		result.push(
-			...MY_PROJECTS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
+        ...filterItemsByQuery(MY_PROJECTS, query).map<SearchResultItem>(
 				(data) => ({
 					data,
 					icon: 'i-carbon-cube',
@@ -45,7 +46,7 @@
 		);
 
 		result.push(
-			...MY_SKILLS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
+			...filterItemsByQuery(MY_SKILLS, query).map<SearchResultItem>(
 				(data) => ({
 					data,
 					icon: 'i-carbon-software-resource-cluster',
@@ -56,11 +57,7 @@
 		);
 
 		result.push(
-			...MY_EXPERIENCES.filter(
-				(item) =>
-					query &&
-					(item.name.toLowerCase().includes(query) || item.company.toLowerCase().includes(query))
-			).map<Item>((data) => ({
+			...filterItemsByQuery(MY_EXPERIENCES, query).map<SearchResultItem>((data) => ({
 				data,
 				icon: 'i-carbon-development',
 				name: `${data.name} @ ${data.company}`,
