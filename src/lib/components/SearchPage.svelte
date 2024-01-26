@@ -3,6 +3,8 @@
 	import CommonPage from './CommonPage.svelte';
 	import Input from './Input/Input.svelte';
 	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	export let title = 'Title';
 	export let search = '';
@@ -30,8 +32,7 @@
 
 			window.history.replaceState(state, '', url);
 			
-			const path = window.location.pathname;
-			if (path.startsWith('/search')) {
+			if ($page.url.pathname.startsWith(`${base}/search`)) {
 				if (searchInput) {
 					searchInput.focus();
 				}
