@@ -1,19 +1,18 @@
 <script lang="ts">
 	export let value = '';
 	export let placeholder = '';
-    let inputElement: HTMLInputElement;
+	let inputElement: HTMLInputElement;
 
-    function focus() {
-        inputElement.focus();
-    }
+	function focus() {
+		inputElement.focus();
+	}
 
-    export { focus };
+	export { focus };
 </script>
 
 <input
 	bind:this={inputElement}
 	bind:value
-	autofocus
 	{placeholder}
 	class="text-[inherit] bg-transparent border-[1px] border-solid border-[var(--border)] px-[20px] py-[10px] rounded-[15px] flex-1 text-[1.15em] "
 />
