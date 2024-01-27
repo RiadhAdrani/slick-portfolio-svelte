@@ -8,12 +8,13 @@
 	import MY_SKILLS from '$lib/skills.params';
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
-    import { filterItemsByQuery } from '$lib/utils/helpers';
+	import { filterItemsByQuery } from '$lib/utils/helpers';
+	import type { Icon } from '$lib/types';
 
 	const { title } = SEARCH;
 
 	type SearchResultItem<T = unknown> = {
-		icon: string;
+		icon: Icon;
 		name: string;
 		data: T;
 		to: string;
@@ -35,25 +36,21 @@
 
 		// filter
 		result.push(
-        ...filterItemsByQuery(MY_PROJECTS, query).map<SearchResultItem>(
-				(data) => ({
-					data,
-					icon: 'i-carbon-cube',
-					name: data.name,
-					to: `projects/${data.slug}`
-				})
-			)
+			...filterItemsByQuery(MY_PROJECTS, query).map<SearchResultItem>((data) => ({
+				data,
+				icon: 'i-carbon-cube',
+				name: data.name,
+				to: `projects/${data.slug}`
+			}))
 		);
 
 		result.push(
-			...filterItemsByQuery(MY_SKILLS, query).map<SearchResultItem>(
-				(data) => ({
-					data,
-					icon: 'i-carbon-software-resource-cluster',
-					name: data.name,
-					to: `skills/${data.slug}`
-				})
-			)
+			...filterItemsByQuery(MY_SKILLS, query).map<SearchResultItem>((data) => ({
+				data,
+				icon: 'i-carbon-software-resource-cluster',
+				name: data.name,
+				to: `skills/${data.slug}`
+			}))
 		);
 
 		result.push(

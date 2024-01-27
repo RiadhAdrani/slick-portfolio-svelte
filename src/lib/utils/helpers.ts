@@ -73,28 +73,42 @@ export function getTimeDiff(date1: Date, date2 = new Date(Date.now() + 1000 * 60
 
 type ItemOrSkill = Item | Skill;
 
-export function filterItemsByQuery(items: ItemOrSkill[], query: string) {
+export function filterItemsByQuery<T extends ItemOrSkill>(
+	items: Array<T>,
+	query: string
+): Array<T> {
 	const ignoredProperties = ['logo', 'links', 'color', 'screenshots'];
 	query = query.toLowerCase();
 
 	return items.filter((item) => doesQueryExistInItemOrAttributes(item, query, ignoredProperties));
 }
 
-function doesQueryExistInItemOrAttributes(item: any, query: string, ignoredProperties: string[] = []): boolean {
+function doesQueryExistInItemOrAttributes(
+	item: any,
+	query: string,
+	ignoredProperties: string[] = []
+): boolean {
 	if (Array.isArray(item)) {
-		return item.some(subItem => doesQueryExistInItemOrAttributes(subItem, query));
+		return item.some((subItem) => doesQueryExistInItemOrAttributes(subItem, query));
 	} else if (typeof item === 'object' && item !== null) {
 		if (item instanceof Date) {
 			const dateFormats = [
 				item.toString().toLowerCase(), // Full date string
 				item.toLocaleDateString('default', { month: 'long', year: 'numeric' }).toLowerCase(), // "January 2023"
-				item.toLocaleDateString('default', { day: 'numeric', month: 'long', year: 'numeric' }).toLowerCase(), // "15 January 2023"
+				item
+					.toLocaleDateString('default', { day: 'numeric', month: 'long', year: 'numeric' })
+					.toLowerCase(), // "15 January 2023"
 				item.toLocaleDateString('en-US').toLowerCase(), // "1/15/2023"
-				item.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toLowerCase(), // "Jan 15, 2023"
+				item
+					.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+					.toLowerCase() // "Jan 15, 2023"
 			];
-			return dateFormats.some(dateStr => dateStr.includes(query));
+			return dateFormats.some((dateStr) => dateStr.includes(query));
 		} else {
-			return Object.keys(item).some(key => !ignoredProperties.includes(key) && doesQueryExistInItemOrAttributes(item[key], query));
+			return Object.keys(item).some(
+				(key) =>
+					!ignoredProperties.includes(key) && doesQueryExistInItemOrAttributes(item[key], query)
+			);
 		}
 	} else {
 		return item.toString().toLowerCase().includes(query);
