@@ -74,7 +74,9 @@ const Assets = {
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
 	Azur: a('azur.png'),
-	BrainAcademy: a('brain-academy.jpg')
+	BrainAcademy: a('brain-academy.jpg'),
+	Remix: a('remix.svg'),
+	Prisma: a('prisma.png')
 };
 
 export default Assets;
