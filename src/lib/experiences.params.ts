@@ -16,7 +16,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		color: 'red',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: ''
+		shortDescription: 'Creating awesome tools for developers.'
 	},
 	{
 		slug: 'software-freelance',
@@ -31,7 +31,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		color: 'blue',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: ''
+		shortDescription: 'Creating awesome applications for customers.'
 	},
 	{
 		slug: 'software-freelance-junior',
@@ -46,7 +46,7 @@ const MY_EXPERIENCES: Array<Experience> = [
 		color: 'green',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: ''
+		shortDescription: 'Creating awesome applications for customers.'
 	}
 ];
 
