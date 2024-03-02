@@ -1,8 +1,8 @@
-import Assets from './data/assets';
-import { getSkills } from './skills.params';
-import type { Project } from './types';
+import Assets from './assets';
+import { getSkills } from './skills';
+import type { Project } from '../types';
 
-const MY_PROJECTS: Array<Project> = [
+export const items: Array<Project> = [
 	{
 		slug: 'slick-portfolio-angular',
 		color: '#5e95e3',
@@ -63,4 +63,4 @@ const MY_PROJECTS: Array<Project> = [
 	}
 ];
 
-export default MY_PROJECTS;
+export const title = 'Projects';

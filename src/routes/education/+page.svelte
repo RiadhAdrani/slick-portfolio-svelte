@@ -5,11 +5,9 @@
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import { getAssetURL } from '$lib/data/assets';
 
-	import { EDUCATION } from '$lib/params';
+	import { title, items } from '@data/education';
 	import type { Education } from '$lib/types';
 	import { getTimeDiff } from '$lib/utils';
-
-	const { items, title } = EDUCATION;
 
 	let search = '';
 

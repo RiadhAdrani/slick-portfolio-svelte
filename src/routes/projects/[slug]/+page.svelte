@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+	import { getAssetURL } from '$lib/data/assets';
+	import { title } from '@data/projects';
+
+	import type { Project } from '$lib/types';
+
 	import CardLogo from '$lib/components/Card/CardLogo.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-
-	import { base } from '$app/paths';
-	import type { Project } from '$lib/types';
-	import { getAssetURL } from '$lib/data/assets';
-	import { PROJECTS } from '$lib/params';
 	import Markdown from '$lib/components/Markdown.svelte';
 	import TabTitle from '$lib/components/TabTitle.svelte';
 	import Chip from '$lib/components/Chip/Chip.svelte';
@@ -15,8 +16,6 @@
 	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
 	export let data: { project?: Project };
-
-	const { title } = PROJECTS;
 
 	const screenshots = data.project?.screenshots ?? [];
 

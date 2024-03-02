@@ -2,13 +2,12 @@
 	import Carrousel from '$lib/components/Carrousel/Carrousel.svelte';
 	import Icon from '$lib/components/Icon/Icon.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
-	import { TITLE_SUFFIX } from '$lib/params';
-	import { HOME, getPlatfromIcon } from '$lib/params';
-	import MY_SKILLS from '$lib/skills.params';
+	import { titleSuffix } from '@data/app';
+	import { links, description, lastName, name, title, skills } from '@data/home';
+	import { items as skillsItems } from '@data/skills';
 	import { useTitle } from '$lib/utils/helpers';
 	import { isBlank } from '@riadh-adrani/utils';
-
-	const { description, lastName, links, name, title, skills } = HOME;
+	import { getPlatfromIcon } from '$lib/utils';
 
 	const isEmail = (email: string): boolean => {
 		const reg =
@@ -19,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{useTitle(title, TITLE_SUFFIX)}</title>
+	<title>{useTitle(title, titleSuffix)}</title>
 </svelte:head>
 <div
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
@@ -42,5 +41,5 @@
 			{/each}
 		</div>
 	</div>
-	<Carrousel items={skills ?? MY_SKILLS} />
+	<Carrousel items={skills ?? skillsItems} />
 </div>
