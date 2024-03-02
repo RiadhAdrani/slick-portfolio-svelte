@@ -1,13 +1,14 @@
-import Assets from './data/assets';
-import type { Skill } from './types';
-import svelte from './md/svelte.md?raw';
+import Assets from './assets';
+import type { Skill } from '../types';
+import svelte from '../md/svelte.md?raw';
+import type { StringWithAutoComplete } from '@riadh-adrani/utils';
 
-const s = (skill: Skill) => skill;
+const s = <S extends string>(skill: Skill<S>) => skill;
 
 export type ArrayElementType<ArrayType extends readonly unknown[]> =
 	ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
 
-const MY_SKILLS = [
+export const items = [
 	s({
 		slug: 'js',
 		color: 'yellow',
@@ -63,9 +64,10 @@ const MY_SKILLS = [
 		logo: Assets.Svelte,
 		name: 'Svelte'
 	})
-];
+] as const;
 
-export default MY_SKILLS;
+export const title = 'Skills';
 
-export const getSkills = (...slugs: Array<string>): Array<Skill> =>
-	MY_SKILLS.filter((it) => slugs.includes(it.slug));
+export const getSkills = (
+	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
+): Array<Skill> => items.filter((it) => slugs.includes(it.slug));

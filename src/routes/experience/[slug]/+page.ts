@@ -1,8 +1,8 @@
-import MY_EXPERIENCES from '$lib/experiences.params';
+import { items } from '@data/experience';
 
 export function load({ params }: { params: Record<string, string> }) {
 	if (params.slug) {
-		const experience = MY_EXPERIENCES.find((item) => {
+		const experience = items.find((item) => {
 			return item.slug === params.slug;
 		});
 

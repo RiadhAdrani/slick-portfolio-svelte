@@ -1,20 +1,20 @@
 <script lang="ts">
+	import { items, title } from '@data/projects';
+	import * as skills from '@data/skills';
+	import { onMount } from 'svelte';
+
+	import type { Project, Skill } from '$lib/types';
+
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import ProjectCard from '$lib/components/ProjectCard/ProjectCard.svelte';
 	import SearchPage from '$lib/components/SearchPage.svelte';
-	import { PROJECTS } from '$lib/params';
-	import type { Project, Skill } from '$lib/types';
-	import { onMount } from 'svelte';
-	import MY_SKILLS from '$lib/skills.params';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
 	interface SkillFilter extends Skill {
 		isSelected?: boolean;
 	}
 
-	const { items, title } = PROJECTS;
-
-	let filters: Array<SkillFilter> = MY_SKILLS.filter((it) => {
+	let filters: Array<SkillFilter> = skills.items.filter((it) => {
 		return items.some((project) => project.skills.some((skill) => skill.slug === it.slug));
 	});
 

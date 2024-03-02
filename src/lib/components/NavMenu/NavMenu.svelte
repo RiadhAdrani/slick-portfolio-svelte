@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { HOME, NavBar } from '$lib/params';
 	import { theme, toggleTheme } from '$lib/stores/theme';
+	import { items } from '@data/navbar';
+	import * as HOME from '@data/home';
 
 	import { base } from '$app/paths';
 	import UIcon from '../Icon/UIcon.svelte';
 
-	let currentRoute = '/';
+	$: currentRoute = $page.url.pathname;
 
 	let expanded = false;
 
@@ -17,20 +18,6 @@
 			expanded = v;
 		}
 	};
-
-	$: {
-		if ($page) {
-			currentRoute = $page.url.pathname;
-		}
-	}
-
-	const items = [
-		{ title: NavBar.skills, to: '/skills', icon: 'i-carbon-software-resource-cluster' },
-		{ title: NavBar.personal, to: '/projects', icon: 'i-carbon-cube' },
-		{ title: NavBar.career, to: '/experience', icon: 'i-carbon-development' },
-		{ title: NavBar.Education, to: '/education', icon: 'i-carbon-education' },
-		{ title: NavBar.resume, to: '/resume', icon: 'i-carbon-result' }
-	] as const;
 </script>
 
 <div class="nav-menu">

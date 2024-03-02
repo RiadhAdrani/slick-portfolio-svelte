@@ -1,7 +1,7 @@
-import Assets from './data/assets';
-import type { Education } from './types';
+import Assets from './assets';
+import type { Education } from '../types';
 
-export const MY_EDUCATIONS: Array<Education> = [
+export const items: Array<Education> = [
 	{
 		degree: 'Bachelor degree of Computer Science',
 		description: '',
@@ -27,3 +27,5 @@ export const MY_EDUCATIONS: Array<Education> = [
 		subjects: ['Assembly', 'Rust', 'Computer Architecture', 'Algorithms and Data structures']
 	}
 ];
+
+export const title = 'Education';

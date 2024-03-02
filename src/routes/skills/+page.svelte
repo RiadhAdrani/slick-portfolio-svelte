@@ -1,22 +1,22 @@
 <script lang="ts">
-	import Card from '$lib/components/Card/Card.svelte';
 	import { base } from '$app/paths';
-	import { SKILLS } from '$lib/params';
-	import SearchPage from '$lib/components/SearchPage.svelte';
-	import type { Skill } from '$lib/types';
+	import { items, title } from '@data/skills';
 	import { isBlank } from '@riadh-adrani/utils';
 	import { getAssetURL } from '$lib/data/assets';
+
+	import type { Skill } from '$lib/types';
+
+	import SearchPage from '$lib/components/SearchPage.svelte';
+	import Card from '$lib/components/Card/Card.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
-	const { items, title } = SKILLS;
-
-	let result: Array<Skill> = items;
+	let result = items as unknown as Array<Skill>;
 
 	const onSearch = (e: CustomEvent<{ search: string }>) => {
 		const query = e.detail.search;
 
 		if (isBlank(query)) {
-			result = items;
+			result = items as unknown as Array<Skill>;
 		}
 
 		result = items.filter((it) => it.name.toLowerCase().includes(query));
