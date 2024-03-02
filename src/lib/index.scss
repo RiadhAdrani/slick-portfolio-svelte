@@ -6,6 +6,7 @@
 
 :root {
 	--dark-0: #000;
+	--dark-00: #3b3b3b;
 	--dark-1: #1e1e1e;
 	--dark-2: #2e2e2e;
 	--dark-3: #3e3e3e;
@@ -16,6 +17,7 @@
 	--dark-8: #8e8e8e;
 
 	--light-0: #fff;
+	--light-00: #cacaca;
 	--light-1: #e1e1e1;
 	--light-2: #d1d1d1;
 	--light-3: #c1c1c1;
@@ -67,6 +69,7 @@ body {
 	color-scheme: dark;
 
 	--main: var(--dark-0);
+	--main-close: var(--dark-00);
 	--main-hover: var(--dark-1);
 	--secondary: var(--dark-1);
 	--secondary-hover: var(--dark-2);
@@ -101,6 +104,7 @@ body {
 	color-scheme: light;
 
 	--main: var(--light-0);
+	--main-close: var(--light-00);
 	--main-hover: var(--light-1);
 	--secondary: var(--light-1);
 	--secondary-hover: var(--light-2);
