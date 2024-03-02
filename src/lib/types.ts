@@ -42,8 +42,14 @@ export interface IconLink extends Link {
 	icon: Asset;
 }
 
+export interface SkillCategory<S extends string = string> {
+	slug: S;
+	name: string;
+}
+
 export interface Skill<S extends string = string> extends Omit<Item<S>, 'shortDescription'> {
 	color: string;
+	category?: SkillCategory;
 }
 
 export interface Project<S extends string = string> extends Item<S> {
