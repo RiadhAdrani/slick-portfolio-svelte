@@ -4,7 +4,7 @@ Vercel-like style portfolio template for developers.
 
 If you want to use the template as it is, you can :
 
-- update `src/lib/params.ts` with your data.
+- update files in `src/lib/data` with your data.
 - update `src/lib/index.scss` for custom styling.
 - update `static/favicon.ico` to customize the tab's icon.
 
