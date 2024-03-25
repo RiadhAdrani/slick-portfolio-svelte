@@ -77,7 +77,9 @@ const Assets = {
 	BrainAcademy: a('brain-academy.jpg'),
 	Remix: a('remix.svg'),
 	Prisma: a('prisma.png'),
-	Werewolves: a('loup-garou.png')
+	Werewolves: a('loup-garou.png'),
+	Playwright: a('playwright.svg'),
+	UCOD: a('ucod.jpg')
 };
 
 export default Assets;

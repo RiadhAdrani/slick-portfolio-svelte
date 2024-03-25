@@ -381,6 +381,14 @@ export const items = [
 		name: 'Jest',
 		category: 'test'
 	}),
+	defineSkill({
+		slug: 'playwright',
+		color: 'green',
+		description: '',
+		logo: Assets.Playwright,
+		name: 'Playwright',
+		category: 'test'
+	}),
 
 	// MARKUP & STYLING
 	defineSkill({

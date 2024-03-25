@@ -4,17 +4,17 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'fullstack@hstech',
+		slug: 'fullstack@ucod',
 		name: 'Fullstack Developer',
-		company: 'HSTECH',
+		company: 'UCOD',
 		description: '',
 		shortDescription: '',
 		contract: ContractType.FullTime,
 		type: 'Software Development',
 		location: 'Remote, Tunisia',
-		color: 'darkcyan',
+		color: 'cyan',
 		links: [],
-		logo: Assets.HSTECH,
+		logo: Assets.UCOD,
 		period: { from: new Date(2022, 9, 3) },
 		skills: getSkills(
 			'deno',
@@ -37,6 +37,8 @@ export const items: Array<Experience> = [
 			'kubernetes',
 			'vite',
 			'jest',
+			'vitest',
+			'playwright',
 			'unocss',
 			'postcss'
 		)
