@@ -3,6 +3,15 @@ import { defineConfig, presetUno, presetWebFonts, presetIcons } from 'unocss';
 
 export default defineConfig({
 	extractors: [extractorSvelte()],
+	content: {
+		pipeline: {
+			include: [
+				/\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+				// include js/ts files
+				'src/**/*.{js,ts}'
+			]
+		}
+	},
 	presets: [
 		presetUno(),
 		presetWebFonts({
