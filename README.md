@@ -15,7 +15,7 @@ Before deploying to `GitHub Pages`:
 - make sure to change the `base` parameter in `svelte.config.js`.
 - make sure to update the target branch of the `deploy.yml` file, it is set to build from `master` branch by default.
 - Allow `GitHub Pages` in your repo settings with correct permissions:
-  - Persmission:
+  - Permissions:
     - go to your repo `Settings` > `Actions` > `General`
     - in `Actions permissions` : check `Allow all actions and reusable workflows`
   - Pages:
