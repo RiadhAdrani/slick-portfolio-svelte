@@ -293,6 +293,14 @@ export const items = [
 		name: 'Express JS',
 		category: 'framework'
 	}),
+	defineSkill({
+		slug: 'honojs',
+		color: 'orange',
+		description: '',
+		logo: Assets.HonoJs,
+		name: 'Hono JS',
+		category: 'framework'
+	}),
 
 	// DATABASES
 	defineSkill({
@@ -326,6 +334,14 @@ export const items = [
 		logo: Assets.Redis,
 		category: 'db',
 		name: 'Redis'
+	}),
+	defineSkill({
+		slug: 'neo4j',
+		color: 'blue',
+		description: '',
+		logo: Assets.Neo4j,
+		category: 'db',
+		name: 'Neo4j'
 	}),
 
 	// ORMs

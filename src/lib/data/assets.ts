@@ -20,7 +20,7 @@ const Assets = {
 	Flask: a('flask.svg'),
 	Go: a('go.svg'),
 	Kafka: a('kafka.svg'),
-	Neo4j: a('neo4j.svg'),
+	Neo4j: a('neo4j.png'),
 	Nginx: a('nginx.svg'),
 	Numpy: a('numpy.svg'),
 	Pandas: a('pandas.svg'),
@@ -79,7 +79,8 @@ const Assets = {
 	Prisma: a('prisma.png'),
 	Werewolves: a('loup-garou.png'),
 	Playwright: a('playwright.svg'),
-	UCOD: a('ucod.jpg')
+	UCOD: a('ucod.jpg'),
+	HonoJs: a('hono-js.png')
 };
 
 export default Assets;
