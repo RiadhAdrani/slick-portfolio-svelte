@@ -80,7 +80,8 @@ const Assets = {
 	Werewolves: a('loup-garou.png'),
 	Playwright: a('playwright.svg'),
 	UCOD: a('ucod.jpg'),
-	HonoJs: a('hono-js.png')
+	HonoJs: a('hono-js.png'),
+	CiHub: a('cihub.webp')
 };
 
 export default Assets;

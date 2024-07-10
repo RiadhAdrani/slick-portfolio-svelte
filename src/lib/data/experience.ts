@@ -4,6 +4,22 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
+		slug: 'dev@cihub',
+		name: 'Software Developer',
+		company: 'CI HUB',
+		color: 'red',
+		contract: ContractType.FullTime,
+		description: '',
+		shortDescription: '',
+		type: 'Software Development',
+		location: 'Remote Tunisia',
+		links: [{ label: 'Website', to: 'https://ci-hub.com/', newTab: true }],
+		logo: Assets.CiHub,
+		period: { from: new Date(2024, 6, 1) },
+		skills: getSkills('js'),
+		screenshots: []
+	},
+	{
 		slug: 'fullstack@hstech',
 		name: 'Fullstack Developer',
 		company: 'HSTECH',
@@ -15,7 +31,7 @@ export const items: Array<Experience> = [
 		color: 'cyan',
 		links: [],
 		logo: Assets.HSTECH,
-		period: { from: new Date(2022, 9, 3) },
+		period: { from: new Date(2022, 9, 3), to: new Date(2024, 4, 1) },
 		skills: getSkills(
 			'deno',
 			'ts',
@@ -57,7 +73,7 @@ export const items: Array<Experience> = [
 		links: [],
 		logo: Assets.Unknown,
 		location: 'Tunisia',
-		period: { from: new Date(2021, 10, 1), to: new Date(2022, 5, 16) },
+		period: { from: new Date(2021, 10, 1) },
 		skills: getSkills(
 			'js',
 			'ts',
@@ -68,7 +84,8 @@ export const items: Array<Experience> = [
 			'xamarin',
 			'csharp',
 			'fastify',
-			'mongodb'
+			'mongodb',
+			'angular'
 		)
 	},
 	{
