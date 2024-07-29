@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Icon from '../Icon/Icon.svelte';
 	import UIcon from '../Icon/UIcon.svelte';
 
 	export let screenshot: { src: string; label: string } | undefined = undefined;
