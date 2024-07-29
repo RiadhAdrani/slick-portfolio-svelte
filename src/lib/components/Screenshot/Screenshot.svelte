@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Icon from '../Icon/Icon.svelte';
+	import UIcon from '../Icon/UIcon.svelte';
+
 	export let screenshot: { src: string; label: string } | undefined = undefined;
 
 	export let onClose = () => {
@@ -28,17 +31,26 @@
 			on:keyup
 			on:keyup
 		>
+			<div class="self-end">
+				<button
+					class="cursor-pointer aspect-square rounded-full border-[var(--border)] border-1px bg-[transparent] border-solid hover:border-[var(--border-hover)]"
+					on:click={onClose}
+					on:keydown
+					on:keypress
+					on:keyup
+				>
+					<UIcon icon={'i-carbon-close'} />
+				</button>
+			</div>
 			<div
 				class="aspect-video col bg-contain w-100% rounded-xl bg-no-repeat bg-contains bg-center"
 				style={`background-image: url(${screenshot?.src});`}
+			/>
+			<p
+				class="font-italic m-t-auto m-x-auto bg-[var(--main-60)] border-solid border-1px border-[var(--border)] p-x-5 p-2 rounded-xl"
 			>
-				<p
-					class="font-italic m-t-auto m-x-auto m-b-5 inline-flex bg-[var(--main-60)] border-solid border-1px border-[var(--border)] p-x-5 p-2 rounded-xl"
-				>
-					{screenshot?.label}
-				</p>
-			</div>
-			<p class="text-[var(--accent-text)] text-0.7em">Click outside the frame to close</p>
+				{screenshot?.label}
+			</p>
 		</div>
 	</div>
 {/if}

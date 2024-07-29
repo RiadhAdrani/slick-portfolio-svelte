@@ -114,3 +114,59 @@ function doesQueryExistInItemOrAttributes(
 		return item.toString().toLowerCase().includes(query);
 	}
 }
+
+const DAY = 24 * 60 * 60 * 1000;
+const WEEK = 7 * 24 * 60 * 60 * 1000;
+const MONTH = 30 * 24 * 60 * 60 * 1000;
+const YEAR = 365 * 24 * 60 * 60 * 1000;
+
+export function computeExactDuration(from: Date, to: Date = new Date()): string {
+	const fromMs = from.getTime();
+	const toMs = to.getTime();
+
+	const display: Array<string> = [];
+
+	let remaining = toMs - fromMs;
+
+	const years = remaining / YEAR;
+
+	console.log(years);
+	if (years >= 1) {
+		remaining = remaining % YEAR;
+		display.push(`${Math.trunc(years)} year${years >= 2 ? 's' : ''}`);
+	}
+
+	const months = remaining / MONTH;
+	if (months >= 1) {
+		remaining = remaining % MONTH;
+		display.push(`${Math.trunc(months)} month${months >= 2 ? 's' : ''}`);
+	}
+
+	const weeks = remaining / WEEK;
+	if (weeks >= 1) {
+		remaining = remaining % WEEK;
+		display.push(`${Math.trunc(weeks)} week${weeks >= 2 ? 's' : ''}`);
+	}
+
+	const days = remaining / DAY;
+	if (days >= 1) {
+		remaining = remaining % DAY;
+		display.push(`${Math.trunc(days)} day${days >= 2 ? 's' : ''}`);
+	}
+
+	if (display.length === 0) {
+		return '1 day';
+	}
+
+	return display
+		.map((it, index) => {
+			if (display.length === 1 || index === display.length - 1) return it;
+
+			if (index === display.length - 2) {
+				return `${it} and`;
+			}
+
+			return `${it},`;
+		})
+		.join(' ');
+}
