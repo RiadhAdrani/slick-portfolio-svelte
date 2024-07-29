@@ -9,11 +9,12 @@
 	import { base } from '$app/paths';
 	import UIcon from '../Icon/UIcon.svelte';
 	import Chip from '../Chip/Chip.svelte';
+	import CardDivider from '../Card/CardDivider.svelte';
 
 	export let experience: Experience;
 
 	// const months = getTimeDiff(experience.period.from, experience.period.to);
-	const months = computeExactDuration(experience.period.from, experience.period.to);
+	const exactDuration = computeExactDuration(experience.period.from, experience.period.to);
 
 	const from = `${getMonthName(
 		experience.period.from.getMonth()
@@ -22,7 +23,7 @@
 		? `${getMonthName(experience.period.to.getMonth())} ${experience.period.to.getFullYear()}`
 		: 'Present';
 
-	const period = `${from} - ${to} · ${months}`;
+	const period = `${from} - ${to}`;
 
 	$: info = [
 		{ label: experience.company, icon: 'i-carbon-building' },
@@ -55,8 +56,19 @@
 					{/each}
 				</div>
 			</div>
-			<div class="text-[var(--text)] text-[0.9em] font-200">{period}</div>
-			<div class="experience-description">{experience.shortDescription}</div>
+			<div class="text-[var(--text)] text-[0.9em]">
+				<div class="row items-center gap-2">
+					<UIcon icon="i-carbon-calendar" classes="text-1.25em" />
+					{period}
+				</div>
+				<CardDivider />
+				<div class="row items-center gap-2">
+					<UIcon icon="i-carbon-time" classes="text-1.25em" />
+					{exactDuration}
+				</div>
+				<CardDivider />
+			</div>
+			<div class="experience-description text-[0.9em]">{experience.shortDescription}</div>
 			<div class="flex flex-row flex-wrap mt-5">
 				{#each experience.skills as skill}
 					<ChipIcon
