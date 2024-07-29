@@ -10,6 +10,7 @@
 	import type { Project } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import { base } from '$app/paths';
+	import UIcon from '../Icon/UIcon.svelte';
 
 	export let project: Project;
 	$: months = countMonths(project.period.from, project.period.to);
@@ -37,10 +38,18 @@
 	</div>
 	<CardDivider />
 	<div
-		class="row m-b-15px justify-between text-[var(--secondary-text)] text-0.9em font-italic font-300"
+		class="col m-b-15px justify-between text-[var(--secondary-text)] text-0.9em font-italic font-300"
 	>
-		<p>{project.type}</p>
-		<p>{period}</p>
+		<div class="row items-center gap-2">
+			<UIcon icon="i-carbon-assembly-cluster" classes="text-1.25em" />
+			<p>{project.type}</p>
+		</div>
+		<CardDivider />
+		<div class="row items-center gap-2">
+			<UIcon icon="i-carbon-time" classes="text-1.25em" />
+			<p>{period}</p>
+		</div>
+		<CardDivider />
 	</div>
 	<div class="col sm:h-100px md:h-160px">
 		<p
