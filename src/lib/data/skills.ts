@@ -497,38 +497,3 @@ export const title = 'Skills';
 export const getSkills = (
 	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
 ): Array<Skill> => items.filter((it) => slugs.includes(it.slug));
-
-export const groupByCategory = (
-	query: string
-): Array<{ category: SkillCategory; items: Array<Skill> }> => {
-	const out: ReturnType<typeof groupByCategory> = [];
-
-	const others: Array<Skill> = [];
-
-	items.forEach((item) => {
-		if (query.trim() && !item.name.toLowerCase().includes(query.trim().toLowerCase())) return;
-
-		// push to others if item does not have a category
-		if (!item.category) {
-			others.push(item);
-			return;
-		}
-
-		// check if category exists
-		let category = out.find((it) => it.category.slug === item.category?.slug);
-
-		if (!category) {
-			category = { items: [], category: item.category };
-
-			out.push(category);
-		}
-
-		category.items.push(item);
-	});
-
-	if (others.length !== 0) {
-		out.push({ category: { name: 'Others', slug: 'others' }, items: others });
-	}
-
-	return out;
-};

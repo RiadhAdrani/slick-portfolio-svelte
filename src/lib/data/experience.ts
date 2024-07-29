@@ -16,7 +16,7 @@ export const items: Array<Experience> = [
 		links: [{ label: 'Website', to: 'https://ci-hub.com/', newTab: true }],
 		logo: Assets.CiHub,
 		period: { from: new Date(2024, 6, 1) },
-		skills: getSkills('js'),
+		skills: getSkills('js', 'docker', 'node', 'express'),
 		screenshots: []
 	},
 	{
