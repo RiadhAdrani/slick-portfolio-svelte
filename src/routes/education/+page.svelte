@@ -8,6 +8,7 @@
 	import { title, items } from '@data/education';
 	import type { Education } from '$lib/types';
 	import { computeExactDuration, getTimeDiff } from '$lib/utils';
+	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 
 	let search = '';
 
@@ -62,11 +63,18 @@
 								/>
 								<div class="text-[1.3em]">{education.degree}</div>
 								<div>{education.organization}</div>
-								<div class="text-[var(--accent-text)] text-[0.9em] font-200 mb-2">
-									{education.location} · {computeExactDuration(
-										education.period.from,
-										education.period.to
-									)}
+								<div class="col text-[0.9em]">
+									<CardDivider />
+									<div class="row items-center gap-2">
+										<UIcon icon="i-carbon-location" />
+										{education.location}
+									</div>
+									<CardDivider />
+									<div class="row items-center gap-2">
+										<UIcon icon="i-carbon-time" />
+										{computeExactDuration(education.period.from, education.period.to)}
+									</div>
+									<CardDivider />
 								</div>
 								<div class="row flex-wrap gap-1">
 									{#each education.subjects as subject}
