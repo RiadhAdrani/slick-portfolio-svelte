@@ -130,7 +130,6 @@ export function computeExactDuration(from: Date, to: Date = new Date()): string 
 
 	const years = remaining / YEAR;
 
-	console.log(years);
 	if (years >= 1) {
 		remaining = remaining % YEAR;
 		display.push(`${Math.trunc(years)} year${years >= 2 ? 's' : ''}`);

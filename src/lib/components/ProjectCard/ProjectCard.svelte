@@ -37,9 +37,7 @@
 		</div>
 	</div>
 	<CardDivider />
-	<div
-		class="col m-b-15px justify-between text-[var(--secondary-text)] text-0.9em font-italic font-300"
-	>
+	<div class="col m-b-15px justify-between text-[var(--secondary-text)] text-0.85em">
 		<div class="row items-center gap-2">
 			<UIcon icon="i-carbon-assembly-cluster" classes="text-1.25em" />
 			<p>{project.type}</p>
@@ -52,9 +50,7 @@
 		<CardDivider />
 	</div>
 	<div class="col sm:h-100px md:h-160px">
-		<p
-			class="text-[0.95em] text-[var(--secondary-text)] font-300 m-t-20px m-b-40px flex-1 line-clamp-3"
-		>
+		<p class="text-[0.9em] text-[var(--secondary-text)] m-t-20px m-b-40px flex-1 line-clamp-3">
 			{project.shortDescription}
 		</p>
 	</div>

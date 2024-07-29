@@ -117,7 +117,6 @@ export const groupByCategory = (
 
 		// push to others if item does not have a category
 		if (!item.category) {
-			console.log(item.category);
 			others.push(item);
 			return;
 		}
