@@ -27,7 +27,39 @@ import docuniser_docs_list from '$lib/screenshots/docuniser/docs-list.png';
 import docuniser_docs_sort from '$lib/screenshots/docuniser/docs-sort-options.png';
 import docuniser_home from '$lib/screenshots/docuniser/home.png';
 
+import domer_md from '$lib/md/projects/domer.md?raw';
+
 export const items: Array<Project> = [
+	{
+		slug: 'dom-router',
+		color: 'green',
+		description: domer_md,
+		shortDescription: 'Router for the dom',
+		links: [{ to: 'https://github.com/RiadhAdrani/dom-router', label: 'GitHub' }],
+		logo: Assets.NodeJs,
+		name: 'Dom Router',
+		period: {
+			from: new Date(2023, 11, 3),
+			to: new Date(2024, 1, 4)
+		},
+		skills: getSkills('ts', 'node', 'vitest', 'vite'),
+		type: 'Library'
+	},
+	{
+		slug: 'domer',
+		color: 'green',
+		description: domer_md,
+		shortDescription: 'A library to build DOM faster',
+		links: [{ to: 'https://github.com/RiadhAdrani/domer', label: 'GitHub' }],
+		logo: Assets.NodeJs,
+		name: 'Domer',
+		period: {
+			from: new Date(2023, 11, 14),
+			to: new Date(2024, 0, 28)
+		},
+		skills: getSkills('ts', 'node', 'vitest', 'vite'),
+		type: 'Library'
+	},
 	{
 		slug: 'annotator',
 		color: '#c82829',
