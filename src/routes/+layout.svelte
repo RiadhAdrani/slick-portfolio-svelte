@@ -17,6 +17,14 @@
 </div>
 
 <style lang="scss">
+	:global(body) {
+		background-image: url('bg/bg-dark.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -26,7 +34,6 @@
 
 	.body {
 		margin: 0px;
-		background-color: var(--main);
 		color: var(--main-text);
 		font-family: var(--text-f);
 		display: flex;
@@ -36,6 +43,14 @@
 		letter-spacing: 1px;
 
 		min-height: 100vh;
+	}
+
+	.body.theme-dark {
+		background-color: var(--main-80);
+	}
+
+	.body.theme-light {
+		background-color: var(--main);
 	}
 
 	:global(p) {

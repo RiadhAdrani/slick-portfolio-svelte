@@ -46,7 +46,10 @@
 	--link-light: #3b82f6;
 
 	--dark-0-60: rgba(0, 0, 0, 0.6);
+	--dark-0-80: rgba(0, 0, 0, 0.8);
+
 	--light-0-60: rgba(255, 255, 255, 0.6);
+	--light-0-80: rgba(255, 255, 255, 0.8);
 
 	// fonts
 	--text-f: 'Inter';
@@ -91,6 +94,7 @@ body {
 	--border-hover: var(--light-7);
 
 	--main-60: var(--dark-0-60);
+	--main-80: var(--dark-0-80);
 
 	--code-keyword: var(--code-keyword-dark);
 	--code-string: var(--code-string-dark);
@@ -126,6 +130,7 @@ body {
 	--border-hover: var(--dark-8);
 
 	--main-60: var(--light-0-60);
+	--main-80: var(--light-0-80);
 
 	--code-keyword: var(--code-keyword-light);
 	--code-string: var(--code-string-light);

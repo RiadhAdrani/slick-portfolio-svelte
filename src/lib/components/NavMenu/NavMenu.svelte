@@ -8,6 +8,7 @@
 	import UIcon from '../Icon/UIcon.svelte';
 
 	$: currentRoute = $page.url.pathname;
+	$: isDark = $theme;
 
 	let expanded = false;
 
@@ -20,7 +21,7 @@
 	};
 </script>
 
-<div class="nav-menu">
+<div class={`nav-menu backdrop-blur bg-[var(--main-60)]`}>
 	<nav class="container flex flex-row items-center text-sm">
 		<a
 			href={`${base}/`}
@@ -124,7 +125,6 @@
 		padding: 0px 10px;
 		height: 50px;
 		border-bottom: 1px solid var(--secondary);
-		background-color: var(--main);
 
 		&-item {
 			text-decoration: none;

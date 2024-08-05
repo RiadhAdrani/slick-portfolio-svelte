@@ -28,12 +28,13 @@ import docuniser_docs_sort from '$lib/screenshots/docuniser/docs-sort-options.pn
 import docuniser_home from '$lib/screenshots/docuniser/home.png';
 
 import domer_md from '$lib/md/projects/domer.md?raw';
+import dom_router_md from '$lib/md/projects/dom-router.md?raw';
 
 export const items: Array<Project> = [
 	{
 		slug: 'dom-router',
 		color: 'green',
-		description: domer_md,
+		description: dom_router_md,
 		shortDescription: 'Router for the dom',
 		links: [{ to: 'https://github.com/RiadhAdrani/dom-router', label: 'GitHub' }],
 		logo: Assets.NodeJs,
