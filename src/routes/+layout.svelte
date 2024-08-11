@@ -8,7 +8,9 @@
 	// ? moved to +layout.server.ts : will be deleted when we make sure that everything is alright
 	// export const prerender = true;
 
-	onMount(() => onHydrated());
+	onMount(() => {
+		onHydrated();
+	});
 </script>
 
 <div class={`body contents ${$theme ? 'theme-dark' : 'theme-light'}`}>
@@ -18,7 +20,6 @@
 
 <style lang="scss">
 	:global(body) {
-		background-image: url('bg/bg-dark.jpg');
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
