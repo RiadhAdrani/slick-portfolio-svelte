@@ -8,7 +8,7 @@
 	import 'prismjs/themes/prism-tomorrow.css';
 	import { onMount } from 'svelte';
 
-	let container: HTMLDivElement = $state();
+	let container: HTMLDivElement = $state() as HTMLDivElement;
 
 	interface Props {
 		content: string;
