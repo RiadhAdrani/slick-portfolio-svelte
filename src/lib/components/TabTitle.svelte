@@ -6,7 +6,7 @@
 		title: string;
 	}
 
-	let { title }: Props = $props();
+	let { title = $bindable() }: Props = $props();
 </script>
 
 <svelte:head>
