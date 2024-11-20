@@ -25,7 +25,11 @@
 		url: string;
 	};
 
-	export let data: { skill?: Skill };
+	interface Props {
+		data: { skill?: Skill };
+	}
+
+	let { data }: Props = $props();
 
 	const getRelatedProjects = (): Array<Related> => {
 		const out: Array<Related> = [];
@@ -63,9 +67,9 @@
 		return out;
 	};
 
-	$: computedTitle = data.skill ? `${data.skill.name} - ${title}` : title;
+	let computedTitle = $derived(data.skill ? `${data.skill.name} - ${title}` : title);
 
-	$: related = data.skill ? getRelatedProjects() : [];
+	let related = $derived(data.skill ? getRelatedProjects() : []);
 </script>
 
 <TabTitle title={computedTitle} />

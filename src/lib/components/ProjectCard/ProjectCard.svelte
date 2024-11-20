@@ -12,18 +12,22 @@
 	import { base } from '$app/paths';
 	import UIcon from '../Icon/UIcon.svelte';
 
-	export let project: Project;
-	$: months = countMonths(project.period.from, project.period.to);
+	interface Props {
+		project: Project;
+	}
+
+	let { project }: Props = $props();
+	let months = $derived(countMonths(project.period.from, project.period.to));
 	// $: period = `${months} month${months > 1 ? 's' : ''}`;
 	// $: period = `${getTimeDiff(
 	// 	project.period.from,
 	// 	project.period.to ?? new Date(Date.now() + 1000 * 60 * 60 * 24)
 	// )}`;
-	$: period = computeExactDuration(project.period.from, project.period.to);
-	$: from = `${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`;
-	$: to = project.period.to
+	let period = $derived(computeExactDuration(project.period.from, project.period.to));
+	let from = $derived(`${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`);
+	let to = $derived(project.period.to
 		? `${getMonthName(project.period.to.getMonth())} ${project.period.to.getFullYear()}`
-		: 'now';
+		: 'now');
 </script>
 
 <Card color={project.color} href={`${base}/projects/${project.slug}`}>

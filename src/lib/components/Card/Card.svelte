@@ -1,31 +1,46 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { convertNamedToHexColor, type NamedColor } from '$lib/utils/colors';
 	import { changeColorOpacity, isHexColor } from '@riadh-adrani/utils';
 	import { onMount } from 'svelte';
 	import type { MouseEventHandler } from 'svelte/elements';
 
-	let el: HTMLElement;
+	let el: HTMLElement = $state();
 
-	export let color = '#ffffff00';
 
-	export let margin = '0px';
-	export let tiltDegree = 5;
-	export let classes: Array<string> = [];
-	export let href: undefined | string = undefined;
-	export let bgImg: string | undefined = undefined;
+	interface Props {
+		color?: string;
+		margin?: string;
+		tiltDegree?: number;
+		classes?: Array<string>;
+		href?: undefined | string;
+		bgImg?: string | undefined;
+		children?: import('svelte').Snippet;
+	}
 
-	$: computedColor = isHexColor(color) ? color : convertNamedToHexColor(color as NamedColor);
-	$: borderColor = changeColorOpacity(computedColor, 0.5);
-	$: dropColor = changeColorOpacity(computedColor, 0.15);
-	$: bgColor = changeColorOpacity(computedColor, 0.01);
+	let {
+		color = '#ffffff00',
+		margin = '0px',
+		tiltDegree = 5,
+		classes = [],
+		href = undefined,
+		bgImg = undefined,
+		children
+	}: Props = $props();
 
-	$: {
+	let computedColor = $derived(isHexColor(color) ? color : convertNamedToHexColor(color as NamedColor));
+	let borderColor = $derived(changeColorOpacity(computedColor, 0.5));
+	let dropColor = $derived(changeColorOpacity(computedColor, 0.15));
+	let bgColor = $derived(changeColorOpacity(computedColor, 0.01));
+
+	run(() => {
 		if (el) {
 			el.style.setProperty('--border-color', borderColor);
 			el.style.setProperty('--drop-color', dropColor);
 			el.style.setProperty('--bg-color', bgColor);
 		}
-	}
+	});
 
 	// svelte typing is broken...
 	const onHover: MouseEventHandler<HTMLDivElement> = (ev) => {
@@ -61,19 +76,19 @@
 	});
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <svelte:element
 	this={href ? 'a' : 'div'}
 	{href}
 	bind:this={el}
-	on:mousemove={onHover}
+	onmousemove={onHover}
 	class={`card text-inherit decoration-none inline-flex flex-col border-1px border-solid border-[var(--border)] rounded-15px duration relative ${classes.join(
 		' '
 	)}`}
 	style:bgColor={'red'}
 >
 	<div class="card-bg-img flex-1 flex flex-col p-25px rounded-15px">
-		<slot />
+		{@render children?.()}
 	</div>
 </svelte:element>
 

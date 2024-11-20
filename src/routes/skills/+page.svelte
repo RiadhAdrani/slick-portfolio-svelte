@@ -7,7 +7,7 @@
 	import Card from '$lib/components/Card/Card.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
-	let result = groupByCategory('');
+	let result = $state(groupByCategory(''));
 
 	const onSearch = (e: CustomEvent<{ search: string }>) => {
 		const query = e.detail.search;
@@ -27,9 +27,9 @@
 			{#each result as group (group.category.slug)}
 				<div class="col gap-5 mb-7">
 					<div class="row items-center gap-5">
-						<div class="bg-[var(--main-hover)] h-[1px] w-[20px]" />
+						<div class="bg-[var(--main-hover)] h-[1px] w-[20px]"></div>
 						<p class="text-[var(--main-close)]">{group.category.name}</p>
-						<div class="flex-1 bg-[var(--main-hover)] h-[1px]" />
+						<div class="flex-1 bg-[var(--main-hover)] h-[1px]"></div>
 					</div>
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-5 ">
 						{#each group.items as skill (skill.slug)}

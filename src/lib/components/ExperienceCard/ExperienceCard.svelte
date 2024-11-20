@@ -11,7 +11,11 @@
 	import Chip from '../Chip/Chip.svelte';
 	import CardDivider from '../Card/CardDivider.svelte';
 
-	export let experience: Experience;
+	interface Props {
+		experience: Experience;
+	}
+
+	let { experience }: Props = $props();
 
 	// const months = getTimeDiff(experience.period.from, experience.period.to);
 	const exactDuration = computeExactDuration(experience.period.from, experience.period.to);
@@ -25,11 +29,11 @@
 
 	const period = `${from} - ${to}`;
 
-	$: info = [
+	let info = $derived([
 		{ label: experience.company, icon: 'i-carbon-building' },
 		{ label: experience.location, icon: 'i-carbon-location' },
 		{ label: experience.contract, icon: 'i-carbon-hourglass' }
-	] as const;
+	] as const);
 </script>
 
 <Card

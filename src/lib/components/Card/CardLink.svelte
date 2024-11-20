@@ -1,8 +1,12 @@
 <script lang="ts">
 	import UIcon from '../Icon/UIcon.svelte';
 
-	export let label: string;
-	export let to: string;
+	interface Props {
+		label: string;
+		to: string;
+	}
+
+	let { label, to }: Props = $props();
 </script>
 
 <a

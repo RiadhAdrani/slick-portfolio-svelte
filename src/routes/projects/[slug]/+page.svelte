@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { createBubbler, handlers } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/projects';
@@ -15,18 +18,22 @@
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
-	export let data: { project?: Project };
+	interface Props {
+		data: { project?: Project };
+	}
+
+	let { data }: Props = $props();
 
 	const screenshots = data.project?.screenshots ?? [];
 
-	let screenIndex: number | undefined = undefined;
+	let screenIndex: number | undefined = $state(undefined);
 
-	$: screenshot =
-		typeof screenIndex !== 'undefined' && screenshots[screenIndex]
+	let screenshot =
+		$derived(typeof screenIndex !== 'undefined' && screenshots[screenIndex]
 			? screenshots[screenIndex]
-			: undefined;
+			: undefined);
 
-	$: computedTitle = data.project ? `${data.project.name} - ${title}` : title;
+	let computedTitle = $derived(data.project ? `${data.project.name} - ${title}` : title);
 </script>
 
 <TabTitle title={computedTitle} />
@@ -96,19 +103,18 @@
 						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10 "
 					>
 						{#each screenshots as item, index}
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<!-- svelte-ignore a11y_no_static_element_interactions -->
 							<div
 								class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-								on:click={() => (screenIndex = index)}
-								on:keydown
-								on:keypress
-								on:keyup
-								on:keyup
+								onclick={() => (screenIndex = index)}
+								onkeydown={bubble('keydown')}
+								onkeypress={bubble('keypress')}
+								onkeyup={handlers(bubble('keyup'), bubble('keyup'))}
 							>
 								<div
 									class="screenshot aspect-video bg-contain w-100% cursor-pointer"
 									style={`background-image: url(${item.src});`}
-								/>
+								></div>
 								<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
 							</div>
 						{/each}

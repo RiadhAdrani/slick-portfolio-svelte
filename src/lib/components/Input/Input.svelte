@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let value = '';
-	export let placeholder = '';
-    let inputElement: HTMLInputElement;
+	interface Props {
+		value?: string;
+		placeholder?: string;
+	}
+
+	let { value = $bindable(''), placeholder = '' }: Props = $props();
+    let inputElement: HTMLInputElement = $state();
 
     function focus() {
         inputElement.focus();

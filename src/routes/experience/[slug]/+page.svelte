@@ -15,9 +15,13 @@
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 
-	export let data: { experience?: Experience };
+	interface Props {
+		data: { experience?: Experience };
+	}
 
-	$: computedTitle = data.experience ? `${data.experience.name} - ${title}` : title;
+	let { data }: Props = $props();
+
+	let computedTitle = $derived(data.experience ? `${data.experience.name} - ${title}` : title);
 </script>
 
 <TabTitle title={computedTitle} />

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { createEventDispatcher, onMount } from 'svelte';
 	import CommonPage from './CommonPage.svelte';
 	import Input from './Input/Input.svelte';
@@ -6,19 +8,24 @@
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 
-	export let title = 'Title';
-	export let search = '';
-    let searchInput: Input;
+	interface Props {
+		title?: string;
+		search?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { title = 'Title', search = $bindable(''), children }: Props = $props();
+    let searchInput: Input = $state();
 
 	const dispatch = createEventDispatcher();
 
-	let mounted = false;
+	let mounted = $state(false);
 
-	$: {
+	run(() => {
 		dispatch('search', { search: search.trim().toLowerCase() });
-	}
+	});
 
-	$: {
+	run(() => {
 		if (browser && mounted) {
 			let searchParams = new URLSearchParams(window.location.search);
 
@@ -38,7 +45,7 @@
 				}
 			}
 		}
-	}
+	});
 
 	onMount(() => {
 		let searchParams = new URLSearchParams(window.location.search);
@@ -53,6 +60,6 @@
 		<Input bind:this={searchInput} bind:value={search} placeholder={'Search...'} />
 	</div>
 	<div class="w-100% col flex-1">
-		<slot />
+		{@render children?.()}
 	</div>
 </CommonPage>

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { items } from '@data/navbar';
@@ -7,9 +10,9 @@
 	import { base } from '$app/paths';
 	import UIcon from '../Icon/UIcon.svelte';
 
-	$: currentRoute = $page.url.pathname;
+	let currentRoute = $derived($page.url.pathname);
 
-	let expanded = false;
+	let expanded = $state(false);
 
 	const toggleExpanded = (v?: boolean) => {
 		if (typeof v === 'undefined') {
@@ -56,7 +59,7 @@
 				</a>
 				<button
 					class="bg-transparent text-1em border-none cursor-pointer hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
-					on:click={() => toggleTheme()}
+					onclick={() => toggleTheme()}
 				>
 					{#if $theme}
 						<UIcon icon="i-carbon-moon" />
@@ -66,13 +69,13 @@
 				</button>
 			</div>
 			<div class="col-center md:hidden h-full hover:bg-[var(--main-hover)] cursor-pointer">
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<div
 					class={`nav-bar-mobile-btn col-center ${expanded ? 'nav-bar-mobile-btn-expanded' : ''}`}
-					on:keydown
-					on:keyup
-					on:click={() => toggleExpanded()}
-				/>
+					onkeydown={bubble('keydown')}
+					onkeyup={bubble('keyup')}
+					onclick={() => toggleExpanded()}
+				></div>
 			</div>
 		</div>
 	</nav>
@@ -82,7 +85,7 @@
 				<a
 					href={`${base}${item.to}`}
 					class="nav-menu-item !text-[var(--secondary-text)] gap-5"
-					on:click={() => toggleExpanded(false)}
+					onclick={() => toggleExpanded(false)}
 				>
 					<UIcon icon={item.icon} classes="text-1.3em" />
 					<span class="">{item.title}</span>
@@ -93,14 +96,14 @@
 			<a
 				href={`${base}/search`}
 				class="text-inherit decoration-none px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)]"
-				on:click={() => toggleExpanded(false)}
+				onclick={() => toggleExpanded(false)}
 			>
 				<UIcon icon="i-carbon-search" />
 				<span>Search</span>
 			</a>
 			<button
 				class="bg-transparent text-1em border-none cursor-pointer px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
-				on:click={() => toggleTheme()}
+				onclick={() => toggleTheme()}
 			>
 				{#if $theme}
 					<UIcon icon="i-carbon-moon" />

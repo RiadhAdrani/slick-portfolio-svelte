@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { items, title } from '@data/projects';
 	import * as skills from '@data/skills';
 	import { onMount } from 'svelte';
@@ -14,12 +16,12 @@
 		isSelected?: boolean;
 	}
 
-	let filters: Array<SkillFilter> = skills.items.filter((it) => {
+	let filters: Array<SkillFilter> = $state(skills.items.filter((it) => {
 		return items.some((project) => project.skills.some((skill) => skill.slug === it.slug));
-	});
+	}));
 
-	let search = '';
-	let displayed: Array<Project> = [];
+	let search = $state('');
+	let displayed: Array<Project> = $state([]);
 
 	const isSelected = (slug: string): boolean => {
 		return filters.some((item) => item.slug === slug && item.isSelected);
@@ -35,7 +37,7 @@
 		});
 	};
 
-	$: {
+	run(() => {
 		displayed = items.filter((project) => {
 			const isFiltered =
 				filters.every((item) => !item.isSelected) ||
@@ -49,7 +51,7 @@
 
 			return isFiltered && isSearched;
 		});
-	}
+	});
 
 	const onSearch = (e: CustomEvent<{ search: string }>) => {
 		search = e.detail.search;

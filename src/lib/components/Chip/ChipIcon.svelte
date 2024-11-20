@@ -1,12 +1,24 @@
 <script lang="ts">
 	import { theme } from '$lib/stores/theme';
 
-	export let name = '';
-	export let logo = '';
-	export let inverted = false;
-	export let grayscale = true;
 
-	export let href: string | undefined = undefined;
+	interface Props {
+		name?: string;
+		logo?: string;
+		inverted?: boolean;
+		grayscale?: boolean;
+		href?: string | undefined;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		name = '',
+		logo = '',
+		inverted = false,
+		grayscale = true,
+		href = undefined,
+		children
+	}: Props = $props();
 </script>
 
 <svelte:element
@@ -17,8 +29,8 @@
 	} ${grayscale ? 'grayscale-65 hover:grayscale-0' : ''}`}
 	data-help={name}
 >
-	{#if $$slots.default}
-		<slot />
+	{#if children}
+		{@render children?.()}
 	{:else}
 		<img
 			class={`w-15px h-15px ${inverted ? 'invert-100' : ''}`}

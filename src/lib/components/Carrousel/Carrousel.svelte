@@ -1,26 +1,33 @@
 <script lang="ts">
+	import { run, createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { onMount } from 'svelte';
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import UIcon from '../Icon/UIcon.svelte';
 
-	export let items: Array<Skill> = [];
+	interface Props {
+		items?: Array<Skill>;
+	}
+
+	let { items = [] }: Props = $props();
 	const delay = 2000;
 
-	let element: HTMLElement;
+	let element: HTMLElement = $state();
 
 	let timeout: unknown;
-	let index = 0;
+	let index = $state(0);
 	let toRight = true;
 
-	$: {
+	run(() => {
 		if (element) {
 			element.scroll({
 				left: index * 150,
 				behavior: 'smooth'
 			});
 		}
-	}
+	});
 
 	const slide = (right: boolean) => {
 		if (right) {
@@ -72,10 +79,10 @@
 <div class="carrousel flex-[0.5] row-center">
 	<button
 		class="row-center font-500 p-5px m-y-0px m-x-10px cursor-pointer border-1px border-solid border-[var(--border)] bg-transparent rounded-[50%] hover:border-[var(--border-hover)]"
-		on:click={toggleLeft}
-		on:keyup
-		on:keydown
-		on:keypress
+		onclick={toggleLeft}
+		onkeyup={bubble('keyup')}
+		onkeydown={bubble('keydown')}
+		onkeypress={bubble('keypress')}
 	>
 		<UIcon icon="i-carbon-chevron-left" />
 	</button>
@@ -91,10 +98,10 @@
 
 	<button
 		class="row-center font-500 p-5px m-y-0px m-x-10px cursor-pointer border-1px border-solid border-[var(--border)] bg-transparent rounded-[50%] hover:border-[var(--border-hover)]"
-		on:click={toggleRight}
-		on:keyup
-		on:keydown
-		on:keypress
+		onclick={toggleRight}
+		onkeyup={bubble('keyup')}
+		onkeydown={bubble('keydown')}
+		onkeypress={bubble('keypress')}
 	>
 		<UIcon icon="i-carbon-chevron-right" />
 	</button>
