@@ -2,7 +2,7 @@
 
 Vercel-like style portfolio template for developers.
 
-[For a reference, check out my personal protfolio, slightly changed, but uses this template.](https://riadhadrani.github.io/RiadhAdrani)
+### [Checkout Svelte 5 version is here](https://github.com/RiadhAdrani/slick-portfolio-svelte-5)
 
 ## Create
 
